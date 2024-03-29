@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-left: 0;
+    padding-right: 0;
+    height: 100dvh;
+    overflow: hidden;
+
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+footer {
+    height: 50px;
+    display: flex;
+    margin-top: auto;
+    justify-content: space-between;
+}
+
+footer a {
+    text-decoration: none;
+}
