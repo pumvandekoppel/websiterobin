@@ -1,6 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
+    justify-content:space-between;
     margin-left: 50px;
     margin-right: 50px;
     padding-left: 0;
@@ -20,10 +21,20 @@ nav li {
     list-style-type: none;
 }
 
+header {
+    height: 75px;
+}
+
+main {
+    flex: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
 footer {
     height: 50px;
     display: flex;
-    margin-top: auto;
+    /* margin-top: auto; */
     justify-content: space-between;
 }
 
