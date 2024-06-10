@@ -2,18 +2,32 @@ body {
     display: flex;
     flex-direction: column;
     justify-content:space-between;
-    margin-left: 50px;
-    margin-right: 50px;
+    align-items: center;
+    margin-left: 13vw;
+    margin-right: 13vw;
     padding-left: 0;
     padding-right: 0;
     height: 100dvh;
-    overflow: hidden;
+    font-family: "Libre Baskerville, Baskerville, Baskerville Old Face, Garamond, Georgia, Times New Roman, serif";
+    font-size: large;
 
 }
 
+img {
+    max-width: 728px;
+}
+
+header {
+    height: 75px;
+    margin-bottom: 7px;
+}
+
 nav ul {
+    width: 728px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
     padding: 0;
 }
 
@@ -21,23 +35,71 @@ nav li {
     list-style-type: none;
 }
 
-header {
-    height: 75px;
+nav li a {
+    text-decoration: none;
+    color: #000;
 }
 
 main {
     flex: auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 51px;
+    margin-bottom: 51px;
+}
+
+main ul {
+    list-style-type: '';
+}
+
+main ul a {
+    text-decoration: none;
+    color: #000;
+}
+
+main ul li {
+    margin-bottom: 0px;
+}
+
+main ul li figure {
+    margin-left: 0;
+    margin-top: 7px;
+}
+
+main#index ul li figure {
+    filter: blur(0.75px);
+}
+
+main ul li:hover {
+    font-style:italic;
+}
+
+main ul li figure:hover {
+    filter: blur(0px);
+}
+
+figure#about {
+    margin-left: 0;
+}
+
+img#profile {
+    margin-top: 150px;
+    max-width: 150px;
+}
+
+p {
+    max-width: 728px;
 }
 
 footer {
-    height: 50px;
+    height: 75px;
+    width: 728px;
     display: flex;
     /* margin-top: auto; */
-    justify-content: space-between;
+    justify-content: start;
+    flex-direction: row;
+    margin-bottom: 14px;
 }
 
 footer a {
     text-decoration: none;
+    color: gray;
 }
