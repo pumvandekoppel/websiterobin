@@ -3,8 +3,8 @@ body {
     flex-direction: column;
     justify-content:space-between;
     align-items: center;
-    margin-left: 13vw;
-    margin-right: 13vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
     padding-left: 0;
     padding-right: 0;
     height: 100dvh;
@@ -13,21 +13,25 @@ body {
 
 }
 
+p {
+	font-size: 1em;}
+
 img {
-    max-width: 728px;
+    max-width: 94vw;
 }
 
 header {
     height: 75px;
+    width: 94vw;
     margin-bottom: 7px;
 }
 
 nav ul {
-    width: 728px;
+    width: 94vw;
     display: flex;
     flex-direction: row;
     justify-content:space-between;
-    align-items: center;
+    align-items: start;
     padding: 0;
 }
 
@@ -40,19 +44,32 @@ nav li a {
     color: #000;
 }
 
+nav li#about h2 {
+	height: 31px;
+	margin-top: 18.41px;
+}
+
 main {
+	width: 94vw;
     flex: auto;
-    margin-top: 51px;
+    margin-top: 66px;
     margin-bottom: 51px;
 }
 
 main ul {
     list-style-type: '';
+    margin-left: 0;
+    padding-left: 0;
 }
 
 main ul a {
     text-decoration: none;
     color: #000;
+}
+
+main ul a p {
+	transform: scale(4, 1) translate(274px, 0);
+
 }
 
 main ul li {
@@ -61,19 +78,27 @@ main ul li {
 
 main ul li figure {
     margin-left: 0;
+/* 
     margin-top: 7px;
+ */
 }
 
 main#index ul li figure {
-    filter: blur(0.75px);
+    transform: scale(1, 0.75);
+}
+
+main#index ul li figure img {
+    width: 94vw;
+    transform: scale(1, 0.75);
+
 }
 
 main ul li:hover {
-    font-style:italic;
-}
+    font-style: italic;
+/* 
+ 	transform: scale(1, 1.5);
+ */
 
-main ul li figure:hover {
-    filter: blur(0px);
 }
 
 figure#about {
@@ -91,12 +116,11 @@ p {
 
 footer {
     height: 75px;
-    width: 728px;
+    width: 94vw;
     display: flex;
     /* margin-top: auto; */
     justify-content: start;
     flex-direction: row;
-    margin-bottom: 14px;
 }
 
 footer a {
