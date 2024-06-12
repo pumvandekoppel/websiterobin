@@ -3,6 +3,8 @@ body {
     flex-direction: column;
     justify-content:space-between;
     align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
     margin-left: 3vw;
     margin-right: 3vw;
     padding-left: 0;
@@ -14,7 +16,9 @@ body {
 }
 
 p {
-	font-size: 1em;}
+	font-size: 1em;
+    max-width: 94vw;
+}
 
 img {
     max-width: 94vw;
@@ -52,8 +56,8 @@ nav li#about h2 {
 main {
 	width: 94vw;
     flex: auto;
-    margin-top: 66px;
-    margin-bottom: 51px;
+    margin-top: 31px;
+    margin-bottom: 0px;
 }
 
 main ul {
@@ -68,12 +72,12 @@ main ul a {
 }
 
 main ul a p {
-	transform: scale(4, 1) translate(274px, 0);
-
+	transform: scale(4, 1);
+    transform-origin: left center;
 }
 
 main ul li {
-    margin-bottom: 0px;
+    margin-bottom: 15.5px;
 }
 
 main ul li figure {
@@ -81,15 +85,15 @@ main ul li figure {
 /* 
     margin-top: 7px;
  */
-}
-
-main#index ul li figure {
-    transform: scale(1, 0.75);
+    width: 94vw;
 }
 
 main#index ul li figure img {
     width: 94vw;
-    transform: scale(1, 0.75);
+    /* transform: scale(1, 0.75); */
+    object-fit: cover;
+    width: 100%;
+    height: 100px;
 
 }
 
@@ -127,3 +131,18 @@ footer a {
     text-decoration: none;
     color: gray;
 }
+
+/* ********************************* */
+
+@media screen and (max-width: 925px) {
+    p {
+        font-size: 0.5em;
+    }
+  }
+  
+@media screen and (max-width: 775px) {
+    main ul a p {
+        transform: scale(3, 1) translate(223px, 0);
+    
+    }
+  }
