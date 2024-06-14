@@ -7,27 +7,61 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="index.html"><h2>Robin Whitehouse</h2></a></li>
-          <li id="aboutButton"><a href="about.html"><h2 style="font-size: 40px;">&#9753;</h2></a></li>
-        </ul>
-      </nav>
-    </header>
+  <body id="rock">
+    <div class="pseudoHeader">
+      <header>
+        <nav>
+          <ul class="index">
+            <li>
+              <a href="index.html"
+                ><div id="rockWrapper" class="wrapper">
+                  <p id="rockTitle">Interventions with a rock</p>
+                </div></a
+              >
+            </li>
+            <li>
+              <a id="aboutButton" href="about.html"
+                ><h2 style="font-size: 40px">&#9753;</h2></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
     <main>
-      <ul>
-        <a href="rock.html"><li><div class="wrapper" id="rockwrapper"><p id="rock">Interventions with a rock</p></div><figure><img src="assets/Interventions with a rock/RockTalk01-1680x945.jpg" alt="cropped picture of the artwork Interventions with a rock"><figcaption></figcaption></figure></li></a>
-      </ul>
+      <div class="container">
+        <ul>
+          <a href="index.html">
+            <li>
+              <figure>
+                <img
+                  src="assets/Interventions with a rock/RockTalk01-3-2.jpg"
+                  alt="cropped picture of the artwork Interventions with a rock"
+                />
+                <figcaption></figcaption>
+              </figure>
+            </li>
+          </a>
+          <figure>
+            <img
+              src="assets/Interventions with a rock/RockTalk01-3-2.jpg"
+              alt="cropped picture of the artwork Interventions with a rock"
+            />
+            <figcaption></figcaption>
+          </figure>
+        </ul>
+        <div class="context"></div>
+      </div>
     </main>
+    <div class="pseudoFooter"></div>
     <footer>
-        <span id="links">
-            <a href="">e-mail<span class="hideonmobile">: robin@gmail.com</span></a>
-            <a>&ensp;|&ensp;</a>
-            <a href="">instagram<span class="hideonmobile">: @instaofrobin</a>
-        </span>
-        <a></a>
+      <span id="links">
+        <a>contact<span>: robin@gmail.com</span></a>
+        <a>|</a>
+        <a><span>@instaofrobin</span></a>
+      </span>
+      <a></a>
     </footer>
     <script src="scale.js"></script>
   </body>
