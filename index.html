@@ -11,71 +11,104 @@
     <header>
       <nav>
         <ul>
-          <li>
-            <a href="index.html"><h2>Robin Whitehouse</h2></a>
-          </li>
-          <li>
-            <a id="aboutButton" href="about.html"><h2 style="font-size: 40px">&#9753;</h2></a>
-          </li>
+            <a id="name" href="index.html"><h2>Robin Whitehouse</h2></a>
+            <a id="aboutButton" href="about.html"
+              ><h2>&#9753;</h2></a
+            >
         </ul>
       </nav>
     </header>
-    <main id="index">
-      <ul class="index">
-        <a href="rock.html"
-          ><li>
-            <div class="wrapper" id="rockWrapper">
-              <p id="rockTitle">Interventions with a rock</h1>
-            </div>
-            <figure>
-              <img
-                src="assets/Interventions with a rock/RockTalk01-1680x945.jpg"
-                alt="cropped picture of the artwork Interventions with a rock"
-              />
-              <figcaption></figcaption>
-            </figure></li
-        ></a>
-        <a href="gips.html"
-          ><li>
-            <div class="wrapper" id="gipswrapper">
-              <p id="gipsTitle">Gips collection</p>
-            </div>
-            <figure>
-              <img
-                src="assets/Gips collection/DSC_0048.JPG"
-                alt="cropped picture of the gips art project"
-              />
-              <figcaption></figcaption>
-            </figure></li
-        ></a>
-        <a href="books.html"
-          ><li>
-            <div class="wrapper" id="bookswrapper">
-              <p id="booksTitle">Artist books</p>
-            </div>
-            <figure>
-              <img
-                src="assets/Artist books/space book/Scan 2.jpg"
-                alt="cropped picture of an artist book"
-              />
-              <figcaption></figcaption>
-            </figure></li
-        ></a>
-        <a href="paper.html"
-          ><li>
-            <div class="wrapper" id="paperwrapper">
-              <p id="paperTitle">Works on paper</p>
-            </div>
-            <figure>
-              <img
-                src="assets/Works on paper/DRAWINGS/sketchbooks together .jpeg"
-                alt="cropped picture of an artwork on paper"
-              />
-              <figcaption></figcaption>
-            </figure></li
-        ></a>
-        <!--           misschien nog meer categorien -->
-      </ul>
+    <main id="index" class="indexCrops">
+      <div id="topBuffer"></div>
+      <a href="rock.html">
+        <div class="wrapper" id="rockWrapper">
+          <p class="bigTitle" id="rockTitle">Interventions with a rock</p>
+        </div>
+        <img
+          src="assets/Interventions with a rock/RockTalk01-1680x945.jpg"
+          alt="picture of the artwork Interventions with a rock"
+        />
+      </a>
+      <a href="gips.html"
+        >
+          <div class="wrapper" id="gipswrapper">
+            <p class="bigTitle" id="gipsTitle">Gips collection</p>
+          </div>
+          <img
+            src="assets/Gips collection/DSC_0048.JPG"
+            alt="cropped picture of the gips art project"
+          />
+      </a>
+
+      <a href="fountain.html"
+      >
+        <div class="wrapper" id="gipswrapper">
+          <p class="bigTitle" id="gipsTitle">The fountain</p>
+        </div>
+        <img
+          src="assets/Gips collection/DSC_0048.JPG"
+          alt="cropped picture of the gips art project"
+        />
+    </a>
+
+    <a href="lobsters.html"
+    >
+      <div class="wrapper" id="gipswrapper">
+        <p class="bigTitle" id="gipsTitle">Lobsters</p>
+      </div>
+      <img
+        src="assets/Gips collection/DSC_0048.JPG"
+        alt="cropped picture of the gips art project"
+      />
+  </a>
+
+    <a href="block.html"
+    >
+      <div class="wrapper" id="gipswrapper">
+        <p class="bigTitle" id="gipsTitle">The block</p>
+      </div>
+      <img
+        src="assets/Gips collection/DSC_0048.JPG"
+        alt="cropped picture of the gips art project"
+      />
+  </a>
+
+      <a href="books.html"
+        >
+          <div class="wrapper" id="bookswrapper">
+            <p class="bigTitle" id="booksTitle">Artist books</p>
+          </div>
+          <img
+            src="assets/Artist books/space book/Scan 2.jpg"
+            alt="cropped picture of an artist book"
+          />
+      </a>
+
+      
+
+      <a href="paper.html"
+        >
+          <div class="wrapper" id="paperWrapper">
+            <p class="bigTitle" id="paperTitle">Works on paper</p>
+          </div>
+          <img
+            src="assets/Works on paper/DRAWINGS/sketchbooks together .jpeg"
+            alt="cropped picture of an artwork on paper"
+          />
+      </a>
+
+      <a href="paintings.html"
+      >
+        <div class="wrapper" id="gipswrapper">
+          <p class="bigTitle" id="gipsTitle">Paintings</p>
+        </div>
+        <img
+          src="assets/Gips collection/DSC_0048.JPG"
+          alt="cropped picture of the gips art project"
+        />
+    </a>
+
+      <!--           misschien nog meer categorien -->
     </main>
     <footer>
       <span id="links">
@@ -85,7 +118,7 @@
           >instagram<span class="hideonmobile">: @instaofrobin</span></a
         >
       </span>
-      <a></a>
+      <hr />
     </footer>
     <script src="scaleIndex.js"></script>
   </body>

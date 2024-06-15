@@ -14,6 +14,11 @@ body {
   font-size: large;
 }
 
+a {
+  text-decoration: none;
+  color: #000;
+}
+
 p {
   max-width: 94vw;
 }
@@ -23,35 +28,35 @@ h1 {
     max-width: 94vw;
 }
 
-ul {
-    list-style-type: none;
-}
-
-img:not(main#index img) {
-  max-width: 78vw;
-  /* object-fit: cover; */
-}
-
-.pseudoHeader {
-  height: 75px;
-  width: 94vw;
-  margin-bottom: 0px;
-  position: fixed;
-  background-color: pink;
-}
-
-.pseudoHeader nav ul li {
-    height: 3vw;
-}
-
 header {
-    height: 75px;
+    position: fixed;
+    height: 3vw;
     width: 94vw;
     margin-bottom: 0px;
+    background-color: #fff;
 }
 
-header ul {
-    display: flex;
+header #name {
+  position: fixed;
+  left: 3vw;
+  top: 1vw;
+}
+
+header #aboutButton {
+  cursor: help;
+  
+}
+
+header nav {
+  height: 3vw;
+}
+
+header nav ul {
+  height: 3vw;
+}
+
+header nav ul li {
+  height: 3vw;
 }
 
 h2 {
@@ -67,53 +72,57 @@ h2 {
     height: 3vw;
 }
 
+#bigTitle {
+  font-style: italic;
+}
+
+#bigTitle:hover {
+  font-style: normal;
+}
+
 #aboutButton {
     position: fixed;
     background-color: #fff;
     width: 40px;
     top: 0;
-    right: 3vw;
+    right: 2.5vw;
     height: 3vw;
+}
+
+#name {
+  margin-top: -7px;
 }
 
 #aboutButton h2 {
-    margin-top: 10px
+    margin-top: -8px;
+    font-size: 51px;
 }
 
-div.context {
+aside {
     position: fixed;
-    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
     width: 24.5vw;
     bottom: 3vw;
     right: 3vw;
-    height: 806px;
+    height: calc(100vh - 6vw);
     /* border-left: 3px solid #000; */
   }
 
-div.pseudoFooter {
-    position: fixed;
-    background-color:pink;
-    width: 94vw;
-    bottom: 0;
-    left: calc(3vw + 2px);
-    height: 3vw;
+hr {
+  width: 100%;
+  color: #b5b5b5;
+  background-color: #b5b5b5;
+  border-width: 0;
+  height: 2px;
 }
 
-footer {
-    position: fixed;
-    background-color: #fff;
-    width: 94vw;
-    bottom: 0;
-    left: calc(3vw + 2px);
-    height: 2.2vw;
-    display: flex;
-    justify-content: start;
-    flex-direction: row;
-}
+aside a {
+  color:gray;
+  text-decoration: none;
 
-footer a {
-    text-decoration: none;
-    color: gray;
 }
 
 /* .showHeader:active,
@@ -154,7 +163,10 @@ nav ul {
 main {
   width: 94vw;
   flex: auto;
-  margin-bottom: 0px;
+}
+
+main.fullImages {
+  padding: 3vw;
 }
 
 ul {
@@ -164,14 +176,24 @@ ul {
 }
 
 ul a {
-    margin-top: 6vw;
+    /* margin-top: 6vw; */
 }
 
-body#rock ul a li figure,
-body#rock ul a li figure img,
-body#rock .container ul a li figure figcaption {
-  max-width: 78vw;
+/* 3:2 aspect ratio */
+body img {
+  height: calc(100vh - 6vw);
+  width: calc(150vh - 9vw);
 }
+
+
+
+/* img#firstBigImage {
+  margin-top: 0;
+}
+
+img#lastBigImage {
+  margin-bottom: 0;
+} */
 
 main#gips > * {
   max-width: 78vw;
@@ -210,28 +232,43 @@ ul li {
   margin-bottom: 15.5px;
 }
 
-ul li figure, figure {
+img {
   margin-left: 0;
-  margin-bottom: 3vw;
   /* 
     margin-top: 7px;
  */
   width: 94vw;
+  object-fit: cover;
 }
 
-ul li figure img {
+div#topBuffer {
+  height: 1.8vw;
+}
+
+.indexCrops {
+  padding: 3vw;
+}
+
+.indexCrops img {
   width: 94vw;
   /* transform: scale(1, 0.75); */
   object-fit: cover;
   width: 100%;
   height: 100px;
+  padding: 10px;
+  cursor: row-resize;
 }
 
-ul li:hover {
+#bigTitle:hover #rockTitle:hover, #gipsTitle:hover, #booksTitle:hover, #paperTitle:hover {
   font-style: italic;
   /* 
  	transform: scale(1, 1.5);
  */
+}
+
+#bigTitle {
+  cursor: w-resize;
+
 }
 
 div.reverseStyle {
@@ -242,14 +279,58 @@ div.reverseStyle:hover {
     font-style: normal;
 }
 
-figure#about {
-  margin-left: 0;
+th {
+  text-align: left;
 }
 
 img#profile {
   margin-top: 150px;
   max-width: 150px;
 }
+
+body#about {
+  overflow: hidden;
+}
+
+blockquote {
+margin: 0;}
+
+footer {
+  position: fixed;
+  background-color: #fff;
+  width: 94vw;
+  bottom: 0;
+  left: calc(3vw);
+  height: 3vw;
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+}
+
+footer #contactInfo {
+  padding-top: 14px;
+}
+
+footer a {
+  text-decoration: none;
+  color: gray;
+}
+
+footer span#links {
+  margin-top: 13px;
+} 
+
+footer hr {
+position: fixed;
+bottom: 1vw;
+right: 3vw;
+width: 67vw;
+color: #b5b5b5;
+background-color: #b5b5b5;
+border-width: 0;
+height: 2px;
+}
+
 
 /* p {
   max-width: 728px;

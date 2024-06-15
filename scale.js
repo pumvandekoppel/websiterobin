@@ -1,27 +1,32 @@
-var scaleRatio = 260; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
-const wrapper = document.getElementsByClassName("wrapper")[0];
-const rock = document.getElementById("rockTitle");
-const gips = document.getElementById("gipsTitle");
-const books = document.getElementById("booksTitle");
-const paper = document.getElementById("paperTitle");
+function vh(percent) {
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    return (percent * h) / 100;
+  }
+  
+  function vw(percent) {
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    return (percent * w) / 100;
+  }
+
+var scaleRatio = 220.075; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
+const longestTitle = document.getElementById("rockTitle");
+
 // const about = document.getElementById("about");
-let width = wrapper.offsetWidth;
+let width = 3 * 0.5* (vh(100) - vw(6));
+console.log("width is"+width)
 var newScaleX;
 
-const bigTitles = document.querySelectorAll('.wrapper > h1');
 function scaleToWidth() {
     newScaleX = width / scaleRatio
     console.log(newScaleX)
-    bigTitles[0].style.transform = "scaleX(" + newScaleX +")"
-    bigTitles[1].style.transform = "scaleX(" + newScaleX +")"
-    bigTitles[2].style.transform = "scaleX(" + newScaleX +")"
-    bigTitles[3].style.transform = "scaleX(" + newScaleX +")"
+    bigTitle.style.transform = "scaleX(" + newScaleX +")"
     // about.style.transform = "scaleX(" + newScaleX +")"
 }
 
-console.log(bigTitles)
+console.log(bigTitle)
 
 scaleToWidth();
 
 window.addEventListener('resize', scaleToWidth);
 
+// zonder wrapper zou zijn: (100vh - 6vw) * 3
