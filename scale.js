@@ -8,7 +8,7 @@ function vh(percent) {
     return (percent * w) / 100;
   }
 
-var scaleRatio = 220.075; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
+var scaleRatioRock = 220.075; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 const longestTitle = document.getElementById("rockTitle");
 
 // const about = document.getElementById("about");
@@ -17,7 +17,7 @@ console.log("width is"+width)
 var newScaleX;
 
 function scaleToWidth() {
-    newScaleX = width / scaleRatio
+    newScaleX = width / scaleRatioRock
     console.log(newScaleX)
     bigTitle.style.transform = "scaleX(" + newScaleX +")"
     // about.style.transform = "scaleX(" + newScaleX +")"
