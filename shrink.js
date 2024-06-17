@@ -8,7 +8,8 @@ var height = Math.max( body.scrollHeight, body.offsetHeight,
 const scaleX = newScaleX
 
 // pick the p tag
-const bigTitle = document.getElementById("bigTitle")
+const shrinkThisBigTitle = document.getElementsByTagName("p")[0]
+
 
 // transition from scaleX (from scale.js) to 0 when scrolling from top to bottom
 window.addEventListener("scroll", function(){
@@ -19,10 +20,10 @@ window.addEventListener("scroll", function(){
     const difference = scaleX - 1
     // shrink Scale x
     var shrinkScaleX = scaleX - (difference*(pixels+(pixels/(height-vh(100)))*vh(100)))/height
-    bigTitle.style.transform = "scaleX(" + shrinkScaleX + ")"
+    shrinkThisBigTitle.style.transform = "scaleX(" + shrinkScaleX + ")"
 
     // reduce font-weight
     const fontWeight = 700 - ((pixels/(height-vh(100)))*vh(100) * 0.3)
     console.log(fontWeight)
-    bigTitle.style.fontVariationSettings = "'wght' "  + fontWeight
+    shrinkThisBigTitle.style.fontVariationSettings = "'wght' "  + fontWeight
 })

@@ -7,114 +7,121 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body id="index">
+  <body id="index" onresize="scaleIndexToWidth()">
     <header>
       <nav>
         <ul>
+          <li id="nameListedItem">
             <a id="name" href="index.html"><h2>Robin Whitehouse</h2></a>
-            <a id="aboutButton" href="about.html"
-              ><h2>&#9753;</h2></a
-            >
+          </li>
+          <li id="aboutListedItem">
+            <a id="aboutButton" href="about.html"><h2>&#9753;</h2></a>
+          </li>
         </ul>
       </nav>
     </header>
     <main id="index" class="indexCrops">
-      <!-- <div id="topBuffer"></div> -->
+      <!-- <div id="topBuffer"> -->
       <a href="rock.html">
         <div class="wrapper" id="rockWrapper">
-          <p class="bigTitle" id="rockTitle">Interventions with a rock</p>
+          <p class="bigTitles" id="rockTitle">Interventions with a rock</p>
         </div>
         <img
           src="assets/Interventions with a rock/RockTalk01-1680x945.jpg"
           alt="picture of the artwork Interventions with a rock"
         />
       </a>
-      <a href="gips.html"
-        >
-          <div class="wrapper" id="gipsWrapper">
-            <p class="bigTitle" id="gipsTitle">Gips collection</p>
-          </div>
-          <img
-            src="assets/Gips collection/DSC_0048.JPG"
-            alt="cropped picture of the gips art project"
-          />
+      <a href="gips.html">
+        <div class="wrapper" id="gipsWrapper">
+          <p class="bigTitles" id="gipsTitle">Gips collection</p>
+        </div>
+        <img
+          src="assets/Gips collection/DSC_0048.JPG"
+          alt="cropped picture of the gips art project"
+        />
       </a>
 
-      <a href="fountain.html"
-      >
+      <a href="fountain.html">
         <div class="wrapper" id="gipsWrapper">
-          <p class="bigTitle" id="gipsTitle">The fountain</p>
+          <p class="bigTitles" id="gipsTitle">The fountain</p>
         </div>
         <img
           src="assets/The fountain/DSC00257-min.jpg"
           alt="cropped picture of the gips art project"
         />
-    </a>
-
-    <a href="lobsters.html"
-    >
-      <div class="wrapper" id="gipsWrapper">
-        <p class="bigTitle" id="gipsTitle">Lobster and shrimp on my plate, I want my pockets so fat they inflate</p>
-      </div>
-      <img
-        src="assets/Lobsters/img3.jpg"
-        alt="cropped picture of the gips art project"
-      />
-  </a>
-
-    <a href="block.html"
-    >
-      <div class="wrapper" id="gipsWrapper">
-        <p class="bigTitle" id="gipsTitle">The block</p>
-      </div>
-      <img
-        src="assets/The block/Screenshot 2024-06-15 034534.png"
-        alt="cropped picture of the gips art project"
-      />
-  </a>
-
-      <a href="books.html"
-        >
-          <div class="wrapper" id="booksWrapper">
-            <p class="bigTitle" id="booksTitle">Artist books</p>
-          </div>
-          <img
-            src="assets/Artist books/space book/Scan 6.jpg"
-            alt="cropped picture of an artist book"
-          />
       </a>
 
-      
-
-      <a href="paper.html"
-        >
-          <div class="wrapper" id="paperWrapper">
-            <p class="bigTitle" id="paperTitle">Works on paper</p>
-          </div>
-          <img
-            src="assets/Works on paper/DRAWINGS/sketchbooks together .jpeg"
-            alt="cropped picture of an artwork on paper"
-          />
-      </a>
-
-      <a href="paintings.html"
-      >
+      <a href="lobsters.html">
         <div class="wrapper" id="gipsWrapper">
-          <p class="bigTitle" id="gipsTitle">Paintings</p>
+          <p class="bigTitles" id="gipsTitle">
+            Lobster and shrimp on my plate, I want my pockets so fat they
+            inflate
+          </p>
         </div>
         <img
+          src="assets/Lobsters/img3.jpg"
+          alt="cropped picture of the gips art project"
+        />
+      </a>
+
+      <a href="block.html">
+        <div class="wrapper" id="gipsWrapper">
+          <p class="bigTitles" id="gipsTitle">The block</p>
+        </div>
+        <img
+          src="assets/The block/Screenshot 2024-06-15 034534.png"
+          alt="cropped picture of the gips art project"
+        />
+      </a>
+
+      <a href="books.html">
+        <div class="wrapper" id="booksWrapper">
+          <p class="bigTitles" id="booksTitle">Artist books</p>
+        </div>
+        <img
+          src="assets/Artist books/space book/Scan 6.jpg"
+          alt="cropped picture of an artist book"
+        />
+      </a>
+
+      <a href="paper.html">
+        <div class="wrapper" id="paperWrapper">
+          <p class="bigTitles" id="paperTitle">Works on paper</p>
+        </div>
+        <img
+          src="assets/Works on paper/DRAWINGS/sketchbooks together .jpeg"
+          alt="cropped picture of an artwork on paper"
+        />
+      </a>
+
+      <a href="paintings.html">
+        <div class="wrapper" id="gipsWrapper">
+          <p class="bigTitles" id="gipsTitle">Paintings</p>
+        </div>
+        <img
+          id="lastCrop"
           src="assets/Paintings/dispaly with BO/with BO 3-min.jpg"
           alt="cropped picture of the gips art project"
         />
-    </a>
+      </a>
     </main>
     <footer>
       <span id="links">
-        <a href="">e-mail<span class="hideonmobile">: robin@gmail.com</span></a>
-        <a>&ensp;|&ensp;</a>
-        <a href=""
-          >instagram<span class="hideonmobile">: @instaofrobin</span></a
-        >
+        <div>
+          <span>&#9997; :</span>
+        </div>
+        <div>
+          <span class="hideOnMobile"></span
+          ><a href="">3226492@kabk.nl</a>
+        </div>
+        <div>
+          <a> | </a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/0.1134_robin"
+            ><span class="hideOnMobile"></span>@0.1134_robin</a
+          >
+        </div>
       </span>
       <hr />
     </footer>

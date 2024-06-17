@@ -1,27 +1,28 @@
-var scaleRatioRock = 192; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
-var scaleRatioGips = 113.9; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
-var scaleRatioFountain = 99.9; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
-var scaleRatioLobsters = 594; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
+var scaleRatioRock = 215; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
+var scaleRatioGips = 125.5; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
+var scaleRatioFountain = 109.9; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
+var scaleRatioLobsters = 581; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioBlock = 83.75; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioBooks = 102.075; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
-var scaleRatioPaper = 137; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
-var scaleRatioPaintings = 79.475; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
+var scaleRatioPaper = 133; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
+var scaleRatioPaintings = 80; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioAbout;
 
 const wrapper = document.getElementsByClassName("wrapper")[0];
 
-let width = wrapper.offsetWidth;
-var newScaleXRock;
-var newScaleXGips;
-var newScaleXFountain;
-var newScaleXLobsters;
-var newScaleXBlock;
-var newScaleXBooks;
-var newScaleXPaper;
-var newScaleXPaintings;
+
 
 const bigTitles = document.querySelectorAll('.wrapper > p');
-function scaleToWidth() {
+function scaleIndexToWidth() {
+    let width = wrapper.offsetWidth;
+    var newScaleXRock;
+    var newScaleXGips;
+    var newScaleXFountain;
+    var newScaleXLobsters;
+    var newScaleXBlock;
+    var newScaleXBooks;
+    var newScaleXPaper;
+    var newScaleXPaintings;
     newScaleXRock = width / scaleRatioRock
     newScaleXGips = width / scaleRatioGips
     newScaleXFountain = width / scaleRatioFountain
@@ -39,11 +40,23 @@ function scaleToWidth() {
     bigTitles[6].style.transform = "scaleX(" + newScaleXPaper +")"
     bigTitles[7].style.transform = "scaleX(" + newScaleXPaintings +")"
     // about.style.transform = "scaleX(" + newScaleX +")"
+    console.log("hallo")
 }
 
-console.log(bigTitles)
+// function reloadCss()
+// {
+//     var link = document.getElementsByTagName("link")[0];
+//     if (link.rel === "stylesheet") {
+//         link.href += "";
+//     }
+// }
 
-scaleToWidth();
+function resizeAndReload() {
+    scaleIndexToWidth();
+    // reloadCss();
+}
 
-window.addEventListener('resize', scaleToWidth);
 
+scaleIndexToWidth();
+
+window.addEventListener('resize', resizeAndReload);
