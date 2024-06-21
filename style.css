@@ -55,17 +55,23 @@ h1 {
 
 header {
   position: fixed;
-  height: 60px;
+  height: 65px;
   width: 100vw;
   margin-bottom: 0px;
   background-color: #fff;
-  z-index: 1;
+  z-index: 3;
 }
 
 header nav {
   width: 94vw;
-  margin-left: 3vw;
-  margin-right: 3vw;
+  text-decoration: none;
+  color: #000;
+  height: 65px;
+  position: fixed;
+  left: 3vw;
+  padding-left: 0;
+  margin-bottom: 0;
+
 }
 
 header #name {
@@ -74,20 +80,8 @@ header #name {
   top: 1vw;
 }
 
-header #aboutButton {
+header #about-button {
   cursor: help;
-}
-
-header nav {
-  height: 60px;
-}
-
-header nav ul {
-  height: 60px;
-}
-
-header nav ul li {
-  height: 60px;
 }
 
 h2 {
@@ -100,22 +94,22 @@ h2 {
   width: 78vw;
   top: 0;
   left: 3vw;
-  height: 60px;
+  height: 65px;
 }
 
-.bigTitles {
+.big-titles {
   font-variation-settings: "wght" 700;
   white-space: nowrap;
   max-width: 94vw;
   object-fit: cover;
 }
 
-#rock .bigTitle {
+#rock .big-title {
   translate: scaleX();
 }
 
-p.bigTitles:hover,
-a#aboutButton h2:hover {
+p.big-titles:hover,
+a#about-button h2:hover {
   color: rgb(107, 107, 107);
   /* color: rgb(255, 255, 255);
   text-shadow:
@@ -125,20 +119,20 @@ a#aboutButton h2:hover {
     1px 1px 0 #000; */
 }
 
-#aboutButton {
+#about-button {
   position: fixed;
   background-color: #fff;
   width: 40px;
   top: 0;
   right: 2.5vw;
-  height: 60px;
+  height: 65px;
 }
 
 #name {
   margin-top: -7px;
 }
 
-#aboutButton h2 {
+#about-button h2 {
   margin-top: -1px;
   font-size: 51px;
 }
@@ -149,25 +143,38 @@ aside {
   flex-direction: column;
   justify-content: space-between;
   background-color: rgb(255, 255, 255);
-  width: 24.5vw;
-  bottom: 3vw;
-  right: 3vw;
+  height: calc(100vh - 130px);
+  top: 68px;
   height: calc(100vh - 6vw);
   /* border-left: 3px solid #000; */
+  z-index: 1;
 }
 
-hr {
-  width: 100%;
-  color: #b5b5b5;
-  background-color: #b5b5b5;
-  border-width: 0;
-  height: 2px;
+aside p {
+  margin: 0;
 }
 
 aside a {
   color: gray;
   text-decoration: none;
 }
+
+#rock aside {
+  font-size: 0.9vw;
+}
+
+aside #rock-transport { 
+  margin-bottom: 0;
+  transition: margin-bottom 1s;
+}
+
+aside#rock-talk {
+  margin-top: calc(68px + (100vh - 6vw));
+  transition: margin-top 1s;
+  z-index: 2;
+}
+
+
 
 /* .showHeader:active,
 .showHeader:focus {
@@ -176,64 +183,61 @@ aside a {
   -webkit-animation-fill-mode: reverse;
 } */
 
-/* nav ul {
-  width: 94vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: start;
-  padding: 0;
-} */
-
-nav li {
-  list-style-type: none;
-}
-
-nav li a {
-  text-decoration: none;
-  color: #000;
-}
-
-nav li#about h2 {
+nav #about-button h2 {
   height: 31px;
-  margin-top: 12.41px;
-  z-index: 1;
-}
-
-nav ul {
-  padding-left: 0;
-  margin-bottom: 0;
+  margin-top: 0px;
+  z-index: 3;
 }
 
 main {
-  width: 94vw;
-  margin-bottom: 100px;
+  margin-bottom: 65px;
   padding-bottom: 100px;
+  overflow: scroll;
+  overflow-x: hidden;
+
 }
 
-main.indexCrops,
-main.fullImages {
-  padding: 70px;
+
+#index main {
+  width: 94vw;
+  margin-bottom: 65px;
+  padding-bottom: 0px;
+}
+
+main.index-crops,
+main.full-images {
+  padding-top: 65px;
   padding-left: 0;
   padding-right: 0;
-  padding-bottom: 0;
+  padding-bottom: 0px;
 }
 
-ul {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
+main.full-images {
+  height: calc(100vh - 130px);
 }
 
-ul a {
-  /* margin-top: 6vw; */
+#rock main hr {
+  color: #000;
+  background-color: #000;
+  width: 77.1vw;
+  height: 2px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 13px
 }
 
-/* 3:2 aspect ratio */
-body img {
-  height: calc(100vh - 6vw);
-  width: calc(150vh - 9vw);
+/* 16:9 */
+#rock img, #gips img {
+  width: calc(16 * (100vh - 130px) / 9);
+  height: calc(100vh - 130px);
 }
+
+#rock aside, #gips aside {
+  height: calc(100vh - 130px);
+  width: calc(94vw - (16 * (100vh - 130px) / 9) - 1.5vw);
+  left: calc(3vw + (16 * (100vh - 130px) / 9 + 1.5vw));
+}
+
 
 /* img#firstBigImage {
   margin-top: 0;
@@ -243,32 +247,9 @@ img#lastBigImage {
   margin-bottom: 0;
 } */
 
-main#gips > * {
-  max-width: 78vw;
-}
-
-main#books > * {
-  max-width: 78vw;
-}
-
-main#paper > * {
-  max-width: 78vw;
-}
-
 div.container {
   width: 94vw;
   display: flex;
-}
-
-ul.index {
-  list-style-type: "";
-  margin-left: 0;
-  padding-left: 0;
-}
-
-ul a {
-  text-decoration: none;
-  color: #000;
 }
 
 p {
@@ -276,9 +257,6 @@ p {
   transform-origin: 0 0;
 }
 
-ul li {
-  /* margin-bottom: 15.5px; */
-}
 
 img {
   margin-left: 0;
@@ -292,18 +270,18 @@ img {
   }
 }
 
-div#topBuffer {
+div#top-buffer {
   height: 1.8vw;
 }
 
-.indexCrops {
+.index-crops {
   /* padding: 60px; */
   padding-left: 0;
   padding-right: 0;
 
 }
 
-.indexCrops img {
+.index-crops img {
   width: 94vw;
   /* transform: scale(1, 0.75); */
   object-fit: cover;
@@ -316,26 +294,8 @@ div#topBuffer {
 
 }
 
-.indexCrops #lastCrop {
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-div.reverseStyle {
-  font-style: italic;
-}
-
-div.reverseStyle:hover {
-  font-style: normal;
-}
-
 th {
   text-align: left;
-}
-
-img#profile {
-  margin-top: 150px;
-  max-width: 150px;
 }
 
 body#about {
@@ -354,12 +314,16 @@ footer {
   bottom: 0px;
   left: 3vw;
   height: 50px;
-  z-index: 1;
+  z-index: 3;
   vertical-align: baseline;
   padding-top: 15px;
 }
 
-footer #contactInfo {
+/* footer #writing-hand {
+  font-size: larger;
+} */
+
+footer #contact-info {
   padding-top: 14px;
 }
 
@@ -405,11 +369,6 @@ footer hr {
   }
   
 @media screen and (max-width: 760px) {
-    main ul a p {
-        transform: scale(3, 1);
-    
-    }
-  } */
 
 /* @keyframes hide-header {
   from {
@@ -423,7 +382,7 @@ footer hr {
 } */
 
 @media screen and (max-width: 800px) {
-  .hideOnMobile {
+  .hide-on-mobile {
     display: none;
   }
 
@@ -450,32 +409,23 @@ footer hr {
     width: 94vw;
     margin-left: 0;
     margin-right: 0;
-  }
-
-  header nav ul {
+    position: fixed;
     height: 60px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  header nav ul li {
+    width: 94vw;
+    margin-left: 0;
+    margin-right: 0;
     position: fixed;
     height: 60px;
     width: 94vw;
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 0;
-  }
-
-  header nav ul li a {
-    position: fixed;
     height: 60px;
-    width: 94vw;
-    margin-left: 0;
-    margin-right: 0;
+    display: flex;
+    justify-content: space-between;
   }
 
-  header nav ul li a h2 {
+  header nav a h2 {
     position: fixed;
     height: 60px;
     margin-left: 0;
@@ -490,22 +440,22 @@ footer hr {
     left: 3vw;
   }
 
-  header #aboutButton h2 {
+  header #about-button h2 {
     position: fixed;
     margin-bottom: 0;
     top: 12px;
     right: 3vw;
   }
 
-  #nameListedItem {
+  #name-listed-item {
     flex: 3 1 auto;
   }
 
-  #aboutListedItem {
+  #about-listed-item {
     flex: 1 1 auto;
   }
 
-  #aboutListedItem a h2 {
+  #about-listed-item a h2 {
     font-size: 47px;
     margin-top: -11px;
     text-align: center;
