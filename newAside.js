@@ -1,40 +1,28 @@
 let dividers = document.getElementsByClassName("divider")
 let asides = document.getElementsByTagName("aside")
-  
-let callback = (entries, observer) => {
-    entries.forEach((entry) => {
-        
-        // Each entry describes an intersection change for one observed
-        // target element:
-        //   entry.boundingClientRect
-        //   entry.intersectionRatio
-        //   entry.intersectionRect
-        //   entry.isIntersecting
-        //   entry.rootBounds
-        //   entry.target
-        //   entry.time
-
-        if (entry.isIntersecting) {
-            console.log("ja!")
-            asides[i].style.marginBottom = "calc(68px + (100vh - 6vw))"
-            asides[i+1].style.marginTop = "0"
-        } else {
-          }
-    });
-};
+let scrollSection = document.getElementsByTagName("main")[0]
 
 let options = {
-    root: null,
+    root: scrollSection,
     rootMargin: "-65px",
     threshold: 1.0,
   };
+  
+const onIntersect = (entries, observer) => {
+  entries.forEach((entry) => console.log(entry))
+  // asides[0].style.backgroundColor = "yellow"
 
-let observer = new IntersectionObserver(callback, options);
+}
+  
+let observer = new IntersectionObserver(onIntersect, options);
 
-for (let i = 0; i < dividers.length; i++) {
-    // voor elke horizontale lijn
-    console.log('trst')
-    console.log(dividers[i])
-    let target = dividers[i]
-    observer.observe(dividers[i]);
-  }
+const targetEl = dividers[0]
+
+observer.observe(targetEl)
+
+// for (let i = 0; i < dividers.length; i++) {
+//     // voor elke horizontale lijn
+//     console.log(dividers[i])
+//     target = dividers[i]
+//     observer.observe(target)
+//   }

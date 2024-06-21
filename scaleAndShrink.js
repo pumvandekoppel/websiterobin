@@ -19,7 +19,6 @@ const img = document.getElementsByTagName("img")[0]
 const scaleThisTitle = document.getElementsByTagName("p")[0]
 const shrinkThisBigTitle = document.getElementsByTagName("p")[0]
 
-
 function vh(percent) {
   var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
   return (percent * h) / 100;
@@ -29,7 +28,7 @@ function vw(percent) {
   return (percent * w) / 100;
 }
 
-var newScaleX
+var newScaleX;
 
 function scaleTitleToWidth() {
   let width = img.width
@@ -59,7 +58,7 @@ function scaleTitleToWidth() {
   if (document.getElementById('gips')) {
     scaleThisTitle.style.transform = "scaleX(" + newScaleXGips +")"
     newScaleX = newScaleXGips
-    return newScaleX
+    return
   }  
   if (document.getElementById('fountain')) {
     scaleThisTitle.style.transform = "scaleX(" + newScaleXFountain +")"
@@ -96,31 +95,25 @@ function scaleTitleToWidth() {
     newScaleX = newScaleXAbout
     return newScaleX
   }
-  return newScaleX
+
 }
 
 scaleTitleToWidth();
 
-window.addEventListener('resize', scaleTitleToWidth);
-
 // transition from scaleX (from scale.js) to 0 when scrolling from top to bottom
-window.addEventListener('scroll', function(){
+window.addEventListener("scroll", function () {
     // amount of pixels scrolled
     const pixels = window.scrollY
-    console.log(pixels)
-    console.log('hoi')
-
+  
     // difference in scaleX to travel when scrolling | destination = 1, start = scaleX
     const difference = newScaleX - 1
-    console.log(difference)
     // shrink Scale x
     var shrinkScaleX = newScaleX - (difference*(pixels+(pixels/(height-vh(100)))*vh(100)))/height
-    console.log(shrinkScaleX)
     shrinkThisBigTitle.style.transform = "scaleX(" + shrinkScaleX + ")"
-
+  
     // reduce font-weight
     const fontWeight = 700 - ((pixels/(height-vh(100)))*vh(100) * 0.3)
-    console.log(fontWeight)
     shrinkThisBigTitle.style.fontVariationSettings = "'wght' "  + fontWeight
-})
+});
 
+window.addEventListener('resize', scaleTitleToWidth);

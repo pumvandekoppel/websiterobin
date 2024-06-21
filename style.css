@@ -16,8 +16,8 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 0;  /* Remove scrollbar space */
-  background: transparent;  /* Optional: just make scrollbar invisible */
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
 }
 
 body {
@@ -71,7 +71,6 @@ header nav {
   left: 3vw;
   padding-left: 0;
   margin-bottom: 0;
-
 }
 
 header #name {
@@ -104,9 +103,9 @@ h2 {
   object-fit: cover;
 }
 
-#rock .big-title {
-  translate: scaleX();
-}
+/* #rock .big-titles {
+  transform: translate("scaleX" 1);
+} */
 
 p.big-titles:hover,
 a#about-button h2:hover {
@@ -163,7 +162,7 @@ aside a {
   font-size: 0.9vw;
 }
 
-aside #rock-transport { 
+aside #rock-transport {
   margin-bottom: 0;
   transition: margin-bottom 1s;
 }
@@ -173,8 +172,6 @@ aside#rock-talk {
   transition: margin-top 1s;
   z-index: 2;
 }
-
-
 
 /* .showHeader:active,
 .showHeader:focus {
@@ -194,9 +191,7 @@ main {
   padding-bottom: 100px;
   overflow: scroll;
   overflow-x: hidden;
-
 }
-
 
 #index main {
   width: 94vw;
@@ -212,9 +207,9 @@ main.full-images {
   padding-bottom: 0px;
 }
 
-main.full-images {
+/* main.full-images {
   height: calc(100vh - 130px);
-}
+} */
 
 #rock main hr {
   color: #000;
@@ -223,21 +218,22 @@ main.full-images {
   height: 2px;
   margin-left: 0;
   margin-right: 0;
-  margin-bottom: 13px
+  margin-bottom: 13px;
 }
 
 /* 16:9 */
-#rock img, #gips img {
+#rock img,
+#gips img {
   width: calc(16 * (100vh - 130px) / 9);
   height: calc(100vh - 130px);
 }
 
-#rock aside, #gips aside {
+#rock aside,
+#gips aside {
   height: calc(100vh - 130px);
   width: calc(94vw - (16 * (100vh - 130px) / 9) - 1.5vw);
   left: calc(3vw + (16 * (100vh - 130px) / 9 + 1.5vw));
 }
-
 
 /* img#firstBigImage {
   margin-top: 0;
@@ -256,7 +252,6 @@ p {
   /* transform: scaleX(2.508); */
   transform-origin: 0 0;
 }
-
 
 img {
   margin-left: 0;
@@ -278,7 +273,6 @@ div#top-buffer {
   /* padding: 60px; */
   padding-left: 0;
   padding-right: 0;
-
 }
 
 .index-crops img {
@@ -291,7 +285,6 @@ div#top-buffer {
   padding-left: 0;
   padding-right: 0;
   cursor: row-resize;
-
 }
 
 th {
@@ -305,7 +298,6 @@ body#about {
 blockquote {
   margin: 0;
 }
-
 
 footer {
   position: fixed;
@@ -342,7 +334,6 @@ footer span#links {
   justify-content: space-between;
   align-items: center;
   width: 310px;
-  vertical-align: center;
 }
 
 footer hr {
