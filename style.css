@@ -17,9 +17,15 @@ html {
   height: 100%;
 }
 
-::-webkit-scrollbar {
-  width: 0; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+main {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 body {
@@ -51,7 +57,7 @@ a {
 }
 
 p {
-  max-width: 94vw;
+  max-width: 72ch;
   transform-origin: left center;
 }
 
@@ -63,7 +69,9 @@ h1 {
 img {
   margin-left: 0;
   object-fit: cover;
+  display: block;
 }
+
 
 /* HEADER */
 
@@ -101,15 +109,22 @@ h2 {
   margin-top: 9px;
 }
 
-.big-titles {
+p.big-titles {
   font-variation-settings: "wght" 700;
   white-space: nowrap;
   max-width: 94vw;
   object-fit: cover;
 }
 
-p.big-titles:hover,
-a#about-button h2:hover {
+header a {
+  display: inline-block;
+}
+
+p.big-titles:hover {
+  transform: skewX(-50deg);
+}
+
+main a:visited {
   color: rgb(107, 107, 107);
 }
 
@@ -234,40 +249,72 @@ blockquote {
 }
 
 /* DIVISION OF IMAGE AND INFO ASIDE */ 
-/* - WITH 16:9 ASPECT RATIO (rock, gips) */
+/* - WITH 16:9 ASPECT RATIO */
 
 #rock img,
-#gips img {
+#gips img, section.fountain-transport img, #block img {
   width: calc(16 * (100vh - 130px) / 9);
   height: calc(100vh - 130px);
 }
 
 #rock aside,
-#gips aside {
+#gips aside, aside.fountain-transport, #block aside {
   height: calc(100vh - 130px);
   width: calc(94vw - (16 * (100vh - 130px) / 9) - 1.5vw);
   left: calc(3vw + (16 * (100vh - 130px) / 9) + 1.5vw);
 }
 
-#rock main hr, #gips main hr {
+/* hr {
   width: calc(16 * (100vh - 130px) / 9);
-}
+} */
 
-/* - WITH 86:61 ASPECT RATIO (books, paper) */
-#books img, #paper img {
+/* - WITH 86:61 ASPECT RATIO*/
+#books img {
   width: calc(86 * (100vh - 130px) / 61);
   height: auto
 }
 
-#books aside, #paper aside {
+#books aside {
   height: auto;
   width: calc(94vw - (86 * (100vh - 130px) / 61) - 1.5vw);
   left: calc(3vw + (86 * (100vh - 130px) / 61) + 1.5vw);
 }
 
-#books main hr, #paper main hr {
+/* hr {
   width: calc(86 * (100vh - 130px) / 61);
+} */
+
+/* - WITH 61:86 ASPECT RATIO*/
+section.vertical-drawings img {
+  height: calc(100vh - 130px);
+  width: auto
 }
+
+aside.vertical-drawings {
+  height: calc(100vh - 130px);
+  width: calc(61 * (100vh - 130px) / 86);
+  left: calc(3vw + 2 * (61 * (100vh - 130px) / 86) + 1.5vw);
+}
+
+/* hr {
+} */
+
+/* - WITH 3:2 ASPECT RATIO */
+#books img, section.one-nest-stand img {
+  width: calc(3 * (100vh - 130px) / 2);
+  height: auto
+}
+
+#books aside, aside.one-nest-stand {
+  height: auto;
+  width: calc(94vw - (3 * (100vh - 130px) / 2) - 1.5vw);
+  left: calc(3vw + (3 * (100vh - 130px) / 2) + 1.5vw);
+}
+
+/* #books main hr, #paper main hr {
+  width: calc(86 * (100vh - 130px) / 61);
+} */
+
 
 /* PROJECTS SETTINGS */
 
@@ -287,7 +334,7 @@ main.full-images {
   padding-top: 61px;
 }
 
-.scroll-section {
+main.full-images section img {
   height: calc(100vh - 130px);
   scroll-snap-align: center;
   scroll-margin: 13px;
