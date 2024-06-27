@@ -24,8 +24,8 @@ html {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 main {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 body {
@@ -47,7 +47,11 @@ body {
 
 /* * { border: 1px solid red !important; } */
 
+/* GENERAL CLASSES */
 
+.show-on-scroll {
+  visibility: hidden;
+}
 
 /* GENERAL RULES FOR TAGS */
 
@@ -71,7 +75,6 @@ img {
   object-fit: cover;
   display: block;
 }
-
 
 /* HEADER */
 
@@ -155,6 +158,7 @@ main {
   padding-bottom: 100px;
   overflow: scroll;
   overflow-x: hidden;
+  scroll-timeline: --switch-asides block;
 }
 
 #index main {
@@ -187,11 +191,11 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: rgb(255, 255, 255);
   height: calc(100vh - 130px);
   top: 68px;
   height: calc(100vh - 130px);
   z-index: 1;
+  background-color: #fff;
 }
 
 aside p {
@@ -207,14 +211,12 @@ aside a {
   font-size: 0.9vw;
 }
 
-aside #rock-transport {
+aside.rock-transport {
   margin-bottom: 0;
-  transition: margin-bottom 1s;
 }
 
-aside#rock-talk {
+aside.rock-talk {
   margin-top: calc(68px + (100vh - 130px));
-  transition: margin-top 1s;
   z-index: 2;
 }
 
@@ -248,17 +250,21 @@ blockquote {
   cursor: row-resize;
 }
 
-/* DIVISION OF IMAGE AND INFO ASIDE */ 
+/* DIVISION OF IMAGE AND INFO ASIDE */
 /* - WITH 16:9 ASPECT RATIO */
 
 #rock img,
-#gips img, section.fountain-transport img, #block img {
+#gips img,
+section.fountain-transport img,
+#block img {
   width: calc(16 * (100vh - 130px) / 9);
   height: calc(100vh - 130px);
 }
 
 #rock aside,
-#gips aside, aside.fountain-transport, #block aside {
+#gips aside,
+aside.fountain-transport,
+#block aside {
   height: calc(100vh - 130px);
   width: calc(94vw - (16 * (100vh - 130px) / 9) - 1.5vw);
   left: calc(3vw + (16 * (100vh - 130px) / 9) + 1.5vw);
@@ -271,7 +277,7 @@ blockquote {
 /* - WITH 86:61 ASPECT RATIO*/
 #books img {
   width: calc(86 * (100vh - 130px) / 61);
-  height: auto
+  height: auto;
 }
 
 #books aside {
@@ -287,7 +293,7 @@ blockquote {
 /* - WITH 61:86 ASPECT RATIO*/
 section.vertical-drawings img {
   height: calc(100vh - 130px);
-  width: auto
+  width: auto;
 }
 
 aside.vertical-drawings {
@@ -300,12 +306,14 @@ aside.vertical-drawings {
 } */
 
 /* - WITH 3:2 ASPECT RATIO */
-#books img, section.one-nest-stand img {
+#books img,
+section.one-nest-stand img {
   width: calc(3 * (100vh - 130px) / 2);
-  height: auto
+  height: auto;
 }
 
-#books aside, aside.one-nest-stand {
+#books aside,
+aside.one-nest-stand {
   height: auto;
   width: calc(94vw - (3 * (100vh - 130px) / 2) - 1.5vw);
   left: calc(3vw + (3 * (100vh - 130px) / 2) + 1.5vw);
@@ -315,7 +323,6 @@ aside.vertical-drawings {
   width: calc(86 * (100vh - 130px) / 61);
 } */
 
-
 /* PROJECTS SETTINGS */
 
 .full-images img {
@@ -323,7 +330,7 @@ aside.vertical-drawings {
   padding-bottom: 13px;
 }
 
-/* SCROLL STUFF */
+/* SCROLL SNAP */
 
 main.full-images {
   height: calc(100vh - 130px);
@@ -339,6 +346,45 @@ main.full-images section img {
   scroll-snap-align: center;
   scroll-margin: 13px;
   scroll-snap-stop: always;
+}
+
+/* SCROLL ANIMATION ASIDE */
+
+body {
+  timeline-scope: --margin-bottom;
+  animation: marginBottom auto linear;
+}
+
+main {
+  scroll-timeline: --scale-progress;
+}
+
+#previous {
+  animation: marginBottom auto linear;
+  animation-timeline: --margin-bottom;
+}
+
+#next {
+  animation: marginTop auto linear;
+  animation-timeline: --margin-top;
+}
+
+@keyframes marginTop {
+  0% {
+    margin-top: calc(68px + (100vh - 130px));
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+
+@keyframes marginBottom {
+  0% {
+    margin-bottom: 0;
+  }
+  100% {
+    margin-bottom: calc(68px + (100vh - 130px));
+  }
 }
 
 /* FOOTER */
@@ -394,10 +440,10 @@ footer hr {
 /* RESPONSIVE DESIGN FOR SMALLER SCREENS */
 
 @media screen and (max-width: 925px) {
-    p {
-        font-size: 0.5em;
-    }
+  p {
+    font-size: 0.5em;
   }
+}
 
 @media screen and (max-width: 800px) {
   .hide-on-mobile {

@@ -100,20 +100,20 @@ function scaleTitleToWidth() {
 
 scaleTitleToWidth();
 
-// transition from scaleX (from scale.js) to 0 when scrolling from top to bottom
-window.addEventListener("scroll", function () {
-    // amount of pixels scrolled
-    const pixels = window.scrollY
+// // transition from scaleX (from scale.js) to 0 when scrolling from top to bottom
+// window.addEventListener("scroll", function () {
+//     // amount of pixels scrolled
+//     const pixels = window.scrollY
   
-    // // difference in scaleX to travel when scrolling | destination = 1, start = scaleX
-    // const difference = newScaleX - 1
-    // // shrink Scale x
-    // var shrinkScaleX = newScaleX - (difference*(pixels+(pixels/(height-vh(100)))*vh(100)))/height
-    // shrinkThisBigTitle.style.transform = "scaleX(" + shrinkScaleX + ")"
+//     // // difference in scaleX to travel when scrolling | destination = 1, start = scaleX
+//     // const difference = newScaleX - 1
+//     // // shrink Scale x
+//     // var shrinkScaleX = newScaleX - (difference*(pixels+(pixels/(height-vh(100)))*vh(100)))/height
+//     // shrinkThisBigTitle.style.transform = "scaleX(" + shrinkScaleX + ")"
   
-    // reduce font-weight
-    const fontWeight = 700 - ((pixels/(height-vh(100)))*vh(100) * 0.3)
-    shrinkThisBigTitle.style.fontVariationSettings = "'wght' "  + fontWeight
-});
+//     // reduce font-weight
+//     const fontWeight = 700 - ((pixels/(height-vh(100)))*vh(100) * 0.3)
+//     shrinkThisBigTitle.style.fontVariationSettings = "'wght' "  + fontWeight
+// });
 
 window.addEventListener('resize', scaleTitleToWidth);
