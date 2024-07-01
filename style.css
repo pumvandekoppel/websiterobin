@@ -49,10 +49,6 @@ body {
 
 /* GENERAL CLASSES */
 
-.show-on-scroll {
-  visibility: hidden;
-}
-
 /* GENERAL RULES FOR TAGS */
 
 a {
@@ -158,7 +154,6 @@ main {
   padding-bottom: 100px;
   overflow: scroll;
   overflow-x: hidden;
-  scroll-timeline: --switch-asides block;
 }
 
 #index main {
@@ -196,6 +191,7 @@ aside {
   height: calc(100vh - 130px);
   z-index: 1;
   background-color: #fff;
+  overflow: hidden !important;
 }
 
 aside p {
@@ -247,7 +243,7 @@ blockquote {
   padding: 10px;
   padding-left: 0;
   padding-right: 0;
-  cursor: row-resize;
+  /* cursor: row-resize; */
 }
 
 /* DIVISION OF IMAGE AND INFO ASIDE */
@@ -323,6 +319,8 @@ aside.one-nest-stand {
   width: calc(86 * (100vh - 130px) / 61);
 } */
 
+/* TABLES */ 
+
 /* PROJECTS SETTINGS */
 
 .full-images img {
@@ -346,45 +344,6 @@ main.full-images section img {
   scroll-snap-align: center;
   scroll-margin: 13px;
   scroll-snap-stop: always;
-}
-
-/* SCROLL ANIMATION ASIDE */
-
-body {
-  timeline-scope: --margin-bottom;
-  animation: marginBottom auto linear;
-}
-
-main {
-  scroll-timeline: --scale-progress;
-}
-
-#previous {
-  animation: marginBottom auto linear;
-  animation-timeline: --margin-bottom;
-}
-
-#next {
-  animation: marginTop auto linear;
-  animation-timeline: --margin-top;
-}
-
-@keyframes marginTop {
-  0% {
-    margin-top: calc(68px + (100vh - 130px));
-  }
-  100% {
-    margin-top: 0;
-  }
-}
-
-@keyframes marginBottom {
-  0% {
-    margin-bottom: 0;
-  }
-  100% {
-    margin-bottom: calc(68px + (100vh - 130px));
-  }
 }
 
 /* FOOTER */
@@ -440,10 +399,77 @@ footer hr {
 /* RESPONSIVE DESIGN FOR SMALLER SCREENS */
 
 @media screen and (max-width: 925px) {
-  p {
-    font-size: 0.5em;
+
+  header nav {
+    height: 65px;
+    width: 94vw;
   }
+
+  header #about-button {
+    height: 30px;
+  }
+
+  header #about-button h2 {
+    position: fixed;
+    margin-bottom: 0;
+    top: 7px;
+    right: 3vw;
+    font-size: 40px;
+  }
+
+  /* DIVISION OF IMAGE AND INFO ASIDE */
+/* - WITH 16:9 ASPECT RATIO */
+
+  img {
+    width: 94vw !important;
+    height: auto !important;
+  }
+
+  #rock aside {
+    width: 94vw;
+    left: 3vw;
+    top: calc(65px + 9 * (94vw / 16) + 13px);
+    height: calc(100vh - 65px - 9 * (94vw / 16) - 13px - 65px);
+  }
+
+  aside {
+    padding-top: 13px;
+  }
+
+  aside p {
+    font-size: 12px;
+    width: 94vw;
+    text-align: left;
+  }
+
+  hr {
+    width: 94vw;
+  } 
+
+  thead {
+    visibility: hidden;
+    height: 0;
+    position: absolute;
+  }
+
+  tr { 
+    margin-bottom: .625em;
+    display: inline-block;
+    width: 94vw;
+  }
+
+  tr p {
+    width: 47vw;
+  }
+  	
+	td { 
+    font-size: .8em;
+    text-align: right;
+	}
+
 }
+
+
 
 @media screen and (max-width: 800px) {
   .hide-on-mobile {
@@ -451,65 +477,12 @@ footer hr {
   }
 
   main {
-    width: 94vw;
     margin-bottom: 150px;
     padding-bottom: 150px;
   }
 }
 
 @media screen and (max-width: 500px) {
-  header {
-    position: fixed;
-    top: 0;
-    left: 3vw;
-    width: 94vw;
-    height: 60px;
-  }
-
-  header nav {
-    position: fixed;
-    height: 60px;
-    left: 3vw;
-    width: 94vw;
-    margin-left: 0;
-    margin-right: 0;
-    position: fixed;
-    height: 60px;
-    width: 94vw;
-    margin-left: 0;
-    margin-right: 0;
-    position: fixed;
-    height: 60px;
-    width: 94vw;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  header nav a h2 {
-    position: fixed;
-    height: 60px;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  header #name h2 {
-    position: fixed;
-    margin-bottom: 0;
-
-    top: 0px;
-    left: 3vw;
-  }
-
-  header #about-button h2 {
-    position: fixed;
-    margin-bottom: 0;
-    top: 12px;
-    right: 3vw;
-  }
 
   #name-listed-item {
     flex: 3 1 auto;

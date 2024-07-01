@@ -14,6 +14,8 @@ var scaleRatioPaper = 133; // if a div is 218.075px wide, the horizontal scale o
 var scaleRatioPaintings = 80; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioAbout;
 
+const mediaQuery = window.matchMedia('(max-width: 925px)')
+
 const img = document.getElementsByTagName("img")[0]
 
 const scaleThisTitle = document.getElementsByTagName("p")[0]
@@ -41,15 +43,29 @@ function scaleTitleToWidth() {
   var newScaleXPaper;
   var newScaleXPaintings;
   var newScaleXAbout;
-  newScaleXRock = width / scaleRatioRock
-  newScaleXGips = width / scaleRatioGips
-  newScaleXFountain = width / scaleRatioFountain
-  newScaleXLobsters = width / scaleRatioLobsters
-  newScaleXBlock = width / scaleRatioBlock
-  newScaleXBooks = width / scaleRatioBooks
-  newScaleXPaper = width / scaleRatioPaper
-  newScaleXPaintings = width / scaleRatioPaintings
-  var newScaleXAbout = width / scaleRatioAbout
+  // on small screens make room for about icon
+  if (mediaQuery.matches) {
+    newScaleXRock = (width - 50) / scaleRatioRock
+    newScaleXGips = width / scaleRatioGips
+    newScaleXFountain = width / scaleRatioFountain
+    newScaleXLobsters = width / scaleRatioLobsters
+    newScaleXBlock = width / scaleRatioBlock
+    newScaleXBooks = width / scaleRatioBooks
+    newScaleXPaper = width / scaleRatioPaper
+    newScaleXPaintings = width / scaleRatioPaintings
+    var newScaleXAbout = width / scaleRatioAbout
+  }
+  else {
+    newScaleXRock = width / scaleRatioRock
+    newScaleXGips = width / scaleRatioGips
+    newScaleXFountain = width / scaleRatioFountain
+    newScaleXLobsters = width / scaleRatioLobsters
+    newScaleXBlock = width / scaleRatioBlock
+    newScaleXBooks = width / scaleRatioBooks
+    newScaleXPaper = width / scaleRatioPaper
+    newScaleXPaintings = width / scaleRatioPaintings
+    var newScaleXAbout = width / scaleRatioAbout
+  }
   if (document.getElementById('rock')) {
     scaleThisTitle.style.transform = "scaleX(" + newScaleXRock +")"
     newScaleX = newScaleXRock
