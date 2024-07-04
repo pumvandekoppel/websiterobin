@@ -113,6 +113,10 @@ p.big-titles {
   white-space: nowrap;
   max-width: 94vw;
   object-fit: cover;
+  top: 0px;
+  margin: 17px 0px;
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 header a {
@@ -145,6 +149,10 @@ main a:visited {
   height: 31px;
   margin-top: 0px;
   z-index: 3;
+}
+
+#about header nav a#about-button {
+  color: rgb(107, 107, 107);
 }
 
 /* MAIN */
@@ -186,13 +194,13 @@ main hr {
 /* INFO ASIDE */
 
 aside {
-  position: fixed;
+  position: sticky;
+  float: right;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: calc(100vh - 130px);
-  top: 68px;
-  height: calc(100vh - 130px);
+  top: 0px;
   z-index: 1;
   background-color: #fff;
   overflow: hidden !important;
@@ -215,15 +223,6 @@ aside a {
   font-size: 0.9vw;
 }
 
-aside.rock-transport {
-  margin-bottom: 0;
-}
-
-aside.rock-talk {
-  margin-top: calc(68px + (100vh - 130px));
-  z-index: 2;
-}
-
 th {
   text-align: left;
   /* white-space: nowrap; */
@@ -244,16 +243,41 @@ blockquote {
   padding-right: 0;
 }
 
+/* #index main {
+  margin-top: 61px;
+} */
+
 .index-crops img {
-  width: 94vw;
   object-fit: cover;
   width: 100%;
-  height: 122px;
+  max-height: 122px;
   padding: 10px;
   padding-left: 0;
   padding-right: 0;
   /* cursor: row-resize; */
 }
+
+#index main a:hover div p {
+  color: grey;
+}
+
+/* INDEX ANIMATION */
+
+/*
+
+#index main a#rock-link:hover + a > img {
+  max-height: 0;
+  transition: max-height 0.35 ease-in;
+}
+
+#rock-link:has(+ #gips-link:hover) {
+  background-color: aqua;
+}
+
+#index main #gips-link:hover + a > img {
+  max-height: 0;
+  transition: max-height 0.35 ease-in;
+} */
 
 /* DIVISION OF IMAGE AND INFO ASIDE */
 /* - WITH 16:9 ASPECT RATIO */
@@ -341,13 +365,17 @@ aside.one-nest-stand {
   width: calc(86 * (100vh - 130px) / 61);
 } */
 
-/* TABLES */ 
+/* TABLES */
 
 /* PROJECTS SETTINGS */
 
 .full-images img {
   padding-top: 13px;
   padding-bottom: 13px;
+}
+
+#about .full-images img {
+  padding: 0;
 }
 
 /* SCROLL SNAP */
@@ -421,7 +449,6 @@ footer hr {
 /* RESPONSIVE DESIGN FOR SMALLER SCREENS */
 
 @media screen and (max-width: 925px) {
-
   header nav {
     height: 65px;
     width: 94vw;
@@ -440,7 +467,7 @@ footer hr {
   }
 
   /* DIVISION OF IMAGE AND INFO ASIDE */
-/* - WITH 16:9 ASPECT RATIO */
+  /* - WITH 16:9 ASPECT RATIO */
 
   img {
     width: 94vw !important;
@@ -466,7 +493,7 @@ footer hr {
 
   hr {
     width: 94vw;
-  } 
+  }
 
   thead {
     visibility: hidden;
@@ -474,8 +501,8 @@ footer hr {
     position: absolute;
   }
 
-  tr { 
-    margin-bottom: .625em;
+  tr {
+    margin-bottom: 0.625em;
     display: inline-block;
     width: 94vw;
   }
@@ -483,15 +510,12 @@ footer hr {
   tr p {
     width: 47vw;
   }
-  	
-	td { 
-    font-size: .8em;
+
+  td {
+    font-size: 0.8em;
     text-align: right;
-	}
-
+  }
 }
-
-
 
 @media screen and (max-width: 800px) {
   .hide-on-mobile {
@@ -505,7 +529,6 @@ footer hr {
 }
 
 @media screen and (max-width: 500px) {
-
   #name-listed-item {
     flex: 3 1 auto;
   }
