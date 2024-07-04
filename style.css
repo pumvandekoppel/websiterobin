@@ -120,7 +120,7 @@ header a {
 }
 
 p.big-titles:hover {
-  transform: skewX(-50deg);
+  color: #b5b5b5;
 }
 
 main a:visited {
@@ -162,6 +162,10 @@ main {
   padding-bottom: 0px;
 }
 
+#about main {
+  overflow: hidden;
+}
+
 main.index-crops,
 main.full-images {
   padding-top: 65px;
@@ -192,6 +196,10 @@ aside {
   z-index: 1;
   background-color: #fff;
   overflow: hidden !important;
+}
+
+#about aside {
+  overflow: scroll;
 }
 
 aside p {
@@ -280,6 +288,19 @@ aside.fountain-transport,
   height: auto;
   width: calc(94vw - (86 * (100vh - 130px) / 61) - 1.5vw);
   left: calc(3vw + (86 * (100vh - 130px) / 61) + 1.5vw);
+}
+
+/* - WITH 5:4 ASPECT RATIO */
+
+#about img {
+  width: calc(5 * (100vh - 130px) / 4);
+  height: auto;
+}
+
+#about aside {
+  height: auto;
+  width: calc(94vw - (5 * (100vh - 130px) / 4) - 1.5vw);
+  left: calc(3vw + (5 * (100vh - 130px) / 4) + 1.5vw);
 }
 
 /* hr {

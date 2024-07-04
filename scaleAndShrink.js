@@ -12,7 +12,7 @@ var scaleRatioBlock = 83.75; // if a div is 218.075px wide, the horizontal scale
 var scaleRatioBooks = 102.075; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioPaper = 133; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioPaintings = 80; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
-var scaleRatioAbout;
+var scaleRatioAbout = 53;
 
 const mediaQuery = window.matchMedia('(max-width: 925px)')
 
