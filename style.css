@@ -199,7 +199,7 @@ aside {
 }
 
 #about aside {
-  overflow: scroll;
+  overflow: scroll !important;
 }
 
 aside p {
@@ -226,6 +226,7 @@ aside.rock-talk {
 
 th {
   text-align: left;
+  /* white-space: nowrap; */
 }
 
 blockquote {
