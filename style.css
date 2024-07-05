@@ -88,24 +88,31 @@ header nav {
   text-decoration: none;
   color: #000;
   height: 65px;
-  position: fixed;
-  left: 3vw;
   padding-left: 0;
   margin-bottom: 0;
+}
+
+header nav a {
+  height: 65px;
+  vertical-align: middle;
+}
+
+header nav a h2 {
+  height: 65px;
+  margin: 0;
 }
 
 header #name {
   position: fixed;
   left: 3vw;
-  top: 1vw;
+}
+
+header #name h2 {
+  padding-top: 12px ;
 }
 
 header #about-button {
   cursor: help;
-}
-
-h2 {
-  margin-top: 9px;
 }
 
 p.big-titles {
@@ -131,10 +138,6 @@ main a:visited {
   color: rgb(107, 107, 107);
 }
 
-#name {
-  margin-top: -7px;
-}
-
 #about-button {
   position: fixed;
   background-color: #fff;
@@ -158,8 +161,10 @@ main a:visited {
 /* MAIN */
 
 main {
-  margin-bottom: 65px;
-  padding-bottom: 100px;
+  position: relative;
+  top: 65px;
+  /* margin-bottom: 65px;
+  padding-bottom: 100px; */
   overflow: scroll;
   overflow-x: hidden;
 }
@@ -167,7 +172,7 @@ main {
 #index main {
   width: 94vw;
   margin-bottom: 65px;
-  padding-bottom: 0px;
+  padding-bottom: 65px;
 }
 
 #about main {
@@ -176,7 +181,6 @@ main {
 
 main.index-crops,
 main.full-images {
-  padding-top: 65px;
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 0px;
@@ -203,7 +207,6 @@ aside {
   top: 0px;
   z-index: 1;
   background-color: #fff;
-  overflow: hidden !important;
 }
 
 #about aside {
@@ -243,10 +246,6 @@ blockquote {
   padding-right: 0;
 }
 
-/* #index main {
-  margin-top: 61px;
-} */
-
 .index-crops img {
   object-fit: cover;
   width: 100%;
@@ -279,6 +278,12 @@ blockquote {
   transition: max-height 0.35 ease-in;
 } */
 
+/* SECTION */
+
+section {
+  margin-bottom: 13px;
+}
+
 /* DIVISION OF IMAGE AND INFO ASIDE */
 /* - WITH 16:9 ASPECT RATIO */
 
@@ -294,7 +299,6 @@ section.fountain-transport img,
 #gips aside,
 aside.fountain-transport,
 #block aside {
-  height: calc(100vh - 130px);
   width: calc(94vw - (16 * (100vh - 130px) / 9) - 1.5vw);
   left: calc(3vw + (16 * (100vh - 130px) / 9) + 1.5vw);
 }
@@ -370,7 +374,6 @@ aside.one-nest-stand {
 /* PROJECTS SETTINGS */
 
 .full-images img {
-  padding-top: 13px;
   padding-bottom: 13px;
 }
 
@@ -385,14 +388,13 @@ main.full-images {
   overflow-y: scroll;
   scroll-snap-type: y;
   scroll-snap-type: y mandatory;
-  scroll-padding-top: 61px;
-  padding-top: 61px;
 }
 
 main.full-images section img {
   height: calc(100vh - 130px);
   scroll-snap-align: center;
-  scroll-margin: 13px;
+  scroll-margin-top: 0px;
+  scroll-margin-bottom: -13px;
   scroll-snap-stop: always;
 }
 
@@ -479,10 +481,6 @@ footer hr {
     left: 3vw;
     top: calc(65px + 9 * (94vw / 16) + 13px);
     height: calc(100vh - 65px - 9 * (94vw / 16) - 13px - 65px);
-  }
-
-  aside {
-    padding-top: 13px;
   }
 
   aside p {
