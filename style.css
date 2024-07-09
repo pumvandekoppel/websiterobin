@@ -13,9 +13,9 @@
 
 /* ALL ELEMENTS */
 
-html {
+/* html {
   height: 100%;
-}
+} */
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .example::-webkit-scrollbar {
@@ -38,11 +38,11 @@ body {
   margin-right: 3vw;
   padding-left: 0;
   padding-right: 0;
-  height: 100vh;
   max-width: 94vw;
   overflow-x: hidden;
   font-family: "STIX Two";
   font-size: large;
+  line-height: normal;
 }
 
 /* * { border: 1px solid red !important; } */
@@ -165,6 +165,7 @@ main {
   top: 65px;
   /* margin-bottom: 65px;
   padding-bottom: 100px; */
+  height: 100%;
   overflow: scroll;
   overflow-x: hidden;
 }
@@ -403,27 +404,36 @@ main.full-images section img {
 footer {
   position: fixed;
   background-color: #fff;
-  width: 100vw;
+  width: 94vw;
   bottom: 0px;
   left: 3vw;
   height: 50px;
   z-index: 3;
-  vertical-align: baseline;
   padding-top: 15px;
+  color:gray;
 }
 
-/* footer #writing-hand {
-  font-size: larger;
-} */
+footer p#writing-hand {
+  margin-top: 14px;
+}
 
 footer #contact-info {
   padding-top: 14px;
+}
+
+footer span#links div {
+  height: 50px;
+  margin-top: -11px;
 }
 
 footer a {
   color: rgb(107, 107, 107);
 
   text-decoration: none;
+}
+
+footer div {
+  height: 50px;
 }
 
 footer span#links {
@@ -434,18 +444,47 @@ footer span#links {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 310px;
+  width: auto;
 }
 
-footer hr {
+footer div hr {
   position: fixed;
-  right: 3vw;
-  width: calc(94vw - 310px - 27px);
+  right: 14ch;
+  width: calc(94vw - 430px  - 14ch);
   color: #b5b5b5;
   background-color: #b5b5b5;
   border-width: 0;
   height: 2px;
-  margin-top: 14px;
+  margin-top: 17px;
+}
+
+#index footer div hr {
+  width: calc(94vw - 487px);
+  right: 3vw;
+}
+
+#about footer div hr {
+  width: calc(94vw - 430px  - 33ch);
+  right: 33ch;
+}
+
+footer div#arrows {
+  width: 7ch;
+  float: right;
+  margin-top: -61px;
+  text-align: right;
+}
+
+div#ad {
+  width: 28ch;
+  float: right;
+  margin-top: -62px;
+}
+
+div#ad p {
+  margin-right: 0;
+  text-align: right;
+
 }
 
 /* RESPONSIVE DESIGN FOR SMALLER SCREENS */
