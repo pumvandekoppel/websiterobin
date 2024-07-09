@@ -108,7 +108,7 @@ header #name {
 }
 
 header #name h2 {
-  padding-top: 12px ;
+  padding-top: 12px;
 }
 
 header #about-button {
@@ -223,10 +223,6 @@ aside a {
   text-decoration: none;
 }
 
-#rock aside {
-  font-size: 0.9vw;
-}
-
 th {
   text-align: left;
   /* white-space: nowrap; */
@@ -285,6 +281,11 @@ section {
   margin-bottom: 13px;
 }
 
+img,
+aside {
+  height: calc(100vh - 130px);
+}
+
 /* DIVISION OF IMAGE AND INFO ASIDE */
 /* - WITH 16:9 ASPECT RATIO */
 
@@ -293,7 +294,6 @@ section {
 section.fountain-transport img,
 #block img {
   width: calc(16 * (100vh - 130px) / 9);
-  height: calc(100vh - 130px);
 }
 
 #rock aside,
@@ -311,11 +311,9 @@ aside.fountain-transport,
 /* - WITH 86:61 ASPECT RATIO*/
 #books img {
   width: calc(86 * (100vh - 130px) / 61);
-  height: auto;
 }
 
 #books aside {
-  height: auto;
   width: calc(94vw - (86 * (100vh - 130px) / 61) - 1.5vw);
   left: calc(3vw + (86 * (100vh - 130px) / 61) + 1.5vw);
 }
@@ -324,11 +322,9 @@ aside.fountain-transport,
 
 #about img {
   width: calc(5 * (100vh - 130px) / 4);
-  height: auto;
 }
 
 #about aside {
-  height: auto;
   width: calc(94vw - (5 * (100vh - 130px) / 4) - 1.5vw);
   left: calc(3vw + (5 * (100vh - 130px) / 4) + 1.5vw);
 }
@@ -339,14 +335,12 @@ aside.fountain-transport,
 
 /* - WITH 61:86 ASPECT RATIO*/
 section.vertical-drawings img {
-  height: calc(100vh - 130px);
-  width: auto;
+  width: calc(61 * (100vh - 130px) / 86);
 }
 
 aside.vertical-drawings {
-  height: calc(100vh - 130px);
-  width: calc(61 * (100vh - 130px) / 86);
-  left: calc(3vw + 2 * (61 * (100vh - 130px) / 86) + 1.5vw);
+  width: calc(94vw - (61 * (100vh - 130px) / 86) - 1.5vw);
+  left: calc(3vw + (61 * (100vh - 130px) / 86) + 1.5vw);
 }
 
 /* hr {
@@ -354,14 +348,15 @@ aside.vertical-drawings {
 
 /* - WITH 3:2 ASPECT RATIO */
 #books img,
-section.one-nest-stand img {
+#lobsters img,
+section#one-nest-stand img,
+section#one-nest-stand div.row {
   width: calc(3 * (100vh - 130px) / 2);
-  height: auto;
 }
 
 #books aside,
+#lobsters aside,
 aside.one-nest-stand {
-  height: auto;
   width: calc(94vw - (3 * (100vh - 130px) / 2) - 1.5vw);
   left: calc(3vw + (3 * (100vh - 130px) / 2) + 1.5vw);
 }
@@ -369,6 +364,13 @@ aside.one-nest-stand {
 /* #books main hr, #paper main hr {
   width: calc(86 * (100vh - 130px) / 61);
 } */
+
+div.row {
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+  gap: 13px;
+}
 
 /* TABLES */
 
@@ -410,7 +412,7 @@ footer {
   height: 50px;
   z-index: 3;
   padding-top: 15px;
-  color:gray;
+  color: gray;
 }
 
 footer p#writing-hand {
@@ -450,7 +452,7 @@ footer span#links {
 footer div hr {
   position: fixed;
   right: 14ch;
-  width: calc(94vw - 430px  - 14ch);
+  width: calc(94vw - 430px - 14ch);
   color: #b5b5b5;
   background-color: #b5b5b5;
   border-width: 0;
@@ -458,13 +460,13 @@ footer div hr {
   margin-top: 17px;
 }
 
-#index footer div hr {
+#index footer div hr, #lobsters footer div hr {
   width: calc(94vw - 487px);
   right: 3vw;
 }
 
 #about footer div hr {
-  width: calc(94vw - 430px  - 33ch);
+  width: calc(94vw - 430px - 33ch);
   right: 33ch;
 }
 
@@ -484,7 +486,6 @@ div#ad {
 div#ad p {
   margin-right: 0;
   text-align: right;
-
 }
 
 /* RESPONSIVE DESIGN FOR SMALLER SCREENS */
@@ -523,7 +524,7 @@ div#ad p {
   }
 
   aside p {
-    font-size: 12px;
+    font-size: 1vmax;
     width: 94vw;
     text-align: left;
   }

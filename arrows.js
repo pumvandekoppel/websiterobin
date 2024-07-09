@@ -49,15 +49,12 @@ function isInViewport(element) {
 // get current section
 function getCurrentSection() {
   for (j = 0; j < sections.length; j++) {
-    let imagesOfSection = sections[j]
-      .getElementsByClassName("images")[0]
-      .getElementsByTagName("img");
-    for (let k = 0; k < imagesOfSection.length; k++) {
-      if (isInViewport(imagesOfSection[k])) {
-        currentSection = sections[j];
-        currentSectionID = sectionIDs[j];
-        return j;
-      }
+    let asideOfSection = sections[j]
+      .getElementsByTagName("aside")[0];
+    if (isInViewport(asideOfSection)) {
+      currentSection = sections[j];
+      currentSectionID = sectionIDs[j];
+      return j;
     }
   }
 }
@@ -101,47 +98,49 @@ function upArrow() {
 // // *SCROLL*
 const main = document.getElementsByTagName("main")[0];
 main.onscrollend = (event) => {
-    console.log("hoi");
-    getCurrentSection(); // updates currentSection to section that is in viewport
-    console.log(currentSectionID)
-    console.log(document.getElementById("up").getAttribute("href"))
-    // if the section in the viewport corresponds with the link of up
-    if (("#" + currentSectionID) == document.getElementById("up").getAttribute("href")) {
-        console.log("up")
-        if (currentSectionID == sectionIDs[0]) {
-            document.getElementById("down").style.visibility = "visible";
-          } else if (currentSectionID == sectionIDs[sections.length - 1]) {
-            document.getElementById("up").style.visibility = "hidden";
-          }
-          var linkToNextSection = j + 1;
-          var linkToPreviousSection = j - 1;
-          document
-            .getElementById("down")
-            .setAttribute("href", "#" + sectionIDs[linkToNextSection]);
-          document
-            .getElementById("up")
-            .setAttribute("href", "#" + sectionIDs[linkToPreviousSection]);
+  getCurrentSection(); // updates currentSection to section that is in viewport
+
+  // if the section in the viewport corresponds with the link of up
+  if (
+    "#" + currentSectionID ==
+    document.getElementById("up").getAttribute("href")
+  ) {
+    if (currentSectionID == sectionIDs[0]) {
+      document.getElementById("down").style.visibility = "visible";
+      document.getElementById("up").style.visibility = "hidden";
     }
-    // if the section in the viewport corresponds with the link of down
-    else if (
-      ("#" + currentSectionID) == document.getElementById("down").getAttribute("href")
-    ) {
-        console.log("down")
-        if (currentSectionID == sectionIDs[1]) {
-            document.getElementById("up").style.visibility = "visible";
-          }
-        if (currentSectionID == sectionIDs[sections.length - 1]) {
-            document.getElementById("down").style.visibility = "hidden";
-          }
-          var linkToNextSection = j + 1;
-          var linkToPreviousSection = j - 1;
-          document
-            .getElementById("down")
-            .setAttribute("href", "#" + sectionIDs[linkToNextSection]);
-          document
-            .getElementById("up")
-            .setAttribute("href", "#" + sectionIDs[linkToPreviousSection]);
-    } else {
-      return;
+    if (currentSectionID == sectionIDs[sections.length - 2]) {
+      document.getElementById("down").style.visibility = "visible";
     }
-  };
+    var linkToNextSection = j + 1;
+    var linkToPreviousSection = j - 1;
+    document
+      .getElementById("down")
+      .setAttribute("href", "#" + sectionIDs[linkToNextSection]);
+    document
+      .getElementById("up")
+      .setAttribute("href", "#" + sectionIDs[linkToPreviousSection]);
+  }
+  // if the section in the viewport corresponds with the link of down
+  else if (
+    "#" + currentSectionID ==
+    document.getElementById("down").getAttribute("href")
+  ) {
+    if (currentSectionID == sectionIDs[1]) {
+      document.getElementById("up").style.visibility = "visible";
+    }
+    if (currentSectionID == sectionIDs[sections.length - 1]) {
+      document.getElementById("down").style.visibility = "hidden";
+    }
+    var linkToNextSection = j + 1;
+    var linkToPreviousSection = j - 1;
+    document
+      .getElementById("down")
+      .setAttribute("href", "#" + sectionIDs[linkToNextSection]);
+    document
+      .getElementById("up")
+      .setAttribute("href", "#" + sectionIDs[linkToPreviousSection]);
+  } else {
+    return;
+  }
+};
