@@ -16,8 +16,7 @@ var scaleRatioAbout = 53;
 
 const mediaQuery = window.matchMedia('(max-width: 925px)')
 
-const img = document.getElementsByTagName("img")[0]
-
+var img = document.getElementsByTagName("img")[0]
 const scaleThisTitle = document.getElementsByTagName("p")[0]
 const shrinkThisBigTitle = document.getElementsByTagName("p")[0]
 

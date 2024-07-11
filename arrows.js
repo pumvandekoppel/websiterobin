@@ -99,8 +99,9 @@ function upArrow() {
 const main = document.getElementsByTagName("main")[0];
 main.onscrollend = (event) => {
   getCurrentSection(); // updates currentSection to section that is in viewport
-
+  img = currentSection.getElementsByTagName("img")[0]
   // if the section in the viewport corresponds with the link of up
+  scaleTitleToWidth();
   if (
     "#" + currentSectionID ==
     document.getElementById("up").getAttribute("href")

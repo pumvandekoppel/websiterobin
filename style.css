@@ -45,6 +45,14 @@ body {
   line-height: normal;
 }
 
+.no-transition * {
+  transition: 0s;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
 /* * { border: 1px solid red !important; } */
 
 /* GENERAL CLASSES */
@@ -124,6 +132,14 @@ p.big-titles {
   margin: 17px 0px;
   position: -webkit-sticky;
   position: sticky;
+  transition-property: transform;
+  transition-duration: 0.275s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+}
+
+#index p.big-titles {
+  transition: transform 0s;
 }
 
 header a {
@@ -288,9 +304,9 @@ aside {
 
 .row {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: auto;
-  gap: 13px;
+  padding: 13px;
 }
 
 /* DIVISION OF IMAGE AND INFO ASIDE */
@@ -366,7 +382,7 @@ aside {
 #final-presentation img,
 #books img,
 #lobsters img,
-#one-nest-stand img #one-nest-stand .row {
+#one-nest-stand .row {
   width: calc(3 * (100vh - 130px) / 2);
 }
 
