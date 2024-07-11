@@ -133,7 +133,7 @@ p.big-titles {
   position: -webkit-sticky;
   position: sticky;
   transition-property: transform;
-  transition-duration: 0.275s;
+  transition-duration: 0.27s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
 }
@@ -475,7 +475,7 @@ footer div hr {
 }
 
 #index footer div hr,
-#lobsters footer div hr {
+#lobsters footer div hr, #block footer div hr {
   width: calc(94vw - 487px);
   right: 3vw;
 }

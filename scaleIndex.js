@@ -1,6 +1,6 @@
-var scaleRatioRock = 215; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
+var scaleRatioRock = 220; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioGips = 125.5; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
-var scaleRatioFountain = 109.9; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
+var scaleRatioFountain = 114.3; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioLobsters = 581; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioBlock = 83.75; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioBooks = 102.075; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
