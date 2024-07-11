@@ -278,7 +278,7 @@ blockquote {
 /* SECTION */
 
 section {
-  margin-bottom: 13px;
+  margin-bottom: 78px;
 }
 
 img,
@@ -304,11 +304,19 @@ aside.fountain-transport,
   left: calc(3vw + (16 * (100vh - 130px) / 9) + 1.5vw);
 }
 
-/* hr {
-  width: calc(16 * (100vh - 130px) / 9);
-} */
+/* DIVISION OF IMAGE AND INFO ASIDE */
+/* - WITH 4:3 ASPECT RATIO */
 
-/* - WITH 86:61 ASPECT RATIO*/
+#gips section.basement img {
+  width: calc(4 * (100vh - 130px) / 3);
+}
+
+#gips aside.basement {
+  width: calc(94vw - (4 * (100vh - 130px) / 3) - 1.5vw);
+  left: calc(3vw + (4 * (100vh - 130px) / 3) + 1.5vw);
+}
+
+/* - WITH 86:61 ASPECT RATIO (HORIZONTAL SCAN) */
 #books img {
   width: calc(86 * (100vh - 130px) / 61);
 }
@@ -329,11 +337,7 @@ aside.fountain-transport,
   left: calc(3vw + (5 * (100vh - 130px) / 4) + 1.5vw);
 }
 
-/* hr {
-  width: calc(86 * (100vh - 130px) / 61);
-} */
-
-/* - WITH 61:86 ASPECT RATIO*/
+/* - WITH 61:86 ASPECT RATIO* (VERTICAL SCAN) */
 section.vertical-drawings img {
   width: calc(61 * (100vh - 130px) / 86);
 }
@@ -343,14 +347,11 @@ aside.vertical-drawings {
   left: calc(3vw + (61 * (100vh - 130px) / 86) + 1.5vw);
 }
 
-/* hr {
-} */
-
 /* - WITH 3:2 ASPECT RATIO */
 #books img,
 #lobsters img,
-section#one-nest-stand img,
-section#one-nest-stand div.row {
+section.one-nest-stand img,
+section.one-nest-stand div.row {
   width: calc(3 * (100vh - 130px) / 2);
 }
 
@@ -360,10 +361,6 @@ aside.one-nest-stand {
   width: calc(94vw - (3 * (100vh - 130px) / 2) - 1.5vw);
   left: calc(3vw + (3 * (100vh - 130px) / 2) + 1.5vw);
 }
-
-/* #books main hr, #paper main hr {
-  width: calc(86 * (100vh - 130px) / 61);
-} */
 
 div.row {
   display: flex;
