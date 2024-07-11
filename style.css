@@ -286,87 +286,88 @@ aside {
   height: calc(100vh - 130px);
 }
 
+.row {
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+  gap: 13px;
+}
+
 /* DIVISION OF IMAGE AND INFO ASIDE */
 /* - WITH 16:9 ASPECT RATIO */
 
-#rock img,
-#gips img,
-section.fountain-transport img,
-#block img {
-  width: calc(16 * (100vh - 130px) / 9);
-}
-
-#rock aside,
-#gips aside,
-aside.fountain-transport,
+#rock-transport aside,
+#rock-talk aside,
+#fountain-transport aside,
 #block aside {
   width: calc(94vw - (16 * (100vh - 130px) / 9) - 1.5vw);
   left: calc(3vw + (16 * (100vh - 130px) / 9) + 1.5vw);
 }
 
-/* DIVISION OF IMAGE AND INFO ASIDE */
-/* - WITH 4:3 ASPECT RATIO */
-
-#gips section.basement img {
-  width: calc(4 * (100vh - 130px) / 3);
+#rock img,
+#gips img,
+#fountain-transport img,
+#block img {
+  width: calc(16 * (100vh - 130px) / 9);
 }
 
-#gips aside.basement {
+/* DIVISION OF IMAGE AND INFO ASIDE */
+/* - WITH 4:3 ASPECT RATIO */
+#basement aside {
   width: calc(94vw - (4 * (100vh - 130px) / 3) - 1.5vw);
   left: calc(3vw + (4 * (100vh - 130px) / 3) + 1.5vw);
 }
 
-/* - WITH 86:61 ASPECT RATIO (HORIZONTAL SCAN) */
-#books img {
-  width: calc(86 * (100vh - 130px) / 61);
+#basement img {
+  width: calc(4 * (100vh - 130px) / 3);
 }
 
+/* - WITH 86:61 ASPECT RATIO (HORIZONTAL SCAN) */
 #books aside {
   width: calc(94vw - (86 * (100vh - 130px) / 61) - 1.5vw);
   left: calc(3vw + (86 * (100vh - 130px) / 61) + 1.5vw);
 }
 
-/* - WITH 5:4 ASPECT RATIO */
-
-#about img {
-  width: calc(5 * (100vh - 130px) / 4);
+#books img {
+  width: calc(86 * (100vh - 130px) / 61);
 }
 
+/* - WITH 5:4 ASPECT RATIO */
 #about aside {
   width: calc(94vw - (5 * (100vh - 130px) / 4) - 1.5vw);
   left: calc(3vw + (5 * (100vh - 130px) / 4) + 1.5vw);
 }
 
-/* - WITH 61:86 ASPECT RATIO* (VERTICAL SCAN) */
-section.vertical-drawings img {
-  width: calc(61 * (100vh - 130px) / 86);
+#about img {
+  width: calc(5 * (100vh - 130px) / 4);
 }
 
-aside.vertical-drawings {
+/* - WITH 61:86 ASPECT RATIO* (VERTICAL SCAN) */
+#vertical-drawings aside {
   width: calc(94vw - (61 * (100vh - 130px) / 86) - 1.5vw);
   left: calc(3vw + (61 * (100vh - 130px) / 86) + 1.5vw);
 }
 
-/* - WITH 3:2 ASPECT RATIO */
-#books img,
-#lobsters img,
-section.one-nest-stand img,
-section.one-nest-stand div.row {
-  width: calc(3 * (100vh - 130px) / 2);
+#vertical-drawings img {
+  width: calc(61 * (100vh - 130px) / 86);
 }
 
+/* - WITH 3:2 ASPECT RATIO */
+#buildup aside,
+#final-presentation aside,
 #books aside,
 #lobsters aside,
-aside.one-nest-stand {
+#one-nest-stand aside {
   width: calc(94vw - (3 * (100vh - 130px) / 2) - 1.5vw);
   left: calc(3vw + (3 * (100vh - 130px) / 2) + 1.5vw);
 }
 
-div.row {
-  display: flex;
-  justify-content: space-between;
-  width: auto;
-  gap: 13px;
+#buildup img,
+#final-presentation img,
+#books img,
+#lobsters img,
+#one-nest-stand img #one-nest-stand .row {
+  width: calc(3 * (100vh - 130px) / 2);
 }
 
 /* TABLES */
@@ -457,7 +458,8 @@ footer div hr {
   margin-top: 17px;
 }
 
-#index footer div hr, #lobsters footer div hr {
+#index footer div hr,
+#lobsters footer div hr {
   width: calc(94vw - 487px);
   right: 3vw;
 }
