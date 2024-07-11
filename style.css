@@ -304,11 +304,21 @@ aside {
 
 .row {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: start;
   width: auto;
-  padding: 13px;
+  padding-bottom: 13px;
+  padding-left: 0;
 }
 
+#paper .row {
+  justify-content: start;
+  gap: 13px;
+}
+
+.row > img {
+  height: calc(100vh - 130px);
+  width: auto;
+}
 /* DIVISION OF IMAGE AND INFO ASIDE */
 /* - WITH 16:9 ASPECT RATIO */
 
@@ -359,13 +369,14 @@ aside {
 }
 
 /* - WITH 61:86 ASPECT RATIO* (VERTICAL SCAN) */
-#vertical-drawings aside {
-  width: calc(94vw - (61 * (100vh - 130px) / 86) - 1.5vw);
-  left: calc(3vw + (61 * (100vh - 130px) / 86) + 1.5vw);
+#vertical-drawings aside,
+#posters-for-2030 aside {
+  width: calc(94vw - (86 * (100vh - 130px) / 61) - 4.5vw);
 }
 
-#vertical-drawings img {
-  width: calc(61 * (100vh - 130px) / 86);
+#vertical-drawings img,
+#posters-for-2030 img {
+  /* width: calc(61 * (100vh - 130px) / 86); */
 }
 
 /* - WITH 3:2 ASPECT RATIO */
@@ -503,7 +514,7 @@ div#ad p {
   text-align: right;
 }
 
-/* RESPONSIVE DESIGN FOR SMALLER SCREENS */
+/* RESPONSIVE DESIGN FOR SMALLER SCREENS --------------- */
 
 @media screen and (max-width: 925px) {
   header nav {
