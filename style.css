@@ -374,10 +374,10 @@ aside {
   width: calc(94vw - (86 * (100vh - 130px) / 61) - 4.5vw);
 }
 
-#vertical-drawings img,
+/* #vertical-drawings img,
 #posters-for-2030 img {
   /* width: calc(61 * (100vh - 130px) / 86); */
-}
+ /* */
 
 /* - WITH 3:2 ASPECT RATIO */
 #buildup aside,
