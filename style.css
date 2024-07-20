@@ -370,8 +370,13 @@ aside {
 
 /* - WITH 61:86 ASPECT RATIO* (VERTICAL SCAN) */
 #vertical-drawings aside,
-#posters-for-2030 aside {
+#posters-for-2030 aside,
+#prints aside {
   width: calc(94vw - (86 * (100vh - 130px) / 61) - 4.5vw);
+}
+
+#posters-for-2030 img {
+  height: calc(100vh - 130px + 7px);
 }
 
 /* #vertical-drawings img,
@@ -384,7 +389,8 @@ aside {
 #final-presentation aside,
 #books aside,
 #lobsters aside,
-#one-nest-stand aside {
+#one-nest-stand aside,
+#dusseldorf aside {
   width: calc(94vw - (3 * (100vh - 130px) / 2) - 1.5vw);
   left: calc(3vw + (3 * (100vh - 130px) / 2) + 1.5vw);
 }
