@@ -49,8 +49,7 @@ function isInViewport(element) {
 // get current section
 function getCurrentSection() {
   for (j = 0; j < sections.length; j++) {
-    let asideOfSection = sections[j]
-      .getElementsByTagName("aside")[0];
+    let asideOfSection = sections[j].getElementsByTagName("aside")[0];
     if (isInViewport(asideOfSection)) {
       currentSection = sections[j];
       currentSectionID = sectionIDs[j];
@@ -99,7 +98,7 @@ function upArrow() {
 const main = document.getElementsByTagName("main")[0];
 main.onscroll = (event) => {
   getCurrentSection(); // updates currentSection to section that is in viewport
-  img = currentSection.getElementsByTagName("img")[0]
+  // img = currentSection.getElementsByTagName("img")[0];
   // if the section in the viewport corresponds with the link of up
   scaleTitleToWidth();
   if (

@@ -297,11 +297,6 @@ section {
   margin-bottom: 78px;
 }
 
-img,
-aside {
-  height: calc(100vh - 130px);
-}
-
 .row {
   display: flex;
   justify-content: start;
@@ -382,7 +377,7 @@ aside {
 /* #vertical-drawings img,
 #posters-for-2030 img {
   /* width: calc(61 * (100vh - 130px) / 86); */
- /* */
+/* */
 
 /* - WITH 3:2 ASPECT RATIO */
 #buildup aside,
@@ -425,7 +420,6 @@ main.full-images {
 }
 
 main.full-images section img {
-  height: calc(100vh - 130px);
   scroll-snap-align: center;
   scroll-margin-top: 0px;
   scroll-margin-bottom: -13px;
@@ -447,11 +441,11 @@ footer {
 }
 
 footer p#writing-hand {
-  margin-top: 14px;
+  margin-top: 15px;
 }
 
 footer #contact-info {
-  padding-top: 14px;
+  padding-top: 15px;
 }
 
 footer span#links div {
@@ -492,7 +486,8 @@ footer div hr {
 }
 
 #index footer div hr,
-#lobsters footer div hr, #block footer div hr {
+#lobsters footer div hr,
+#block footer div hr {
   width: calc(94vw - 487px);
   right: 3vw;
 }
@@ -520,12 +515,32 @@ div#ad p {
   text-align: right;
 }
 
+@media screen and (min-width: 925px) {
+  img,
+aside {
+  height: calc(100vh - 130px);
+}
+}
+
 /* RESPONSIVE DESIGN FOR SMALLER SCREENS --------------- */
 
 @media screen and (max-width: 925px) {
+
+  header {
+    height: 50px;
+  }
+
   header nav {
-    height: 65px;
+    height: 50px;
     width: 94vw;
+  }
+
+  header nav a {
+    height: 50px;
+  }
+
+  p.big-titles {
+    margin-bottom: 10px;
   }
 
   header #about-button {
@@ -535,9 +550,18 @@ div#ad p {
   header #about-button h2 {
     position: fixed;
     margin-bottom: 0;
-    top: 7px;
+    top: 4px;
     right: 3vw;
     font-size: 40px;
+  }
+
+  section {
+    margin-bottom: 58px;
+  }
+
+  aside {
+    justify-content: start;
+
   }
 
   /* DIVISION OF IMAGE AND INFO ASIDE */
@@ -545,24 +569,184 @@ div#ad p {
 
   img {
     width: 94vw !important;
-    height: auto !important;
   }
 
-  #rock aside {
-    width: 94vw;
-    left: 3vw;
-    top: calc(65px + 9 * (94vw / 16) + 13px);
-    height: calc(100vh - 65px - 9 * (94vw / 16) - 13px - 65px);
+  aside .info {
+    padding: 4px;
+    padding-bottom: 13px;
   }
+
+  main.full-images {
+    height: calc(100vh - 95px);
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
+
+  /* 16:9 */
+  #rock-transport aside,
+  #rock-talk aside,
+  #fountain-transport aside,
+  #block aside {
+    width: 94vw;
+    padding-top: calc((9 * (94vw / 16)) + 13px);
+    height: calc(100vh - 50px - 9 * (94vw / 16) - 13px - 45px);
+    background-clip: content-box;
+  }
+
+  section#rock-transport img,
+  section#rock-talk img,
+  section#fountain-transport img,
+  section#block img {
+    scroll-snap-align: center;
+    height: calc(9 * (94vw / 16));
+    scroll-margin-top: 0;
+    scroll-margin-bottom: calc(100vh - 50px - 9 * (94vw / 16) - 13px - 45px);
+    scroll-snap-stop: always;
+  }
+
+  #rock-transport div.images,
+  #rock-talk div.images,
+  #fountain-transport div.images,
+  #block div.images {
+    padding-bottom: calc(100vh - 50px - 9 * (94vw / 16) - 13px - 45px);
+  }
+
+  /* 4:3 */
+#basement aside {
+    width: 94vw;
+    padding-top: calc((3 * (94vw / 4)) + 13px);
+    height: calc(100vh - 50px - 3 * (94vw / 4) - 13px - 45px);
+    background-clip: content-box;
+  }
+
+  section#basement img {
+    scroll-snap-align: center;
+    height: calc(3 * (94vw / 4));
+    scroll-margin-top: 0;
+    scroll-margin-bottom: calc(100vh - 50px - 3 * (94vw / 4) - 13px - 45px);
+    scroll-snap-stop: always;
+  }
+
+  #basement div.images {
+    padding-bottom: calc(100vh - 50px - 3 * (94vw / 4) - 13px - 45px);
+
+  }
+
+  /* 86:61 */
+  #books aside {
+    width: 94vw;
+    padding-top: calc((61 * (94vw / 86)) + 13px);
+    height: calc(100vh - 50px - 61 * (94vw / 86) - 13px - 45px);
+    background-clip: content-box;
+  }
+
+  section#books img {
+    scroll-snap-align: center;
+    height: calc(61 * (94vw / 86));
+    scroll-margin-top: 0;
+    scroll-margin-bottom: calc(100vh - 50px - 61 * (94vw / 86) - 13px - 45px);
+    scroll-snap-stop: always;
+  }
+
+  #books div.images {
+    padding-bottom: calc(100vh - 50px - 61 * (94vw / 86) - 13px - 45px);
+  }
+
+  /* 5:4 */
+#about aside {
+    width: 94vw;
+    padding-top: calc((4 * (94vw / 5)) + 13px);
+    height: calc(100vh - 50px - 4 * (94vw / 5) - 13px - 45px);
+    background-clip: content-box;
+  }
+
+  section#about img {
+    scroll-snap-align: center;
+    height: calc(4 * (94vw / 5));
+    scroll-margin-top: 0;
+    scroll-margin-bottom: calc(100vh - 50px - 4 * (94vw / 5) - 13px - 45px);
+    scroll-snap-stop: always;
+  }
+
+  #about div.images {
+    padding-bottom: calc(100vh - 50px - 4 * (94vw / 5) - 13px - 45px);
+  }
+
+  /* 61/86 */
+  #vertical-drawings aside,
+  #posters-for-2030 aside,
+  #prints aside {
+    width: 94vw;
+    padding-top: calc((86 * (94vw / 61)) + 13px);
+    height: calc(100vh - 50px - 86 * (94vw / 61) - 13px - 45px);
+    background-clip: content-box;
+  }
+
+  section#vertical-drawings img,
+  section#posters-for-2030 img,
+  section#drawing img {
+    scroll-snap-align: center;
+    height: calc(86 * (94vw / 61));
+    scroll-margin-top: 0;
+    scroll-margin-bottom: calc(100vh - 50px - 86 * (94vw / 61) - 13px - 45px);
+    scroll-snap-stop: always;
+  }
+
+  #vertical-drawings div.images,
+  #posters-for-2030 div.images,
+  #drawing div.images {
+    padding-bottom: calc(100vh - 50px - 86 * (94vw / 61) - 13px - 45px);
+  }
+
+  /* 3/2 */
+  #buildup aside,
+  #final-presentation aside,
+  #books aside,
+  #lobsters aside,
+  #one-nest-stand aside,
+  #dusseldorf aside {
+    width: 94vw;
+    padding-top: calc((2 * (94vw / 3)) + 13px);
+    height: calc(100vh - 50px - 2 * (94vw / 3) - 13px - 45px);
+    background-clip: content-box;
+  }
+
+  section#buildup img,
+  section#final-presentation img,
+  section#books img,
+  section#lobsters img,
+  section#one-nest-stand img,
+  section#dusseldorf img {
+    scroll-snap-align: center;
+    height: calc(2 * (94vw / 3));
+    scroll-margin-top: 0;
+    scroll-margin-bottom: calc(100vh - 50px - 2 * (94vw / 3) - 13px - 45px);
+    scroll-snap-stop: always;
+  }
+
+  #buildup div.images,
+  #final-presentation div.images,
+  #books div.images,
+  #lobsters div.images,
+  #one-nest-stand div.images,
+  #dusseldorf div.images {
+    padding-bottom: calc(100vh - 50px - 2 * (94vw / 3) - 13px - 45px);
+  }
+
+  /**/
 
   aside p {
-    font-size: 1vmax;
+    font-size: 2vh;
     width: 94vw;
     text-align: left;
   }
 
   hr {
     width: 94vw;
+  }
+
+  table {
+    padding-top: 13px;
   }
 
   thead {
@@ -572,7 +756,8 @@ div#ad p {
   }
 
   tr {
-    margin-bottom: 0.625em;
+    margin-bottom: -11px;
+    margin-top: -24px;
     display: inline-block;
     width: 94vw;
   }
@@ -582,8 +767,34 @@ div#ad p {
   }
 
   td {
-    font-size: 0.8em;
+    font-size: 0.85em;
     text-align: right;
+  }
+
+  footer {
+    height: 45px;
+    padding-top: 0;
+  }
+
+  footer * {
+    height: 45px !important;
+  }
+
+  footer p#writing-hand {
+    margin-top: 17px;
+  }
+
+  footer #contact-info {
+    padding-top: 14px;
+  }
+
+  footer span#links div {
+    height: 45px;
+    margin-top: -10px;
+  }
+
+  footer div#arrows {
+    margin-top: -50px;
   }
 }
 
@@ -591,14 +802,13 @@ div#ad p {
   .hide-on-mobile {
     display: none;
   }
-
-  main {
-    margin-bottom: 150px;
-    padding-bottom: 150px;
-  }
 }
 
 @media screen and (max-width: 500px) {
+  aside p {
+    font-size: 1.8vh;
+  }
+
   #name-listed-item {
     flex: 3 1 auto;
   }
@@ -624,6 +834,6 @@ div#ad p {
   }
 
   footer {
-    height: 50px;
+    height: 45px;
   }
 }

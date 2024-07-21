@@ -45,14 +45,14 @@ function scaleTitleToWidth() {
   // on small screens make room for about icon
   if (mediaQuery.matches) {
     newScaleXRock = (width - 50) / scaleRatioRock
-    newScaleXGips = width / scaleRatioGips
-    newScaleXFountain = width / scaleRatioFountain
-    newScaleXLobsters = width / scaleRatioLobsters
-    newScaleXBlock = width / scaleRatioBlock
-    newScaleXBooks = width / scaleRatioBooks
-    newScaleXPaper = width / scaleRatioPaper
-    newScaleXPaintings = width / scaleRatioPaintings
-    var newScaleXAbout = width / scaleRatioAbout
+    newScaleXGips = (width - 50) / scaleRatioGips
+    newScaleXFountain = (width - 50) / scaleRatioFountain
+    newScaleXLobsters = (width - 50) / scaleRatioLobsters
+    newScaleXBlock = (width - 50) / scaleRatioBlock
+    newScaleXBooks = (width - 50) / scaleRatioBooks
+    newScaleXPaper = (width - 50) / scaleRatioPaper
+    newScaleXPaintings = (width - 50) / scaleRatioPaintings
+    var newScaleXAbout = (width - 50) / scaleRatioAbout
   }
   else {
     newScaleXRock = width / scaleRatioRock

@@ -33,7 +33,7 @@
           <br />
           <br />
           <!-- <hr> -->
-          <div>
+          <div class="info">
             <p>
               Walking towards the oyster party in a Bistro organised around the
               Fountain. Playing with contexts.
@@ -148,26 +148,24 @@
               <td><p>Lotte van Uittert</p></td>
             </tr>
           </table>
-          <p>
-            "Featuring the collaborative works of: Bo Deurloo & Mice and Bird,
-            Robin Whitehouse <b>&</b> a spring market, Thordur Hans Baldursson &
-            a queue of musicians, Emma Sebregts & Jeanne van Steenbergen, Pum
-            van de Koppel & The ministry of finance, Roselyn Flach & Yoda,
-            Suhjoo Kim & Jiyoung Yim, Matei Dragomir & Alper Çekinmez, Marion
-            Haguet & Caty, Nanou, Delphine, Manu and Cécille <br /><br />
-            Over the last semester, as part of a long standing collaboration
-            between the Fine Arts department and Nest, a number of our students
-            from the 2nd, 3rd and 4th year have reacted to the exhibition ‘The
-            Grand Palace of Everyone’, which closed last week. Borrowing similar
-            motivations, ‘Peas and Carrots’ focusses on collaboration, with a
-            person, being or force outside of themselves, opening up their
-            practice to others.
-            <br /><br />
-            The students were selected via open call as part of the Fine Art
-            department electives and were guided in their process by three
-            professional coaches: Jan Hoek, Clementine Edwards and Tim
-            Hollander."
-          </p>
+          <div class="info">
+            <p>
+              "Featuring the collaborative works of: Bo Deurloo & Mice and Bird,
+              Robin Whitehouse <b>&</b> a spring market, Thordur Hans Baldursson
+              & a queue of musicians, Emma Sebregts & Jeanne van Steenbergen,
+              Pum van de Koppel & The ministry of finance, Roselyn Flach & Yoda,
+              Suhjoo Kim & Jiyoung Yim, Matei Dragomir & Alper Çekinmez, Marion
+              Haguet & Caty, Nanou, Delphine, Manu and Cécille <br /><br />
+              Over the last semester, as part of a long standing collaboration
+              between the Fine Arts department and Nest, a number of our
+              students from the 2nd, 3rd and 4th year have reacted to the
+              exhibition ‘The Grand Palace of Everyone’, which closed last week.
+              Borrowing similar motivations, ‘Peas and Carrots’ focusses on
+              collaboration, with a person, being or force outside of
+              themselves, opening up their practice to others.
+              <br /><br />
+            </p>
+          </div>
         </aside>
         <div class="images">
           <img
@@ -212,7 +210,10 @@
         </div>
         <div>
           <p>
-            <a href="">robinwhitehouse1905@gmail.com</a>
+            <a href="mailto:robinwhitehouse1905@gmail.com"
+              ><span class="hide-on-mobile">robinwhitehouse1905@gmail.com</span
+              ><span class="hide-on-desktop">e-mail</span></a
+            >
           </p>
         </div>
         <div>
@@ -222,7 +223,10 @@
         </div>
         <div>
           <p>
-            <a href="https://www.instagram.com/0.1134_robin">@0.1134_robin</a>
+            <a href="https://www.instagram.com/0.1134_robin"
+              ><span class="hide-on-mobile">@0.1134_robin</span
+              ><span class="hide-on-desktop">instagram</span></a
+            >
           </p>
         </div>
       </span>
@@ -239,5 +243,10 @@
     <script src="preload.js"></script>
     <script src="arrows.js"></script>
     <script src="scaleAndShrink.js"></script>
+    <script>
+      window.fitText(
+        document.getElementById("info").getElementsByTagName("p")[0]
+      );
+    </script>
   </body>
 </html>
