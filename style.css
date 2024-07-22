@@ -382,7 +382,6 @@ section {
 /* - WITH 3:2 ASPECT RATIO */
 #buildup aside,
 #final-presentation aside,
-#books aside,
 #lobsters aside,
 #one-nest-stand aside,
 #dusseldorf aside {
@@ -392,7 +391,6 @@ section {
 
 #buildup img,
 #final-presentation img,
-#books img,
 #lobsters img,
 #one-nest-stand .row {
   width: calc(3 * (100vh - 130px) / 2);
@@ -565,10 +563,14 @@ aside {
   }
 
   /* DIVISION OF IMAGE AND INFO ASIDE */
-  /* - WITH 16:9 ASPECT RATIO */
 
   img {
     width: 94vw !important;
+    object-fit: cover;
+  }
+
+  .row {
+    display: block;
   }
 
   aside .info {
@@ -640,7 +642,7 @@ aside {
     background-clip: content-box;
   }
 
-  section#books img {
+  #books section img {
     scroll-snap-align: center;
     height: calc(61 * (94vw / 86));
     scroll-margin-top: 0;
@@ -650,6 +652,7 @@ aside {
 
   #books div.images {
     padding-bottom: calc(100vh - 50px - 61 * (94vw / 86) - 13px - 45px);
+    padding-top: calc(-1 * ((100vh - 50px - 61 * (94vw / 86) - 13px - 45px) + (61 * (94vw / 86)) + 13px));
   }
 
   /* 5:4 */
@@ -701,7 +704,6 @@ aside {
   /* 3/2 */
   #buildup aside,
   #final-presentation aside,
-  #books aside,
   #lobsters aside,
   #one-nest-stand aside,
   #dusseldorf aside {
@@ -713,7 +715,6 @@ aside {
 
   section#buildup img,
   section#final-presentation img,
-  section#books img,
   section#lobsters img,
   section#one-nest-stand img,
   section#dusseldorf img {
@@ -726,7 +727,6 @@ aside {
 
   #buildup div.images,
   #final-presentation div.images,
-  #books div.images,
   #lobsters div.images,
   #one-nest-stand div.images,
   #dusseldorf div.images {
