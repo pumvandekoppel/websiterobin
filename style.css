@@ -202,7 +202,7 @@ main.full-images {
   padding-right: 0;
   padding-bottom: 0px;
 }
-
+/* 
 main hr {
   color: #000;
   background-color: #000;
@@ -210,7 +210,7 @@ main hr {
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 13px;
-}
+} */
 
 /* INFO ASIDE */
 
@@ -224,10 +224,11 @@ aside {
   top: 0px;
   z-index: 1;
   background-color: #fff;
+  overflow-x: hidden;
 }
 
 #about aside {
-  overflow: scroll !important;
+  overflow-y: scroll !important;
 }
 
 aside p {
@@ -246,6 +247,11 @@ th {
 
 blockquote {
   margin: 0;
+}
+
+aside p {
+  margin-left: 0;
+  margin-right:0;
 }
 
 /*****/
@@ -428,6 +434,9 @@ main.full-images section img {
 
 footer {
   position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: #fff;
   width: 94vw;
   bottom: 0px;
@@ -438,15 +447,22 @@ footer {
   color: gray;
 }
 
-footer p#writing-hand {
+footer div#writing-hand {
+  width: 50px;
+}
+
+footer div#writing-hand p {
   margin-top: 15px;
+  width: auto;
 }
 
-footer #contact-info {
-  padding-top: 15px;
+footer div#links {
+  flex-wrap: nowrap;
+  flex-shrink: 0;
 }
 
-footer span#links div {
+footer div#links div {
+  display: inline-block;
   height: 50px;
   margin-top: -11px;
 }
@@ -461,38 +477,29 @@ footer div {
   height: 50px;
 }
 
-footer span#links {
-  position: fixed;
-  color: rgb(107, 107, 107);
-  margin-left: 3px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: auto;
+div.info {
+  width: 94vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5px;
 }
 
-footer div hr {
-  position: fixed;
-  right: 14ch;
-  width: calc(94vw - 430px - 14ch);
+footer div#line {
+  flex-grow: 1;
+  padding-left: 13px;
+  padding-right: 13px;
+  margin-left: 13px;
+  margin-right: 13px;
+}
+
+footer div#line hr {
   color: #b5b5b5;
   background-color: #b5b5b5;
   border-width: 0;
   height: 2px;
   margin-top: 17px;
-}
+  width: calc(100%);
 
-#index footer div hr,
-#lobsters footer div hr,
-#block footer div hr {
-  width: calc(94vw - 487px);
-  right: 3vw;
-}
-
-#about footer div hr {
-  width: calc(94vw - 430px - 33ch);
-  right: 33ch;
 }
 
 footer div#arrows {
@@ -500,20 +507,29 @@ footer div#arrows {
   float: right;
   margin-top: -61px;
   text-align: right;
+  flex-shrink: 0;
 }
 
 div#ad {
-  width: 28ch;
-  float: right;
-  margin-top: -62px;
+  margin-top: -12px;
+  flex-shrink: 0;
 }
 
-div#ad p {
+div#ad p, div#ad span {
   margin-right: 0;
   text-align: right;
+  color: #d7d1d1;
+}
+
+div#ad a {
+  color: #d7d1d1;
 }
 
 @media screen and (min-width: 925px) {
+ .hide-on-desktop {
+  display:none;
+ }
+ 
   img,
 aside {
   height: calc(100vh - 130px);
@@ -523,6 +539,10 @@ aside {
 /* RESPONSIVE DESIGN FOR SMALLER SCREENS --------------- */
 
 @media screen and (max-width: 925px) {
+
+  aside {
+    overflow-x: hidden;
+  }
 
   header {
     height: 50px;
@@ -559,6 +579,7 @@ aside {
 
   aside {
     justify-content: start;
+    width: 94vw;
 
   }
 
@@ -574,8 +595,8 @@ aside {
   }
 
   aside .info {
-    padding: 4px;
     padding-bottom: 13px;
+    background-color: #fff;
   }
 
   main.full-images {
@@ -663,7 +684,7 @@ aside {
     background-clip: content-box;
   }
 
-  section#about img {
+  #about section img {
     scroll-snap-align: center;
     height: calc(4 * (94vw / 5));
     scroll-margin-top: 0;
@@ -737,16 +758,13 @@ aside {
 
   aside p {
     font-size: 2vh;
-    width: 94vw;
+    max-width: 94vw;
     text-align: left;
-  }
-
-  hr {
-    width: 94vw;
   }
 
   table {
     padding-top: 13px;
+    background-color: #fff;
   }
 
   thead {
@@ -762,8 +780,17 @@ aside {
     width: 94vw;
   }
 
+  #about th {
+    font-size:medium;
+  }
+
+  #about tr {
+    margin-bottom:30px;
+    text-align: right;
+  }
+
   tr p {
-    width: 47vw;
+    width: 45.5vw;
   }
 
   td {
@@ -776,11 +803,7 @@ aside {
     padding-top: 0;
   }
 
-  footer * {
-    height: 45px !important;
-  }
-
-  footer p#writing-hand {
+  footer div#writing-hand p {
     margin-top: 17px;
   }
 
@@ -788,13 +811,19 @@ aside {
     padding-top: 14px;
   }
 
-  footer span#links div {
+  footer div#links div {
+    display: inline-block;
     height: 45px;
     margin-top: -10px;
   }
 
   footer div#arrows {
     margin-top: -50px;
+  }
+
+  div#ad {
+    margin-top: -8px;
+    flex-shrink: 0;
   }
 }
 
@@ -835,5 +864,9 @@ aside {
 
   footer {
     height: 45px;
+  }
+
+  footer div#line {
+    display: none;
   }
 }
