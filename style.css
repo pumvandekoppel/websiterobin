@@ -326,7 +326,8 @@ section {
 #rock-transport aside,
 #rock-talk aside,
 #fountain-transport aside,
-#block aside {
+#block aside,
+#basement-paintings aside {
   width: calc(94vw - (16 * (100dvh - 130px) / 9) - 1.5vw);
   left: calc(3vw + (16 * (100dvh - 130px) / 9) + 1.5vw);
 }
@@ -334,7 +335,8 @@ section {
 #rock img,
 #gips img,
 #fountain-transport img,
-#block img {
+#block img,
+#basement-paintings img {
   width: calc(16 * (100dvh - 130px) / 9);
 }
 
