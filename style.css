@@ -220,7 +220,7 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100vh - 130px);
+  height: calc(100dvh - 130px);
   top: 0px;
   z-index: 1;
   background-color: #fff;
@@ -317,7 +317,7 @@ section {
 }
 
 .row > img {
-  height: calc(100vh - 130px);
+  height: calc(100dvh - 130px);
   width: auto;
 }
 /* DIVISION OF IMAGE AND INFO ASIDE */
@@ -327,62 +327,62 @@ section {
 #rock-talk aside,
 #fountain-transport aside,
 #block aside {
-  width: calc(94vw - (16 * (100vh - 130px) / 9) - 1.5vw);
-  left: calc(3vw + (16 * (100vh - 130px) / 9) + 1.5vw);
+  width: calc(94vw - (16 * (100dvh - 130px) / 9) - 1.5vw);
+  left: calc(3vw + (16 * (100dvh - 130px) / 9) + 1.5vw);
 }
 
 #rock img,
 #gips img,
 #fountain-transport img,
 #block img {
-  width: calc(16 * (100vh - 130px) / 9);
+  width: calc(16 * (100dvh - 130px) / 9);
 }
 
 /* DIVISION OF IMAGE AND INFO ASIDE */
 /* - WITH 4:3 ASPECT RATIO */
 #basement aside {
-  width: calc(94vw - (4 * (100vh - 130px) / 3) - 1.5vw);
-  left: calc(3vw + (4 * (100vh - 130px) / 3) + 1.5vw);
+  width: calc(94vw - (4 * (100dvh - 130px) / 3) - 1.5vw);
+  left: calc(3vw + (4 * (100dvh - 130px) / 3) + 1.5vw);
 }
 
 #basement img {
-  width: calc(4 * (100vh - 130px) / 3);
+  width: calc(4 * (100dvh - 130px) / 3);
 }
 
 /* - WITH 86:61 ASPECT RATIO (HORIZONTAL SCAN) */
 #books aside {
-  width: calc(94vw - (86 * (100vh - 130px) / 61) - 1.5vw);
-  left: calc(3vw + (86 * (100vh - 130px) / 61) + 1.5vw);
+  width: calc(94vw - (86 * (100dvh - 130px) / 61) - 1.5vw);
+  left: calc(3vw + (86 * (100dvh - 130px) / 61) + 1.5vw);
 }
 
 #books img {
-  width: calc(86 * (100vh - 130px) / 61);
+  width: calc(86 * (100dvh - 130px) / 61);
 }
 
 /* - WITH 5:4 ASPECT RATIO */
 #about aside {
-  width: calc(94vw - (5 * (100vh - 130px) / 4) - 1.5vw);
-  left: calc(3vw + (5 * (100vh - 130px) / 4) + 1.5vw);
+  width: calc(94vw - (5 * (100dvh - 130px) / 4) - 1.5vw);
+  left: calc(3vw + (5 * (100dvh - 130px) / 4) + 1.5vw);
 }
 
 #about img {
-  width: calc(5 * (100vh - 130px) / 4);
+  width: calc(5 * (100dvh - 130px) / 4);
 }
 
 /* - WITH 61:86 ASPECT RATIO* (VERTICAL SCAN) */
 #vertical-drawings aside,
 #posters-for-2030 aside,
 #prints aside {
-  width: calc(94vw - (86 * (100vh - 130px) / 61) - 4.5vw);
+  width: calc(94vw - (86 * (100dvh - 130px) / 61) - 4.5vw);
 }
 
 #posters-for-2030 img {
-  height: calc(100vh - 130px + 7px);
+  height: calc(100dvh - 130px + 7px);
 }
 
 /* #vertical-drawings img,
 #posters-for-2030 img {
-  /* width: calc(61 * (100vh - 130px) / 86); */
+  /* width: calc(61 * (100dvh - 130px) / 86); */
 /* */
 
 /* - WITH 3:2 ASPECT RATIO */
@@ -391,15 +391,15 @@ section {
 #lobsters aside,
 #one-nest-stand aside,
 #dusseldorf aside {
-  width: calc(94vw - (3 * (100vh - 130px) / 2) - 1.5vw);
-  left: calc(3vw + (3 * (100vh - 130px) / 2) + 1.5vw);
+  width: calc(94vw - (3 * (100dvh - 130px) / 2) - 1.5vw);
+  left: calc(3vw + (3 * (100dvh - 130px) / 2) + 1.5vw);
 }
 
 #buildup img,
 #final-presentation img,
 #lobsters img,
 #one-nest-stand .row {
-  width: calc(3 * (100vh - 130px) / 2);
+  width: calc(3 * (100dvh - 130px) / 2);
 }
 
 /* TABLES */
@@ -417,7 +417,7 @@ section {
 /* SCROLL SNAP */
 
 main.full-images {
-  height: calc(100vh - 130px);
+  height: calc(100dvh - 130px);
   overflow-y: scroll;
   scroll-snap-type: y;
   scroll-snap-type: y mandatory;
@@ -447,13 +447,13 @@ footer {
   color: gray;
 }
 
-footer div#writing-hand {
-  width: 50px;
+footer div {
+  height: 50px;
 }
 
-footer div#writing-hand p {
-  margin-top: 15px;
-  width: auto;
+footer a {
+  color: rgb(107, 107, 107);
+  text-decoration: none;
 }
 
 footer div#links {
@@ -467,25 +467,17 @@ footer div#links div {
   margin-top: -11px;
 }
 
-footer a {
-  color: rgb(107, 107, 107);
-
-  text-decoration: none;
+footer div#writing-hand {
+  width: 50px;
 }
 
-footer div {
-  height: 50px;
-}
-
-div.info {
-  width: 94vw;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 5px;
+footer div#writing-hand p {
+  margin-top: 15px;
+  width: auto;
 }
 
 footer div#line {
-  flex-grow: 1;
+  flex: 1;
   padding-left: 13px;
   padding-right: 13px;
   margin-left: 13px;
@@ -497,15 +489,19 @@ footer div#line hr {
   background-color: #b5b5b5;
   border-width: 0;
   height: 2px;
-  margin-top: 17px;
-  width: calc(100%);
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
 
+#index footer div#line {
+  margin-right: 0;
+  padding-right: 0;
 }
 
 footer div#arrows {
   width: 7ch;
-  float: right;
-  margin-top: -61px;
+  margin-top: -8px;
   text-align: right;
   flex-shrink: 0;
 }
@@ -532,7 +528,7 @@ div#ad a {
  
   img,
 aside {
-  height: calc(100vh - 130px);
+  height: calc(100dvh - 130px);
 }
 }
 
@@ -594,13 +590,13 @@ aside {
     display: block;
   }
 
-  aside .info {
+  aside div.info {
     padding-bottom: 13px;
     background-color: #fff;
   }
 
   main.full-images {
-    height: calc(100vh - 95px);
+    height: calc(100dvh - 95px);
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
   }
@@ -612,7 +608,7 @@ aside {
   #block aside {
     width: 94vw;
     padding-top: calc((9 * (94vw / 16)) + 13px);
-    height: calc(100vh - 50px - 9 * (94vw / 16) - 13px - 45px);
+    height: calc(100dvh - 50px - 9 * (94vw / 16) - 13px - 45px);
     background-clip: content-box;
   }
 
@@ -623,7 +619,7 @@ aside {
     scroll-snap-align: center;
     height: calc(9 * (94vw / 16));
     scroll-margin-top: 0;
-    scroll-margin-bottom: calc(100vh - 50px - 9 * (94vw / 16) - 13px - 45px);
+    scroll-margin-bottom: calc(100dvh - 50px - 9 * (94vw / 16) - 13px - 45px);
     scroll-snap-stop: always;
   }
 
@@ -631,14 +627,14 @@ aside {
   #rock-talk div.images,
   #fountain-transport div.images,
   #block div.images {
-    padding-bottom: calc(100vh - 50px - 9 * (94vw / 16) - 13px - 45px);
+    padding-bottom: calc(100dvh - 50px - 9 * (94vw / 16) - 13px - 45px);
   }
 
   /* 4:3 */
 #basement aside {
     width: 94vw;
     padding-top: calc((3 * (94vw / 4)) + 13px);
-    height: calc(100vh - 50px - 3 * (94vw / 4) - 13px - 45px);
+    height: calc(100dvh - 50px - 3 * (94vw / 4) - 13px - 45px);
     background-clip: content-box;
   }
 
@@ -646,12 +642,12 @@ aside {
     scroll-snap-align: center;
     height: calc(3 * (94vw / 4));
     scroll-margin-top: 0;
-    scroll-margin-bottom: calc(100vh - 50px - 3 * (94vw / 4) - 13px - 45px);
+    scroll-margin-bottom: calc(100dvh - 50px - 3 * (94vw / 4) - 13px - 45px);
     scroll-snap-stop: always;
   }
 
   #basement div.images {
-    padding-bottom: calc(100vh - 50px - 3 * (94vw / 4) - 13px - 45px);
+    padding-bottom: calc(100dvh - 50px - 3 * (94vw / 4) - 13px - 45px);
 
   }
 
@@ -659,7 +655,7 @@ aside {
   #books aside {
     width: 94vw;
     padding-top: calc((61 * (94vw / 86)) + 13px);
-    height: calc(100vh - 50px - 61 * (94vw / 86) - 13px - 45px);
+    height: calc(100dvh - 50px - 61 * (94vw / 86) - 13px - 45px);
     background-clip: content-box;
   }
 
@@ -667,20 +663,20 @@ aside {
     scroll-snap-align: center;
     height: calc(61 * (94vw / 86));
     scroll-margin-top: 0;
-    scroll-margin-bottom: calc(100vh - 50px - 61 * (94vw / 86) - 13px - 45px);
+    scroll-margin-bottom: calc(100dvh - 50px - 61 * (94vw / 86) - 13px - 45px);
     scroll-snap-stop: always;
   }
 
   #books div.images {
-    padding-bottom: calc(100vh - 50px - 61 * (94vw / 86) - 13px - 45px);
-    padding-top: calc(-1 * ((100vh - 50px - 61 * (94vw / 86) - 13px - 45px) + (61 * (94vw / 86)) + 13px));
+    padding-bottom: calc(100dvh - 50px - 61 * (94vw / 86) - 13px - 45px);
+    padding-top: calc(-1 * ((100dvh - 50px - 61 * (94vw / 86) - 13px - 45px) + (61 * (94vw / 86)) + 13px));
   }
 
   /* 5:4 */
 #about aside {
     width: 94vw;
     padding-top: calc((4 * (94vw / 5)) + 13px);
-    height: calc(100vh - 50px - 4 * (94vw / 5) - 13px - 45px);
+    height: calc(100dvh - 50px - 4 * (94vw / 5) - 13px - 45px);
     background-clip: content-box;
   }
 
@@ -688,12 +684,12 @@ aside {
     scroll-snap-align: center;
     height: calc(4 * (94vw / 5));
     scroll-margin-top: 0;
-    scroll-margin-bottom: calc(100vh - 50px - 4 * (94vw / 5) - 13px - 45px);
+    scroll-margin-bottom: calc(100dvh - 50px - 4 * (94vw / 5) - 13px - 45px);
     scroll-snap-stop: always;
   }
 
   #about div.images {
-    padding-bottom: calc(100vh - 50px - 4 * (94vw / 5) - 13px - 45px);
+    padding-bottom: calc(100dvh - 50px - 4 * (94vw / 5) - 13px - 45px);
   }
 
   /* 61/86 */
@@ -702,7 +698,7 @@ aside {
   #prints aside {
     width: 94vw;
     padding-top: calc((86 * (94vw / 61)) + 13px);
-    height: calc(100vh - 50px - 86 * (94vw / 61) - 13px - 45px);
+    height: calc(100dvh - 50px - 86 * (94vw / 61) - 13px - 45px);
     background-clip: content-box;
   }
 
@@ -712,14 +708,14 @@ aside {
     scroll-snap-align: center;
     height: calc(86 * (94vw / 61));
     scroll-margin-top: 0;
-    scroll-margin-bottom: calc(100vh - 50px - 86 * (94vw / 61) - 13px - 45px);
+    scroll-margin-bottom: calc(100dvh - 50px - 86 * (94vw / 61) - 13px - 45px);
     scroll-snap-stop: always;
   }
 
   #vertical-drawings div.images,
   #posters-for-2030 div.images,
   #drawing div.images {
-    padding-bottom: calc(100vh - 50px - 86 * (94vw / 61) - 13px - 45px);
+    padding-bottom: calc(100dvh - 50px - 86 * (94vw / 61) - 13px - 45px);
   }
 
   /* 3/2 */
@@ -730,7 +726,7 @@ aside {
   #dusseldorf aside {
     width: 94vw;
     padding-top: calc((2 * (94vw / 3)) + 13px);
-    height: calc(100vh - 50px - 2 * (94vw / 3) - 13px - 45px);
+    height: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 45px);
     background-clip: content-box;
   }
 
@@ -742,7 +738,7 @@ aside {
     scroll-snap-align: center;
     height: calc(2 * (94vw / 3));
     scroll-margin-top: 0;
-    scroll-margin-bottom: calc(100vh - 50px - 2 * (94vw / 3) - 13px - 45px);
+    scroll-margin-bottom: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 45px);
     scroll-snap-stop: always;
   }
 
@@ -751,13 +747,13 @@ aside {
   #lobsters div.images,
   #one-nest-stand div.images,
   #dusseldorf div.images {
-    padding-bottom: calc(100vh - 50px - 2 * (94vw / 3) - 13px - 45px);
+    padding-bottom: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 45px);
   }
 
   /**/
 
   aside p {
-    font-size: 2vh;
+    font-size: 2dvh;
     max-width: 94vw;
     text-align: left;
   }
@@ -835,7 +831,7 @@ aside {
 
 @media screen and (max-width: 500px) {
   aside p {
-    font-size: 1.8vh;
+    font-size: 1.8dvh;
   }
 
   #name-listed-item {
