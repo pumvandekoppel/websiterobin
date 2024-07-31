@@ -61,6 +61,7 @@ function getCurrentSection() {
 // *CLICK*
 
 function downArrow() {
+  k++;
   getCurrentSection();
   if (currentSection == firstSection) {
     document.getElementById("up").style.visibility = "visible";
@@ -78,6 +79,7 @@ function downArrow() {
 }
 
 function upArrow() {
+  k--;
   getCurrentSection();
   if (currentSection == lastSection) {
     document.getElementById("down").style.visibility = "visible";
@@ -100,11 +102,11 @@ main.onscroll = (event) => {
   getCurrentSection(); // updates currentSection to section that is in viewport
   // img = currentSection.getElementsByTagName("img")[0];
   // if the section in the viewport corresponds with the link of up
-  scaleTitleToWidth();
   if (
     "#" + currentSectionID ==
     document.getElementById("up").getAttribute("href")
   ) {
+    k--;
     if (currentSectionID == sectionIDs[0]) {
       document.getElementById("down").style.visibility = "visible";
       document.getElementById("up").style.visibility = "hidden";
@@ -112,6 +114,7 @@ main.onscroll = (event) => {
     if (currentSectionID == sectionIDs[sections.length - 2]) {
       document.getElementById("down").style.visibility = "visible";
     }
+    scaleTitleToWidth();
     var linkToNextSection = j + 1;
     var linkToPreviousSection = j - 1;
     document
@@ -126,12 +129,14 @@ main.onscroll = (event) => {
     "#" + currentSectionID ==
     document.getElementById("down").getAttribute("href")
   ) {
+    k++;
     if (currentSectionID == sectionIDs[1]) {
       document.getElementById("up").style.visibility = "visible";
     }
     if (currentSectionID == sectionIDs[sections.length - 1]) {
       document.getElementById("down").style.visibility = "hidden";
     }
+    scaleTitleToWidth();
     var linkToNextSection = j + 1;
     var linkToPreviousSection = j - 1;
     document
@@ -141,6 +146,7 @@ main.onscroll = (event) => {
       .getElementById("up")
       .setAttribute("href", "#" + sectionIDs[linkToPreviousSection]);
   } else {
+    scaleTitleToWidth();
     return;
   }
 };

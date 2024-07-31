@@ -4,19 +4,20 @@ var body = document.body,
 var height = Math.max( body.scrollHeight, body.offsetHeight, 
                        html.clientHeight, html.scrollHeight, html.offsetHeight );
 
-var scaleRatioRock = 220.5; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
-var scaleRatioGips = 125.5; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
-var scaleRatioFountain = 113.9; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
+var scaleRatioRock = 214.5; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
+var scaleRatioGips = 122; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
+var scaleRatioFountain = 106; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioLobsters = 581; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioBlock = 83.75; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioBooks = 102.075; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioPaper = 133; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioPaintings = 80; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
-var scaleRatioAbout = 53;
+var scaleRatioAbout = 48.5;
 
 const mediaQuery = window.matchMedia('(max-width: 925px)')
 
-var img = document.getElementsByTagName("img")[0]
+var k = 0;
+var img = document.getElementsByTagName("section")[0].getElementsByTagName("img")[0]
 const scaleThisTitle = document.getElementsByTagName("p")[0]
 const shrinkThisBigTitle = document.getElementsByTagName("p")[0]
 
@@ -32,6 +33,7 @@ function vw(percent) {
 var newScaleX;
 
 function scaleTitleToWidth() {
+  img = document.getElementsByTagName("section")[k].getElementsByTagName("img")[0]
   let width = img.width
   var newScaleXRock;
   var newScaleXGips;
