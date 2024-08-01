@@ -328,7 +328,8 @@ section {
 #fountain-transport aside,
 #block aside,
 #basement-paintings aside,
-#old-studio aside {
+#old-studio aside,
+#webcams aside {
   width: calc(94vw - (16 * (100dvh - 130px) / 9) - 1.5vw);
   left: calc(3vw + (16 * (100dvh - 130px) / 9) + 1.5vw);
 }
@@ -338,27 +339,40 @@ section {
 #fountain-transport img,
 #block img,
 #basement-paintings img,
-#old-studio img {
+#old-studio img,
+#webcams img {
   width: calc(16 * (100dvh - 130px) / 9);
 }
 
 /* DIVISION OF IMAGE AND INFO ASIDE */
 /* - WITH 4:3 ASPECT RATIO */
 #basement aside,
-#cornish-works aside {
+#cornish-works aside,
+#heden aside,
+#oranjeplein aside,
+#repair-1 aside,
+#facebook aside {
   width: calc(94vw - (4 * (100dvh - 130px) / 3) - 1.5vw);
   left: calc(3vw + (4 * (100dvh - 130px) / 3) + 1.5vw);
 }
 
 #basement img,
 #cornish-works img,
-#cornish-works div.row {
+#cornish-works div.row,
+#heden img,
+#oranjeplein img,
+#repair-1 img {
   width: calc(4 * (100dvh - 130px) / 3);
 }
 
 #cornish-works div.row {
   height: 100dvh;
   gap: 13px;
+}
+
+#facebook img {
+  object-position: left center;
+  width: calc(100dvh - 56px);
 }
 
 /* - WITH 86:61 ASPECT RATIO (HORIZONTAL SCAN) */
@@ -415,6 +429,17 @@ section {
 }
 
 /* TABLES */
+
+table {
+  display: table !important;
+  padding-top: 1px !important;
+  background-color: #fff !important;
+}
+
+table td {
+  padding-right: 20px !important;
+}
+
 
 /* PROJECTS SETTINGS */
 
@@ -771,8 +796,11 @@ aside {
   }
 
   table {
-    padding-top: 13px;
-    background-color: #fff;
+    display: table !important;
+    border-spacing: 13px !important;
+    padding-top: 13px !important;
+    padding-right: 13px !important;
+    background-color: #fff !important;
   }
 
   thead {
@@ -804,6 +832,10 @@ aside {
   td {
     font-size: 0.85em;
     text-align: right;
+  }
+  
+  td p {
+    padding-right: 13px;
   }
 
   footer {
