@@ -53,6 +53,16 @@ body {
   -o-transition: none !important;
 }
 
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
 /* * { border: 1px solid red !important; } */
 
 /* GENERAL CLASSES */
@@ -133,7 +143,7 @@ p.big-titles {
   position: -webkit-sticky;
   position: sticky;
   transition-property: transform;
-  transition-duration: 0.27s;
+  transition-duration: 0.34s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
 }
@@ -251,7 +261,7 @@ blockquote {
 
 aside p {
   margin-left: 0;
-  margin-right:0;
+  margin-right: 0;
 }
 
 /*****/
@@ -329,7 +339,8 @@ section {
 #block aside,
 #basement-paintings aside,
 #old-studio aside,
-#webcams aside {
+#scheveningen aside,
+#webcam aside {
   width: calc(94vw - (16 * (100dvh - 130px) / 9) - 1.5vw);
   left: calc(3vw + (16 * (100dvh - 130px) / 9) + 1.5vw);
 }
@@ -340,7 +351,8 @@ section {
 #block img,
 #basement-paintings img,
 #old-studio img,
-#webcams img {
+#scheveningen img,
+#webcam img {
   width: calc(16 * (100dvh - 130px) / 9);
 }
 
@@ -351,7 +363,9 @@ section {
 #heden aside,
 #oranjeplein aside,
 #repair-1 aside,
-#facebook aside {
+#facebook aside,
+#homeless-man aside,
+#hms aside {
   width: calc(94vw - (4 * (100dvh - 130px) / 3) - 1.5vw);
   left: calc(3vw + (4 * (100dvh - 130px) / 3) + 1.5vw);
 }
@@ -361,18 +375,29 @@ section {
 #cornish-works div.row,
 #heden img,
 #oranjeplein img,
-#repair-1 img {
+#repair-1 img,
+#homeless-man img,
+#hms img {
   width: calc(4 * (100dvh - 130px) / 3);
 }
 
 #cornish-works div.row {
-  height: 100dvh;
+  height: calc(100dvh - 130px);
   gap: 13px;
 }
 
 #facebook img {
   object-position: left center;
   width: calc(100dvh - 56px);
+}
+
+#hms div.row {
+  gap: 26px;
+}
+
+#hms div.row img {
+  width: 28.2vw;
+  height: calc(100dvh - 130px);
 }
 
 /* - WITH 86:61 ASPECT RATIO (HORIZONTAL SCAN) */
@@ -400,10 +425,20 @@ section {
 #posters-for-2030 aside,
 #prints aside {
   width: calc(94vw - (86 * (100dvh - 130px) / 61) - 4.5vw);
+  left: calc(86vw + (5 * (100dvh - 130px) / 61) + 4.5vw);
 }
 
-#posters-for-2030 img {
-  height: calc(100dvh - 130px + 7px);
+#vertical-drawings img,
+#posters-for-2030 img,
+#prints img {
+  width: calc(86 * (100dvh - 130px) / 61);
+}
+
+#vertical-drawings .row img,
+#posters-for-2030 .row img,
+#prints .row img {
+  width: 30.2vw;
+  height: calc(100dvh - 130px);
 }
 
 /* #vertical-drawings img,
@@ -414,17 +449,25 @@ section {
 /* - WITH 3:2 ASPECT RATIO */
 #buildup aside,
 #final-presentation aside,
-#lobsters aside,
+#lobstersv3 aside,
 #one-nest-stand aside,
-#dusseldorf aside {
+#dusseldorf aside,
+#west aside,
+#repair-2 aside,
+#mauritshuis aside,
+#lobstersv2 aside {
   width: calc(94vw - (3 * (100dvh - 130px) / 2) - 1.5vw);
   left: calc(3vw + (3 * (100dvh - 130px) / 2) + 1.5vw);
 }
 
 #buildup img,
 #final-presentation img,
-#lobsters img,
-#one-nest-stand .row {
+#lobstersv3 img,
+#one-nest-stand .row,
+#west img,
+#repair-2 img,
+#mauritshuis img,
+#lobstersv2 img {
   width: calc(3 * (100dvh - 130px) / 2);
 }
 
@@ -436,10 +479,17 @@ table {
   background-color: #fff !important;
 }
 
+tbody {
+  margin-bottom: 39px;
+}
+
 table td {
   padding-right: 20px !important;
 }
 
+table tr.spacer {
+  height: 13px;
+}
 
 /* PROJECTS SETTINGS */
 
@@ -449,6 +499,10 @@ table td {
 
 #about .full-images img {
   padding: 0;
+}
+
+#about div.box {
+  margin-right: 22px;
 }
 
 /* SCROLL SNAP */
@@ -478,14 +532,15 @@ footer {
   width: 94vw;
   bottom: 0px;
   left: 3vw;
-  height: 50px;
+  height: 45px;
   z-index: 3;
   padding-top: 15px;
   color: gray;
+  padding-bottom: 6px;
 }
 
 footer div {
-  height: 50px;
+  height: 45px;
 }
 
 footer a {
@@ -500,12 +555,12 @@ footer div#links {
 
 footer div#links div {
   display: inline-block;
-  height: 50px;
+  height: 45px;
   margin-top: -11px;
 }
 
 footer div#writing-hand {
-  width: 50px;
+  width: 40px;
 }
 
 footer div#writing-hand p {
@@ -513,7 +568,7 @@ footer div#writing-hand p {
   width: auto;
 }
 
-footer div#line {
+footer div#box {
   flex: 1;
   padding-left: 13px;
   padding-right: 13px;
@@ -521,58 +576,106 @@ footer div#line {
   margin-right: 13px;
 }
 
-footer div#line hr {
+/* footer div#line hr {
   color: #b5b5b5;
   background-color: #b5b5b5;
   border-width: 0;
   height: 2px;
   margin-top: 20px;
   margin-left: 5px;
-  margin-right: 5px;
+  margin-right: 0px;
+} */
+
+div.box {
+  color: #b5b5b5;
+  background-color: #b5b5b5;
+  margin-top: -5px;
+  margin-left: 13px;
+  margin-right: 0px;
+  flex-grow: 1;
+  --mask: radial-gradient(
+        4.18px at 50% calc(100% + 1.05px),
+        #0000 calc(99% - 2px),
+        #000 calc(101% - 2px) 99%,
+        #0000 101%
+      )
+      calc(50% - 6px) calc(50% - 2.5px + 0.5px) / 12px 5px repeat-x,
+    radial-gradient(
+        4.18px at 50% -1.05px,
+        #0000 calc(99% - 2px),
+        #000 calc(101% - 2px) 99%,
+        #0000 101%
+      )
+      50% calc(50% + 2.5px) / 12px 5px repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
 }
 
-#index footer div#line {
-  margin-right: 0;
-  padding-right: 0;
+#index footer div.box {
+  margin-right: 4px;
+}
+
+#about footer div.box {
+  margin-right: 0px;
 }
 
 footer div#arrows {
   width: 7ch;
-  margin-top: -8px;
+  margin-top: -11px;
   text-align: right;
   flex-shrink: 0;
 }
 
 div#ad {
-  margin-top: -12px;
+  height: 45px;
+  flex-wrap: nowrap;
   flex-shrink: 0;
+  margin-left: 12px;
+  margin-top: -6.5px;
 }
 
-div#ad p, div#ad span {
+div#ad a small {
+  margin-top: -2px;
+  flex-shrink: 0;
+  height: 45px;
+}
+
+div#ad p,
+div#ad span {
   margin-right: 0;
   text-align: right;
-  color: #d7d1d1;
 }
 
-div#ad a {
-  color: #d7d1d1;
+div#ad small.self-promotion_shown {
+  width: auto;
+  margin-top: -1px;
 }
 
-@media screen and (min-width: 925px) {
- .hide-on-desktop {
-  display:none;
- }
- 
+div#ad small.self-promotion_hidden {
+  display: none;
+}
+
+/* @media screen and (max-width: 1829px) {
+  div.images > img{
+    width: 82vw !important;
+    margin-left: vw !important;
+  }
+} */
+
+@media screen and (min-width: 965px) {
+  .hide-on-desktop {
+    display: none;
+  }
+
   img,
-aside {
-  height: calc(100dvh - 130px);
-}
+  aside {
+    height: calc(100dvh - 130px);
+  }
 }
 
 /* RESPONSIVE DESIGN FOR SMALLER SCREENS --------------- */
 
-@media screen and (max-width: 925px) {
-
+@media screen and (max-width: 965px) {
   aside {
     overflow-x: hidden;
   }
@@ -611,9 +714,8 @@ aside {
   }
 
   aside {
-    justify-content: start;
+    justify-content: flex-start;
     width: 94vw;
-
   }
 
   /* DIVISION OF IMAGE AND INFO ASIDE */
@@ -642,17 +744,25 @@ aside {
   #rock-transport aside,
   #rock-talk aside,
   #fountain-transport aside,
-  #block aside {
+  #block aside,
+  #basement-paintings aside,
+  #old-studio aside,
+  #scheveningen aside,
+  #webcam aside {
     width: 94vw;
     padding-top: calc((9 * (94vw / 16)) + 13px);
     height: calc(100dvh - 50px - 9 * (94vw / 16) - 13px - 45px);
     background-clip: content-box;
   }
 
-  section#rock-transport img,
-  section#rock-talk img,
-  section#fountain-transport img,
-  section#block img {
+  #rock img,
+  #gips img,
+  #fountain-transport img,
+  #block img,
+  #basement-paintings img,
+  #old-studio img,
+  #scheveningen img,
+  #webcam img {
     scroll-snap-align: center;
     height: calc(9 * (94vw / 16));
     scroll-margin-top: 0;
@@ -660,22 +770,40 @@ aside {
     scroll-snap-stop: always;
   }
 
-  #rock-transport div.images,
-  #rock-talk div.images,
+  #rock div.images,
+  #gips div.images,
   #fountain-transport div.images,
-  #block div.images {
+  #block div.images,
+  #basement-paintings div.images,
+  #old-studio div.images,
+  #scheveningen div.images,
+  #webcam div.images {
     padding-bottom: calc(100dvh - 50px - 9 * (94vw / 16) - 13px - 45px);
   }
 
   /* 4:3 */
-#basement aside {
+  #basement aside,
+  #cornish-works aside,
+  #heden aside,
+  #oranjeplein aside,
+  #repair-1 aside,
+  #facebook aside,
+  #homeless-man aside,
+  #hms aside {
     width: 94vw;
     padding-top: calc((3 * (94vw / 4)) + 13px);
     height: calc(100dvh - 50px - 3 * (94vw / 4) - 13px - 45px);
     background-clip: content-box;
   }
 
-  section#basement img {
+  #basement img,
+  #cornish-works img,
+  #cornish-works div.row,
+  #heden img,
+  #oranjeplein img,
+  #repair-1 img,
+  #homeless-man img,
+  #hms img {
     scroll-snap-align: center;
     height: calc(3 * (94vw / 4));
     scroll-margin-top: 0;
@@ -683,9 +811,14 @@ aside {
     scroll-snap-stop: always;
   }
 
-  #basement div.images {
+  #basement div.images,
+  #cornish-works div.images,
+  #heden div.images,
+  #oranjeplein div.images,
+  #repair-1 div.images,
+  #homeless-man div.images,
+  #hms div.images {
     padding-bottom: calc(100dvh - 50px - 3 * (94vw / 4) - 13px - 45px);
-
   }
 
   /* 86:61 */
@@ -706,11 +839,14 @@ aside {
 
   #books div.images {
     padding-bottom: calc(100dvh - 50px - 61 * (94vw / 86) - 13px - 45px);
-    padding-top: calc(-1 * ((100dvh - 50px - 61 * (94vw / 86) - 13px - 45px) + (61 * (94vw / 86)) + 13px));
+    padding-top: calc(
+      -1 * ((100dvh - 50px - 61 * (94vw / 86) - 13px - 45px) +
+            (61 * (94vw / 86)) + 13px)
+    );
   }
 
   /* 5:4 */
-#about aside {
+  #about aside {
     width: 94vw;
     padding-top: calc((4 * (94vw / 5)) + 13px);
     height: calc(100dvh - 50px - 4 * (94vw / 5) - 13px - 45px);
@@ -758,20 +894,27 @@ aside {
   /* 3/2 */
   #buildup aside,
   #final-presentation aside,
-  #lobsters aside,
+  #lobstersv3 aside,
   #one-nest-stand aside,
-  #dusseldorf aside {
+  #dusseldorf aside,
+  #west aside,
+  #repair-2 aside,
+  #mauritshuis aside,
+  #lobstersv2 aside {
     width: 94vw;
     padding-top: calc((2 * (94vw / 3)) + 13px);
     height: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 45px);
     background-clip: content-box;
   }
 
-  section#buildup img,
-  section#final-presentation img,
-  section#lobsters img,
-  section#one-nest-stand img,
-  section#dusseldorf img {
+  #buildup img,
+  #final-presentation img,
+  #lobstersv3 img,
+  #one-nest-stand .row,
+  #west img,
+  #repair-2 img,
+  #mauritshuis img,
+  #lobstersv2 img {
     scroll-snap-align: center;
     height: calc(2 * (94vw / 3));
     scroll-margin-top: 0;
@@ -781,9 +924,11 @@ aside {
 
   #buildup div.images,
   #final-presentation div.images,
-  #lobsters div.images,
-  #one-nest-stand div.images,
-  #dusseldorf div.images {
+  #lobstersv3 div.images,
+  #one-nest-stand div.images #west img,
+  #repair-2 img,
+  #mauritshuis img,
+  #lobstersv2 img {
     padding-bottom: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 45px);
   }
 
@@ -795,7 +940,7 @@ aside {
     text-align: left;
   }
 
-  table {
+  /* table {
     display: table !important;
     border-spacing: 13px !important;
     padding-top: 13px !important;
@@ -817,11 +962,11 @@ aside {
   }
 
   #about th {
-    font-size:medium;
+    font-size: medium;
   }
 
   #about tr {
-    margin-bottom:30px;
+    margin-bottom: 30px;
     text-align: right;
   }
 
@@ -833,9 +978,27 @@ aside {
     font-size: 0.85em;
     text-align: right;
   }
-  
+
   td p {
     padding-right: 13px;
+  } */
+
+  table {
+    margin-top: 13px;
+    margin-bottom: 39px;
+  }
+
+  tr {
+    border-collapse: separate;
+    border-spacing: 0 139px;
+  }
+
+  #about div.info {
+    margin-top: 13px;
+  }
+
+  #about table {
+    margin-top: 0px;
   }
 
   footer {
@@ -852,23 +1015,32 @@ aside {
   }
 
   footer div#links div {
-    display: inline-block;
     height: 45px;
     margin-top: -10px;
   }
 
   footer div#arrows {
-    margin-top: -50px;
+    margin-top: -9px;
   }
 
   div#ad {
-    margin-top: -8px;
     flex-shrink: 0;
+    margin-top: -4px;
+  }
+
+  .hide-on-mobile-earlier {
+    display: none;
   }
 }
 
 @media screen and (max-width: 800px) {
   .hide-on-mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  div#ad small.self-promotion_hidden {
     display: none;
   }
 }
@@ -906,7 +1078,20 @@ aside {
     height: 45px;
   }
 
-  footer div#line {
+  small.self-promotion_hidden {
+    display: flex;
+  }
+
+  div#ad {
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  div#ad small.self-promotion_hidden {
+    display: inline;
+  }
+
+  div#ad small.self-promotion_shown {
     display: none;
   }
 }

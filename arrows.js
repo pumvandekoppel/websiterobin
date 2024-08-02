@@ -6,6 +6,9 @@ for (let i = 0; i < sections.length; i++) {
   sectionIDs.push(sections[i].id);
 }
 
+// collect k
+var k = localStorage.getItem("k");
+
 // initialize global j to redefine later
 var j;
 
@@ -61,7 +64,6 @@ function getCurrentSection() {
 // *CLICK*
 
 function downArrow() {
-  k++;
   getCurrentSection();
   if (currentSection == firstSection) {
     document.getElementById("up").style.visibility = "visible";
@@ -76,10 +78,10 @@ function downArrow() {
   document
     .getElementById("up")
     .setAttribute("href", "#" + sectionIDs[linkToPreviousSection]);
+    console.log(k)
 }
 
 function upArrow() {
-  k--;
   getCurrentSection();
   if (currentSection == lastSection) {
     document.getElementById("down").style.visibility = "visible";
@@ -93,7 +95,8 @@ function upArrow() {
     .setAttribute("href", "#" + sectionIDs[linkToNextSection]);
   document
     .getElementById("up")
-    .setAttribute("href", "#" + sectionIDs[linkToPreviousSection]);
+    .setAttribute("href", "#" + sectionIDs[linkToPreviousSection]); 
+  console.log(k)
 }
 
 // // *SCROLL*
@@ -106,7 +109,7 @@ main.onscroll = (event) => {
     "#" + currentSectionID ==
     document.getElementById("up").getAttribute("href")
   ) {
-    k--;
+    k = k - 1;
     if (currentSectionID == sectionIDs[0]) {
       document.getElementById("down").style.visibility = "visible";
       document.getElementById("up").style.visibility = "hidden";
@@ -129,7 +132,7 @@ main.onscroll = (event) => {
     "#" + currentSectionID ==
     document.getElementById("down").getAttribute("href")
   ) {
-    k++;
+    k = k + 1;
     if (currentSectionID == sectionIDs[1]) {
       document.getElementById("up").style.visibility = "visible";
     }

@@ -3,19 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Robin Whitehouse - works on paper</title>
+    <title>Robin Whitehouse - Works on paper</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body class="no-transition" id="paper" onresize="scaleTitleToWidth()">
     <header>
       <nav>
-        <a href="index.html"><p class="big-titles">works on paper</p></a>
+        <a href="index.html"><p class="big-titles">Works on paper</p></a>
         <a id="about-button" href="about.html"><h2>&#9753;&#xFE0E;</h2></a>
       </nav>
     </header>
 
     <main class="full-images">
+      
       <section id="vertical-drawings">
         <aside>
           <table>
@@ -25,14 +26,11 @@
             </tr>
             <tr>
               <td><p>Year</p></td>
-              <td><p>2020</p></td>
-            </tr>
-            <tr>
-              <td><p>Dimensions</p></td>
-              <td></td>
+              <td><p>2020 - now</p></td>
             </tr>
           </table>
-          <div class="info"><p>...</p></div>
+          <br><br>
+          <div class="info"><p>Pages from my sketchbooks.</p></div>
         </aside>
         <div class="images">
           <img
@@ -146,7 +144,7 @@
             </tr>
             <tr>
               <td><p>Year</p></td>
-              <td>2020 - 2030</td>
+              <td><p>2020 - 2030</p></td>
             </tr>
           </table>
           <div class="info"><p>Starting in 2020, I have been making posters for each day during 2030. The poster has a title and date and style. The posters will be then offered for free in 2030 for the date of the event that takes place. </p></div>
@@ -213,22 +211,18 @@
             </tr>
             <tr>
               <td><p>Year</p></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><p>Dimensions</p></td>
-              <td></td>
+              <td><p>2022</p></td>
             </tr>
           </table>
-          <div class="info"><p>...</p></div>
+          <div class="info"><p>Prints made in Beaux Arts de Paris</p></div>
         </aside>
         <img
           src="assets/Works on paper/DRAWINGS/drawings/Scan 27-min.jpeg"
           alt="scan of a drawing"
           style="
-            visibility: hidden;
-            height: 0px;
-            width: calc(86 * (100vh - 130px) / 61 - 1.8vw);
+            display: none;
+            height: 0.1px;
+            width: calc((100vh - 130px) / 61 - 1.8vw);
           "
         />
         <div class="row">
@@ -240,8 +234,8 @@
 
     <footer>
       <div id="links">
-        <div>
-          <p id="writing-hand">&#9997;&#xFE0E; :&ensp;</p>
+        <div id="writing-hand" class="noselect">
+          <p>&#9997;&#xFE0E; :&ensp;</p>
         </div>
         <div>
           <p>
@@ -253,7 +247,7 @@
         </div>
         <div>
           <p>
-            <a>&ensp;|&ensp;</a>
+            <a class="noselect">&ensp;|&ensp;</a>
           </p>
         </div>
         <div>
@@ -265,10 +259,13 @@
           </p>
         </div>
       </div>
-      <div id="line"><hr /></div>
-      <div id="arrows">
+      <div class="box"></div>
+      <div id="arrows" class="noselect">
         <p>
-          &ensp;<a id="down" href="#">↓</a>&ensp;|&ensp;<a id="up" href="#"
+          &ensp;<a id="down" href="#" onclick="downArrow()">↓</a>&ensp;|&ensp;<a
+            id="up"
+            href="#"
+            onclick="upArrow()"
             >↑</a
           >
         </p>
@@ -276,7 +273,7 @@
     </footer>
 
     <script src="preload.js"></script>
-    <script src="scaleAndShrink.js"></script>
     <script src="arrows.js"></script>
+    <script src="scaleAndShrink.js"></script>
   </body>
 </html>

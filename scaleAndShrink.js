@@ -17,6 +17,7 @@ var scaleRatioAbout = 48.5;
 const mediaQuery = window.matchMedia('(max-width: 925px)')
 
 var k = 0;
+localStorage.setItem("k", k);
 var img = document.getElementsByTagName("section")[0].getElementsByTagName("img")[0]
 const scaleThisTitle = document.getElementsByTagName("p")[0]
 const shrinkThisBigTitle = document.getElementsByTagName("p")[0]
