@@ -631,10 +631,10 @@ div#ad {
   flex-wrap: nowrap;
   flex-shrink: 0;
   margin-left: 12px;
-  margin-top: -6.5px;
+  margin-top: 6.5px;
 }
 
-div#ad a small {
+div#ad a > * {
   margin-top: -2px;
   flex-shrink: 0;
   height: 45px;
@@ -646,13 +646,23 @@ div#ad span {
   text-align: right;
 }
 
-div#ad small.self-promotion_shown {
+div#ad .self-promotion_shown {
+  display: initial;
   width: auto;
   margin-top: -1px;
 }
 
-div#ad small.self-promotion_hidden {
+div#ad .self-promotion_hidden {
+  display: inline;
+  margin-top: 7px;
+}
+
+p#plug {
   display: none;
+}
+
+span#huh {
+  cursor: zoom-in;
 }
 
 /* @media screen and (max-width: 1829px) {
@@ -1025,7 +1035,6 @@ div#ad small.self-promotion_hidden {
 
   div#ad {
     flex-shrink: 0;
-    margin-top: -4px;
   }
 
   .hide-on-mobile-earlier {
@@ -1039,11 +1048,11 @@ div#ad small.self-promotion_hidden {
   }
 }
 
-@media screen and (min-width: 500px) {
+/* @media screen and (min-width: 500px) {
   div#ad small.self-promotion_hidden {
     display: none;
   }
-}
+} */
 
 @media screen and (max-width: 500px) {
   aside p {
@@ -1078,7 +1087,7 @@ div#ad small.self-promotion_hidden {
     height: 45px;
   }
 
-  small.self-promotion_hidden {
+  .self-promotion_hidden {
     display: flex;
   }
 
@@ -1087,11 +1096,7 @@ div#ad small.self-promotion_hidden {
     flex-shrink: 0;
   }
 
-  div#ad small.self-promotion_hidden {
-    display: inline;
-  }
-
-  div#ad small.self-promotion_shown {
+  div#ad .self-promotion_shown {
     display: none;
   }
 }
