@@ -9,6 +9,12 @@ for (let i = 0; i < sections.length; i++) {
 // collect k
 var k = localStorage.getItem("k");
 
+// clear 
+function clearKAndGoToIndex() {
+  localStorage.removeItem("k")
+  history.replaceState(null, '', 'index.html')
+}
+
 // initialize global j to redefine later
 var j;
 

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body class="no-transition" id="paper" onresize="scaleTitleToWidth()">
+  <body class="no-transition" id="paper">
     <header>
       <nav>
         <a href="index.html"><p class="big-titles">Works on paper</p></a>
@@ -150,6 +150,10 @@
           <div class="info"><p>Starting in 2020, I have been making posters for each day during 2030. The poster has a title and date and style. The posters will be then offered for free in 2030 for the date of the event that takes place. </p></div>
         </aside>
         <div class="images">
+          <img class="fake-image"
+          src="assets/Works on paper/DRAWINGS/drawings/Scan 24-min.jpeg"
+          alt="scan of a drawing"
+        />
           <div class="row">
             <img
               src="assets/Works on paper/DRAWINGS/posters for 2030/Scan 19.jpeg"
@@ -216,15 +220,10 @@
           </table>
           <div class="info"><p>Prints made in Beaux Arts de Paris</p></div>
         </aside>
-        <img
-          src="assets/Works on paper/DRAWINGS/drawings/Scan 27-min.jpeg"
-          alt="scan of a drawing"
-          style="
-            display: none;
-            height: 0.1px;
-            width: calc((100vh - 130px) / 61 - 1.8vw);
-          "
-        />
+        <img id="fake-image"
+        src="assets/Works on paper/DRAWINGS/drawings/Scan 24-min.jpeg"
+        alt="scan of a drawing"
+      />
         <div class="row">
           <img src="assets/Works on paper/PRINTS/IMG_2973.jpg" alt="" />
           <img src="assets/Works on paper/PRINTS/IMG_2975.jpg" alt="" />
@@ -252,7 +251,7 @@
         </div>
         <div>
           <p>
-            <a href="https://www.instagram.com/0.1134_robin"
+            <a onclick="clearKAndGoToIndex()" href="https://https://www.instagram.com/0.1134_robin"
               ><span class="hide-on-mobile">@0.1134_robin</span
               ><span class="hide-on-desktop">instagram</span></a
             >
