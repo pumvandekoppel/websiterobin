@@ -319,7 +319,7 @@ section {
 
 .row {
   display: flex;
-  justify-content: start;
+  justify-content: space-around;
   width: auto;
   padding-bottom: 13px;
   padding-left: 0;
@@ -366,7 +366,7 @@ section {
 #cornish-works aside,
 #heden aside,
 #oranjeplein aside,
-#repair-1 aside,
+#repair-one aside,
 #facebook aside,
 #homeless-man aside,
 #hms aside {
@@ -379,7 +379,7 @@ section {
 #cornish-works div.row,
 #heden img,
 #oranjeplein img,
-#repair-1 img,
+#repair-one img,
 #homeless-man img,
 #hms img {
   width: calc(4 * (100dvh - 130px) / 3);
@@ -457,7 +457,7 @@ section {
 #one-nest-stand aside,
 #dusseldorf aside,
 #west aside,
-#repair-2 aside,
+#repair-two aside,
 #mauritshuis aside,
 #lobstersv2 aside {
   width: calc(94vw - (3 * (100dvh - 130px) / 2) - 1.5vw);
@@ -469,7 +469,7 @@ section {
 #lobstersv3 img,
 #one-nest-stand .row,
 #west img,
-#repair-2 img,
+#repair-two img,
 #mauritshuis img,
 #lobstersv2 img {
   width: calc(3 * (100dvh - 130px) / 2);
@@ -630,9 +630,13 @@ div.box {
 
 footer div#arrows {
   width: 7ch;
-  margin-top: -11px;
+  margin-top: -13px;
   text-align: right;
   flex-shrink: 0;
+}
+
+footer div#arrows a {
+  font-size: larger;
 }
 
 div#ad {
@@ -697,6 +701,7 @@ span#huh {
 @media screen and (max-width: 965px) {
   aside {
     overflow-x: hidden;
+    justify-content: flex-start;
   }
 
   header {
@@ -728,13 +733,12 @@ span#huh {
     font-size: 40px;
   }
 
-  section {
-    margin-bottom: 58px;
+  main {
+    top: 50px;
   }
 
-  aside {
-    justify-content: flex-start;
-    width: 94vw;
+  section {
+    margin-bottom: 58px;
   }
 
   /* DIVISION OF IMAGE AND INFO ASIDE */
@@ -749,8 +753,9 @@ span#huh {
   }
 
   aside div.info {
-    padding-bottom: 13px;
+    padding-bottom: 13px !important;
     background-color: #fff;
+    padding-left: 2px;
   }
 
   main.full-images {
@@ -805,7 +810,7 @@ span#huh {
   #cornish-works aside,
   #heden aside,
   #oranjeplein aside,
-  #repair-1 aside,
+  #repair-one aside,
   #facebook aside,
   #homeless-man aside,
   #hms aside {
@@ -820,7 +825,8 @@ span#huh {
   #cornish-works div.row,
   #heden img,
   #oranjeplein img,
-  #repair-1 img,
+  #repair-one img,
+  #facebook img,
   #homeless-man img,
   #hms img {
     scroll-snap-align: center;
@@ -834,7 +840,8 @@ span#huh {
   #cornish-works div.images,
   #heden div.images,
   #oranjeplein div.images,
-  #repair-1 div.images,
+  #repair-one div.images,
+  #facebook div.images,
   #homeless-man div.images,
   #hms div.images {
     padding-bottom: calc(100dvh - 50px - 3 * (94vw / 4) - 13px - 45px);
@@ -886,7 +893,7 @@ span#huh {
 
   /* 61/86 */
   #vertical-drawings aside,
-  #posters-for-2030 aside,
+  #posters-for2030 aside,
   #prints aside {
     width: 94vw;
     padding-top: calc((86 * (94vw / 61)) + 13px);
@@ -895,7 +902,7 @@ span#huh {
   }
 
   section#vertical-drawings img,
-  section#posters-for-2030 img,
+  section#posters-for2030 img,
   section#drawing img {
     scroll-snap-align: center;
     height: calc(86 * (94vw / 61));
@@ -905,7 +912,7 @@ span#huh {
   }
 
   #vertical-drawings div.images,
-  #posters-for-2030 div.images,
+  #posters-for2030 div.images,
   #drawing div.images {
     padding-bottom: calc(100dvh - 50px - 86 * (94vw / 61) - 13px - 45px);
   }
@@ -913,13 +920,13 @@ span#huh {
   /* 3/2 */
   #buildup aside,
   #final-presentation aside,
-  #lobstersv3 aside,
+  #lobsters-v-three aside,
   #one-nest-stand aside,
   #dusseldorf aside,
   #west aside,
-  #repair-2 aside,
+  #repair-two aside,
   #mauritshuis aside,
-  #lobstersv2 aside {
+  #lobsters-v-two aside {
     width: 94vw;
     padding-top: calc((2 * (94vw / 3)) + 13px);
     height: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 45px);
@@ -928,12 +935,13 @@ span#huh {
 
   #buildup img,
   #final-presentation img,
-  #lobstersv3 img,
+  #lobsters-v-three img,
+  #one-nest-stand img,
   #one-nest-stand .row,
   #west img,
-  #repair-2 img,
+  #repair-two img,
   #mauritshuis img,
-  #lobstersv2 img {
+  #lobsters-v-two img {
     scroll-snap-align: center;
     height: calc(2 * (94vw / 3));
     scroll-margin-top: 0;
@@ -943,11 +951,12 @@ span#huh {
 
   #buildup div.images,
   #final-presentation div.images,
-  #lobstersv3 div.images,
-  #one-nest-stand div.images #west img,
-  #repair-2 img,
-  #mauritshuis img,
-  #lobstersv2 img {
+  #lobsters-v-three div.images,
+  #one-nest-stand div.images,
+  #west div.images,
+  #repair-two div.images,
+  #mauritshuis div.images,
+  #lobsters-v-two div.images {
     padding-bottom: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 45px);
   }
 
@@ -1004,7 +1013,7 @@ span#huh {
 
   table {
     margin-top: 13px;
-    margin-bottom: 39px;
+    margin-bottom: 23px;
   }
 
   tr {
@@ -1023,6 +1032,7 @@ span#huh {
   footer {
     height: 45px;
     padding-top: 0;
+    padding-bottom: 0;
   }
 
   footer div#writing-hand p {
@@ -1068,9 +1078,9 @@ span#huh {
 } */
 
 @media screen and (max-width: 500px) {
-  aside p {
+/*   aside p {
     font-size: 1.8dvh;
-  }
+  } */
 
   #name-listed-item {
     flex: 3 1 auto;
@@ -1081,7 +1091,7 @@ span#huh {
   }
 
   #about-listed-item a h2 {
-    font-size: 47px;
+    /* font-size: 47px; */
     margin-top: -11px;
     text-align: center;
   }
@@ -1104,14 +1114,32 @@ span#huh {
     display: flex;
   } */
 
-
-
   div#ad {
     margin-top: 10px;
     flex-shrink: 0;
+    display: initial;
   }
 
-  /* div#ad .self-promotion_shown {
+}
+
+@media screen and (max-width: 365px) {
+  
+  table {
+      margin-top: 7px;
+      margin-bottom: 3px;
+    }
+
+    #final-presentation aside {
+      height: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 44px);
+    }
+
+    footer {
+      height: 44px;
+      
+    }
+  
+  div#ad {
     display: none;
-  } */
+  }
+
 }
