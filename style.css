@@ -381,7 +381,7 @@ section {
 #oranjeplein img,
 #repair-one img,
 #homeless-man img,
-#hms img {
+#hms img, #hms div.row {
   width: calc(4 * (100dvh - 130px) / 3);
 }
 
@@ -429,7 +429,7 @@ section {
 #posters-for-2030 aside,
 #prints aside {
   width: calc(94vw - (86 * (100dvh - 130px) / 61) - 4.5vw);
-  left: calc(86vw + (5 * (100dvh - 130px) / 61) + 4.5vw);
+  left: calc(3vw + (5 * (100dvh - 130px) / 61) + 1.5vw);
 }
 
 #vertical-drawings img,
@@ -453,25 +453,25 @@ section {
 /* - WITH 3:2 ASPECT RATIO */
 #buildup aside,
 #final-presentation aside,
-#lobstersv3 aside,
+#lobsters-v-three aside,
 #one-nest-stand aside,
 #dusseldorf aside,
 #west aside,
 #repair-two aside,
 #mauritshuis aside,
-#lobstersv2 aside {
-  width: calc(94vw - (3 * (100dvh - 130px) / 2) - 1.5vw);
+#lobsters-v-two aside {
+  width: calc(94vw - (3 * (100dvh - 130px) / 2) - 4.5vw);
   left: calc(3vw + (3 * (100dvh - 130px) / 2) + 1.5vw);
 }
 
 #buildup img,
 #final-presentation img,
-#lobstersv3 img,
+#lobsters-v-three img,
 #one-nest-stand .row,
 #west img,
 #repair-two img,
 #mauritshuis img,
-#lobstersv2 img {
+#lobsters-v-two img {
   width: calc(3 * (100dvh - 130px) / 2);
 }
 

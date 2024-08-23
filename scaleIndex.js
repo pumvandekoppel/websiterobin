@@ -22,8 +22,8 @@ function scaleIndexToWidth() {
     var newScaleXPaper = width / scaleRatioPaper
     var newScaleXPaintings = width / scaleRatioPaintings
     var newScaleXAbout = width / scaleRatioAbout
-    bigTitles[0].style.transform = "scaleX(" + newScaleXRock +")"
-    bigTitles[1].style.transform = "scaleX(" + newScaleXGips +")"
+    bigTitles[1].style.transform = "scaleX(" + newScaleXRock +")"
+    bigTitles[0].style.transform = "scaleX(" + newScaleXGips +")"
     bigTitles[2].style.transform = "scaleX(" + newScaleXFountain+")"
     bigTitles[3].style.transform = "scaleX(" + newScaleXLobsters +")"
     // bigTitles[4].style.transform = "scaleX(" + newScaleXBlock +")"
