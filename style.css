@@ -172,7 +172,7 @@ main a:visited {
   background-color: #fff;
   width: 40px;
   top: 0;
-  right: 2.5vw;
+  right: 2.7vw;
   height: 65px;
 }
 
@@ -426,27 +426,27 @@ section {
 
 /* - WITH 61:86 ASPECT RATIO* (VERTICAL SCAN) */
 #vertical-drawings aside,
-#posters-for-2030 aside,
+#posters-for2030 aside,
 #prints aside {
   width: calc(94vw - (86 * (100dvh - 130px) / 61) - 4.5vw);
   left: calc(3vw + (5 * (100dvh - 130px) / 61) + 1.5vw);
 }
 
 #vertical-drawings img,
-#posters-for-2030 img,
+#posters-for2030 img,
 #prints img {
   width: calc(86 * (100dvh - 130px) / 61);
 }
 
 #vertical-drawings .row img,
-#posters-for-2030 .row img,
+#posters-for2030 .row img,
 #prints .row img {
   width: 30.2vw;
   height: calc(100dvh - 130px);
 }
 
 /* #vertical-drawings img,
-#posters-for-2030 img {
+#posters-for2030 img {
   /* width: calc(61 * (100dvh - 130px) / 86); */
 /* */
 
@@ -678,12 +678,28 @@ span#huh {
   cursor: zoom-in;
 }
 
-/* @media screen and (max-width: 1829px) {
-  div.images > img{
-    width: 82vw !important;
-    margin-left: vw !important;
+aside span.hint {
+  display: none;
+}
+
+@media ((min-width: 750px) and (max-width: 1814px)) {
+
+  aside div.info {
+    display: none;
   }
-} */
+
+  aside span.hint {
+    display: inline;
+  }
+
+}
+
+@media ((min-width:750px) and (max-width: 1250px)) {
+  td {
+    width: 50%;
+  }
+}
+
 
 @media screen and (min-width: 965px) {
   .hide-on-desktop {
@@ -699,6 +715,11 @@ span#huh {
 /* RESPONSIVE DESIGN FOR SMALLER SCREENS --------------- */
 
 @media screen and (max-width: 965px) {
+
+  .hide-on-mobile {
+    display: none;
+  }
+
   aside {
     overflow-x: hidden;
     justify-content: flex-start;
