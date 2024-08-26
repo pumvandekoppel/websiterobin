@@ -16,7 +16,7 @@ var scaleRatioAbout = 48.5;
 
 const mediaQuery = window.matchMedia('(max-width: 925px)')
 
-var k = JSON.parse(sessionStorage.getItem("k")) + 346
+var k = JSON.parse(sessionStorage.getItem("k"))
 // var obj = {}
 // obj[k] = JSON.stringify(0)
 // k = JSON.parse(sessionStorage.getItem("k"))
