@@ -16,8 +16,13 @@ var scaleRatioAbout = 48.5;
 
 const mediaQuery = window.matchMedia('(max-width: 925px)')
 
-var k = 0;
-var img = document.getElementsByTagName("section")[0].getElementsByTagName("img")[0]
+var k = JSON.parse(sessionStorage.getItem("k")) + 346
+// var obj = {}
+// obj[k] = JSON.stringify(0)
+// k = JSON.parse(sessionStorage.getItem("k"))
+// console.log(k)
+
+var model = document.getElementsByClassName("images")[0].firstChild.outerHTML
 const scaleThisTitle = document.getElementsByTagName("p")[0]
 const shrinkThisBigTitle = document.getElementsByTagName("p")[0]
 
@@ -33,8 +38,9 @@ function vw(percent) {
 var newScaleX;
 
 function scaleTitleToWidth() {
-  img = document.getElementsByTagName("section")[k].getElementsByTagName("img")[0]
-  let width = img.width
+  // k = JSON.parse(sessionStorage.getItem("k"))
+  model = document.getElementsByTagName("section")[k].getElementsByClassName("images")[0].getElementsByClassName("first-child")[0]
+  let width = model.offsetWidth
   var newScaleXRock;
   var newScaleXGips;
   var newScaleXFountain;

@@ -7,13 +7,7 @@ for (let i = 0; i < sections.length; i++) {
 }
 
 // collect k
-var k = localStorage.getItem("k");
-
-// clear 
-function clearKAndGoToIndex() {
-  localStorage.removeItem("k")
-  history.replaceState(null, '', 'index.html')
-}
+var k = JSON.parse(sessionStorage.getItem("k")) + 346;
 
 // initialize global j to redefine later
 var j;
@@ -84,7 +78,6 @@ function downArrow() {
   document
     .getElementById("up")
     .setAttribute("href", "#" + sectionIDs[linkToPreviousSection]);
-    console.log(k)
 }
 
 function upArrow() {
@@ -102,7 +95,6 @@ function upArrow() {
   document
     .getElementById("up")
     .setAttribute("href", "#" + sectionIDs[linkToPreviousSection]); 
-  console.log(k)
 }
 
 // // *SCROLL*
@@ -116,6 +108,7 @@ main.onscroll = (event) => {
     document.getElementById("up").getAttribute("href")
   ) {
     k = k - 1;
+    // sessionStorage.setItem("k", JSON.stringify(k));
     if (currentSectionID == sectionIDs[0]) {
       document.getElementById("down").style.visibility = "visible";
       document.getElementById("up").style.visibility = "hidden";
@@ -139,6 +132,7 @@ main.onscroll = (event) => {
     document.getElementById("down").getAttribute("href")
   ) {
     k = k + 1;
+    // sessionStorage.setItem("k", JSON.stringify(k));
     if (currentSectionID == sectionIDs[1]) {
       document.getElementById("up").style.visibility = "visible";
     }
@@ -159,3 +153,9 @@ main.onscroll = (event) => {
     return;
   }
 };
+
+// clear 
+function clearKAndGoToIndex() {
+  sessionStorage.removeItem("k")
+  history.replaceState(null, '', 'index.html')
+}

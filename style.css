@@ -17,10 +17,17 @@
   height: 100%;
 } */
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-.example::-webkit-scrollbar {
+main {
+  /*FireFox*/
+  scrollbar-width: none;
+  /*IE10+*/
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+main::-webkit-scrollbar {
+  /*Chrome, Safari, Edge*/
   display: none;
 }
+
 
 /* Hide scrollbar for IE, Edge and Firefox */
 main {
@@ -289,7 +296,7 @@ aside p {
   /* cursor: row-resize; */
 }
 
-#index main a:hover div p {
+#index main div.wrapper:hover {
   color: grey;
 }
 
@@ -318,8 +325,8 @@ section {
 }
 
 .row {
-  display: flex;
-  justify-content: space-around;
+  display: flex !important;
+  justify-content: space-around !important;
   width: auto;
   padding-bottom: 13px;
   padding-left: 0;
@@ -438,6 +445,10 @@ section {
   width: calc(86 * (100dvh - 130px) / 61);
 }
 
+#vertical-drawings .row, #posters-for2030 .row, #prints .row {
+  width: calc(86 * (100dvh - 130px) / 61);
+}
+
 #vertical-drawings .row img,
 #posters-for2030 .row img,
 #prints .row img {
@@ -511,7 +522,7 @@ table tr.spacer {
 
 img.fake-image {
   visibility: hidden;
-  height: 0px;
+  height: 0px !important;
 }
 
 /* SCROLL SNAP */
@@ -565,15 +576,16 @@ footer div#links {
 footer div#links div {
   display: inline-block;
   height: 45px;
-  margin-top: -11px;
+  margin-top: -12px;
 }
 
 footer div#writing-hand {
-  width: 40px;
+  width: 44px;
 }
 
 footer div#writing-hand p {
-  margin-top: 15px;
+  margin-top: 14px;
+  font-size: 20px;
   width: auto;
 }
 
@@ -682,6 +694,230 @@ aside span.hint {
   display: none;
 }
 
+header {
+  height: 50px;
+}
+
+header nav {
+  height: 50px;
+  width: 94vw;
+}
+
+header nav a {
+  height: 50px;
+}
+
+@media all and (display-mode: fullscreen) and (min-width: 1814px) {
+
+  header, header > * {
+    height: 115px !important;
+  }
+
+  nav {
+    margin-top:30px !important;
+  }
+
+  nav #about-button {
+    margin-top: 30px !important;
+  }
+
+  main {
+    top: 115px !important;
+  }
+
+  /* DIVISION OF IMAGE AND INFO ASIDE */
+  /* - WITH 16:9 ASPECT RATIO */
+  
+  #rock-transport aside,
+  #rock-talk aside,
+  #fountain-transport aside,
+  #block aside,
+  #basement-paintings aside,
+  #old-studio aside,
+  #scheveningen aside,
+  #webcam aside {
+    width: calc(94vw - (16 * (100dvh - 210px) / 9) - 1.5vw) !important;
+    left: calc(3vw + (16 * (100dvh - 210px) / 9) + 1.5vw) !important;
+  }
+  
+  #rock img,
+  #gips img,
+  #fountain-transport img,
+  #block img,
+  #basement-paintings img,
+  #old-studio img,
+  #scheveningen img,
+  #webcam img {
+    width: calc(16 * (100dvh - 210px) / 9) !important;
+  }
+  
+  /* DIVISION OF IMAGE AND INFO ASIDE */
+  /* - WITH 4:3 ASPECT RATIO */
+  #basement aside,
+  #cornish-works aside,
+  #heden aside,
+  #oranjeplein aside,
+  #repair-one aside,
+  #facebook aside,
+  #homeless-man aside,
+  #hms aside {
+    width: calc(94vw - (4 * (100dvh - 210px) / 3) - 1.5vw) !important;
+    left: calc(3vw + (4 * (100dvh - 210px) / 3) + 1.5vw) !important;
+  }
+  
+  #basement img,
+  #cornish-works img,
+  #cornish-works div.row,
+  #heden img,
+  #oranjeplein img,
+  #repair-one img,
+  #homeless-man img,
+  #hms img, #hms div.row {
+    width: calc(4 * (100dvh - 210px) / 3) !important;
+  }
+  
+  #cornish-works div.row {
+    height: calc(100dvh - 210px) !important;
+    gap: 13px;
+  }
+  
+  #facebook img {
+    object-position: left center;
+    width: calc((4 * (100dvh - 210px) / 3) - 1.5vw) !important;
+  }
+  
+  .row > img {
+    height: calc(100dvh - 210px);
+    width: auto;
+  }
+
+  #hms div.row {
+    gap: 26px;
+  }
+  
+  #hms div.row img {
+    width: 28.2vw;
+    height: calc(100dvh - 210px) !important;
+  }
+  
+  /* - WITH 86:61 ASPECT RATIO (HORIZONTAL SCAN) */
+  #books aside {
+    width: calc(94vw - (86 * (100dvh - 210px) / 61) - 1.5vw) !important;
+    left: calc(3vw + (86 * (100dvh - 210px) / 61) + 1.5vw) !important;
+  }
+  
+  #books img {
+    width: calc(86 * (100dvh - 210px) / 61) !important;
+  }
+  
+  /* - WITH 5:4 ASPECT RATIO */
+  #about aside {
+    width: calc(94vw - (5 * (100dvh - 210px) / 4) - 1.5vw)  !important;
+    left: calc(3vw + (5 * (100dvh - 210px) / 4) + 1.5vw) !important;
+  }
+  
+  #about img {
+    width: calc(5 * (100dvh - 210px) / 4) !important;
+  }
+  
+  /* - WITH 61:86 ASPECT RATIO* (VERTICAL SCAN) */
+  #vertical-drawings aside,
+  #posters-for2030 aside,
+  #prints aside {
+    width: calc(94vw - (86 * (100dvh - 210px) / 61) - 4.5vw) !important;
+    left: calc(3vw + (5 * (100dvh - 210px) / 61) + 1.5vw) !important;
+  }
+  
+  #vertical-drawings img,
+  #posters-for2030 img,
+  #prints img {
+    width: calc(86 * (100dvh - 210px) / 61) !important;
+  }
+
+  #vertical-drawings .row, #posters-for2030 .row, #prints .row {
+    width: calc(86 * (100dvh - 210px) / 61) !important;
+  }
+  
+  #vertical-drawings .row img,
+  #posters-for2030 .row img,
+  #prints .row img {
+    width: 30.2vw !important;
+    height: calc(100dvh - 210px) !important;
+  }
+  
+  /* #vertical-drawings img,
+  #posters-for2030 img {
+    /* width: calc(61 * (100dvh - 130px) / 86); */
+  /* */
+  
+  /* - WITH 3:2 ASPECT RATIO */
+  #buildup aside,
+  #final-presentation aside,
+  #lobsters-v-three aside,
+  #one-nest-stand aside,
+  #dusseldorf aside,
+  #west aside,
+  #repair-two aside,
+  #mauritshuis aside,
+  #lobsters-v-two aside {
+    width: calc(94vw - (3 * (100dvh - 210px) / 2) - 4.5vw) !important;
+    left: calc(3vw + (3 * (100dvh - 210px) / 2) + 1.5vw) !important;
+  }
+  
+  #buildup img,
+  #final-presentation img,
+  #lobsters-v-three img,
+  #one-nest-stand .row,
+  #west img,
+  #repair-two img,
+  #mauritshuis img,
+  #lobsters-v-two img {
+    width: calc(3 * (100dvh - 210px) / 2) !important;
+  }
+  
+  main.full-images {
+    height: calc(100dvh - 210px);
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
+
+  img, div.row, aside {
+    height: calc(100dvh - 210px) !important;
+  }
+
+  footer, footer > * {
+    height: 95px !important;
+    padding-top: 0;
+    z-index: -2;
+  }
+
+  #index footer, #index footer > * {
+    height: 69px !important;
+    z-index: initial;
+  } 
+
+  #index footer div#links {
+    margin-top: 19px !important;
+  }
+
+  footer div#links {
+    margin-top: 33px !important;
+    padding-top: 0;
+  }
+
+  footer div.box {
+    margin-top: 4px !important;
+    padding-top: 0;
+  }
+
+  footer div#arrows, footer div#ad {
+    margin-top: 21px !important;
+    padding-top: 0;
+
+  }
+
+}
+
 @media ((min-width: 750px) and (max-width: 1814px)) {
 
   aside div.info {
@@ -770,7 +1006,8 @@ aside span.hint {
   }
 
   .row {
-    display: block;
+    display: block !important;
+    width: 94vw !important;
   }
 
   aside div.info {
@@ -868,6 +1105,12 @@ aside span.hint {
     padding-bottom: calc(100dvh - 50px - 3 * (94vw / 4) - 13px - 45px);
   }
 
+  #cornish-works .row img {
+    object-position: bottom;
+  }
+
+
+
   /* 86:61 */
   #books aside {
     width: 94vw;
@@ -918,23 +1161,24 @@ aside span.hint {
   #prints aside {
     width: 94vw;
     padding-top: calc((86 * (94vw / 61)) + 13px);
-    height: calc(100dvh - 50px - 86 * (94vw / 61) - 13px - 45px);
+    height: calc(100dvh - 50px - 86 * (94vw / 61) - 13px - 45px) !important;
     background-clip: content-box;
   }
 
   section#vertical-drawings img,
   section#posters-for2030 img,
-  section#drawing img {
+  section#prints img {
     scroll-snap-align: center;
-    height: calc(86 * (94vw / 61));
+    height: calc(86 * (94vw / 61)) !important;
     scroll-margin-top: 0;
     scroll-margin-bottom: calc(100dvh - 50px - 86 * (94vw / 61) - 13px - 45px);
     scroll-snap-stop: always;
+    object-position: right;
   }
 
   #vertical-drawings div.images,
   #posters-for2030 div.images,
-  #drawing div.images {
+  #prints div.images {
     padding-bottom: calc(100dvh - 50px - 86 * (94vw / 61) - 13px - 45px);
   }
 
@@ -959,6 +1203,7 @@ aside span.hint {
   #lobsters-v-three img,
   #one-nest-stand img,
   #one-nest-stand .row,
+  #dusseldorf img,
   #west img,
   #repair-two img,
   #mauritshuis img,
@@ -974,6 +1219,7 @@ aside span.hint {
   #final-presentation div.images,
   #lobsters-v-three div.images,
   #one-nest-stand div.images,
+  #dusseldorf div.images,
   #west div.images,
   #repair-two div.images,
   #mauritshuis div.images,
@@ -1034,6 +1280,11 @@ aside span.hint {
 
   table {
     margin-top: 13px;
+    margin-bottom: 23px;
+  }
+
+  #paper table {
+    margin-top: 3px;
     margin-bottom: 23px;
   }
 
