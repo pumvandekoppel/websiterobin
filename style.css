@@ -218,6 +218,7 @@ main {
   width: 94vw;
   margin-bottom: 100px;
   padding-bottom: 100px;
+  overflow-x: hidden;
 }
 
 #about main {
