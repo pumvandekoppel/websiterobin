@@ -17,22 +17,31 @@
   height: 100%;
 } */
 
-main {
+main,
+aside {
   /*FireFox*/
-  scrollbar-width: none;
+  scrollbar-width: none !important;
   /*IE10+*/
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-main::-webkit-scrollbar {
-  /*Chrome, Safari, Edge*/
-  display: none;
+  -ms-overflow-style: none !important;
 }
 
+main::-webkit-scrollbar,
+main#index::-webkit-scrollbar,
+aside::-webkit-scrollbar {
+  /*Chrome, Safari, Edge*/
+  overflow-y: scroll;
+  display: none !important;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
 
 /* Hide scrollbar for IE, Edge and Firefox */
-main {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+main,
+aside {
+  -ms-overflow-style: none !important; /* IE and Edge */
+
+  scrollbar-width: none !important; /* Firefox */
   max-width: 94vw;
   margin-left: auto;
   margin-right: auto;
@@ -85,7 +94,7 @@ a {
 }
 
 p {
-  max-width: 72ch;
+  max-width: 73ch;
   transform-origin: left center;
 }
 
@@ -104,7 +113,7 @@ img {
 
 header {
   position: fixed;
-  height: 65px;
+  height: 100px;
   width: 100vw;
   margin-bottom: 0px;
   background-color: #fff;
@@ -115,18 +124,18 @@ header nav {
   width: 94vw;
   text-decoration: none;
   color: #000;
-  height: 65px;
+  height: 100px;
   padding-left: 0;
   margin-bottom: 0;
 }
 
 header nav a {
-  height: 65px;
+  height: 100px;
   vertical-align: middle;
 }
 
 header nav a h2 {
-  height: 65px;
+  height: 100px;
   margin: 0;
 }
 
@@ -180,7 +189,7 @@ main a:visited {
   width: 40px;
   top: 0;
   right: 2.7vw;
-  height: 65px;
+  height: 50px;
 }
 
 #about-button h2 {
@@ -198,18 +207,17 @@ main a:visited {
 
 main {
   position: relative;
-  top: 65px;
+  top: 100px;
   /* margin-bottom: 65px;
   padding-bottom: 100px; */
   height: 100%;
-  overflow: scroll;
   overflow-x: hidden;
 }
 
 #index main {
   width: 94vw;
-  margin-bottom: 65px;
-  padding-bottom: 65px;
+  margin-bottom: 100px;
+  padding-bottom: 100px;
 }
 
 #about main {
@@ -220,7 +228,7 @@ main.index-crops,
 main.full-images {
   padding-left: 0;
   padding-right: 0;
-  padding-bottom: 0px;
+  padding-bottom: 0px;  
 }
 /* 
 main hr {
@@ -249,7 +257,7 @@ aside {
 }
 
 #about aside {
-  overflow-y: scroll !important;
+  overflow-y: scroll;
 }
 
 aside p {
@@ -282,8 +290,10 @@ aside p {
 /* INDEX SETTINGS */
 
 .index-crops {
+  height: calc(100dvh - 200px);
   padding-left: 0;
   padding-right: 0;
+  overflow: scroll;
 }
 
 .index-crops img {
@@ -293,6 +303,7 @@ aside p {
   padding: 10px;
   padding-left: 0;
   padding-right: 0;
+  padding-bottom: 11px;
   /* cursor: row-resize; */
 }
 
@@ -388,7 +399,8 @@ section {
 #oranjeplein img,
 #repair-one img,
 #homeless-man img,
-#hms img, #hms div.row {
+#hms img,
+#hms div.row {
   width: calc(4 * (100dvh - 130px) / 3);
 }
 
@@ -445,7 +457,9 @@ section {
   width: calc(86 * (100dvh - 130px) / 61);
 }
 
-#vertical-drawings .row, #posters-for2030 .row, #prints .row {
+#vertical-drawings .row,
+#posters-for2030 .row,
+#prints .row {
   width: calc(86 * (100dvh - 130px) / 61);
 }
 
@@ -548,6 +562,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   background-color: #fff;
   width: 94vw;
   bottom: 0px;
@@ -576,7 +591,7 @@ footer div#links {
 footer div#links div {
   display: inline-block;
   height: 45px;
-  margin-top: -12px;
+  margin-top: -3px;
 }
 
 footer div#writing-hand {
@@ -642,7 +657,7 @@ div.box {
 
 footer div#arrows {
   width: 7ch;
-  margin-top: -13px;
+  margin-top: -3px;
   text-align: right;
   flex-shrink: 0;
 }
@@ -707,27 +722,27 @@ header nav a {
   height: 50px;
 }
 
-@media all and (display-mode: fullscreen) and (min-width: 1814px) {
-
-  header, header > * {
-    height: 115px !important;
+@media all and (min-width: 1214px) {
+  header,
+  header > * {
+    height: 100px !important;
   }
 
   nav {
-    margin-top:30px !important;
+    margin-top: 15px !important;
   }
 
   nav #about-button {
-    margin-top: 30px !important;
+    margin-top: 15px !important;
   }
 
   main {
-    top: 115px !important;
+    top: 100px !important;
   }
 
   /* DIVISION OF IMAGE AND INFO ASIDE */
   /* - WITH 16:9 ASPECT RATIO */
-  
+
   #rock-transport aside,
   #rock-talk aside,
   #fountain-transport aside,
@@ -736,10 +751,10 @@ header nav a {
   #old-studio aside,
   #scheveningen aside,
   #webcam aside {
-    width: calc(94vw - (16 * (100dvh - 210px) / 9) - 1.5vw) !important;
-    left: calc(3vw + (16 * (100dvh - 210px) / 9) + 1.5vw) !important;
+    width: calc(94vw - (16 * (100dvh - 200px) / 9) - 1.5vw) !important;
+    left: calc(3vw + (16 * (100dvh - 200px) / 9) + 1.5vw) !important;
   }
-  
+
   #rock img,
   #gips img,
   #fountain-transport img,
@@ -748,9 +763,9 @@ header nav a {
   #old-studio img,
   #scheveningen img,
   #webcam img {
-    width: calc(16 * (100dvh - 210px) / 9) !important;
+    width: calc(16 * (100dvh - 200px) / 9) !important;
   }
-  
+
   /* DIVISION OF IMAGE AND INFO ASIDE */
   /* - WITH 4:3 ASPECT RATIO */
   #basement aside,
@@ -761,10 +776,10 @@ header nav a {
   #facebook aside,
   #homeless-man aside,
   #hms aside {
-    width: calc(94vw - (4 * (100dvh - 210px) / 3) - 1.5vw) !important;
-    left: calc(3vw + (4 * (100dvh - 210px) / 3) + 1.5vw) !important;
+    width: calc(94vw - (4 * (100dvh - 200px) / 3) - 1.5vw) !important;
+    left: calc(3vw + (4 * (100dvh - 200px) / 3) + 1.5vw) !important;
   }
-  
+
   #basement img,
   #cornish-works img,
   #cornish-works div.row,
@@ -772,84 +787,87 @@ header nav a {
   #oranjeplein img,
   #repair-one img,
   #homeless-man img,
-  #hms img, #hms div.row {
+  #hms img,
+  #hms div.row {
     width: calc(4 * (100dvh - 210px) / 3) !important;
   }
-  
+
   #cornish-works div.row {
-    height: calc(100dvh - 210px) !important;
+    height: calc(100dvh - 200px) !important;
     gap: 13px;
   }
-  
+
   #facebook img {
     object-position: left center;
-    width: calc((4 * (100dvh - 210px) / 3) - 1.5vw) !important;
+    width: calc((4 * (100dvh - 200px) / 3) - 1.5vw) !important;
   }
-  
+
   .row > img {
-    height: calc(100dvh - 210px);
+    height: calc(100dvh - 200px);
     width: auto;
   }
 
   #hms div.row {
     gap: 26px;
   }
-  
+
   #hms div.row img {
     width: 28.2vw;
-    height: calc(100dvh - 210px) !important;
+    height: calc(100dvh - 200px) !important;
   }
-  
+
   /* - WITH 86:61 ASPECT RATIO (HORIZONTAL SCAN) */
   #books aside {
-    width: calc(94vw - (86 * (100dvh - 210px) / 61) - 1.5vw) !important;
-    left: calc(3vw + (86 * (100dvh - 210px) / 61) + 1.5vw) !important;
+    width: calc(94vw - (86 * (100dvh - 200px) / 61) - 1.5vw) !important;
+    left: calc(3vw + (86 * (100dvh - 200px) / 61) + 1.5vw) !important;
   }
-  
+
   #books img {
-    width: calc(86 * (100dvh - 210px) / 61) !important;
+    width: calc(86 * (100dvh - 200px) / 61) !important;
   }
-  
+
   /* - WITH 5:4 ASPECT RATIO */
   #about aside {
-    width: calc(94vw - (5 * (100dvh - 210px) / 4) - 1.5vw)  !important;
-    left: calc(3vw + (5 * (100dvh - 210px) / 4) + 1.5vw) !important;
+    width: calc(94vw - (5 * (100dvh - 200px) / 4) - 1.5vw) !important;
+    left: calc(3vw + (5 * (100dvh - 200px) / 4) + 1.5vw) !important;
   }
-  
+
   #about img {
-    width: calc(5 * (100dvh - 210px) / 4) !important;
+    width: calc(5 * (100dvh - 200px) / 4) !important;
   }
-  
+
   /* - WITH 61:86 ASPECT RATIO* (VERTICAL SCAN) */
   #vertical-drawings aside,
   #posters-for2030 aside,
   #prints aside {
-    width: calc(94vw - (86 * (100dvh - 210px) / 61) - 4.5vw) !important;
-    left: calc(3vw + (5 * (100dvh - 210px) / 61) + 1.5vw) !important;
+    width: calc(94vw - (86 * (100dvh - 200px) / 61) - 4.5vw) !important;
+    left: calc(3vw + (5 * (100dvh - 200px) / 61) + 1.5vw) !important;
   }
-  
+
   #vertical-drawings img,
   #posters-for2030 img,
   #prints img {
-    width: calc(86 * (100dvh - 210px) / 61) !important;
+    width: calc(86 * (100dvh - 200px) / 61) !important;
   }
 
-  #vertical-drawings .row, #posters-for2030 .row, #prints .row {
-    width: calc(86 * (100dvh - 210px) / 61) !important;
+  #vertical-drawings .row,
+  #posters-for2030 .row,
+  #prints .row {
+    width: calc(86 * (100dvh - 200px) / 61) !important;
   }
-  
+
   #vertical-drawings .row img,
   #posters-for2030 .row img,
   #prints .row img {
     width: 30.2vw !important;
-    height: calc(100dvh - 210px) !important;
+    height: calc(100dvh - 200px) !important;
   }
-  
+
   /* #vertical-drawings img,
   #posters-for2030 img {
     /* width: calc(61 * (100dvh - 130px) / 86); */
   /* */
-  
+
   /* - WITH 3:2 ASPECT RATIO */
   #buildup aside,
   #final-presentation aside,
@@ -860,10 +878,10 @@ header nav a {
   #repair-two aside,
   #mauritshuis aside,
   #lobsters-v-two aside {
-    width: calc(94vw - (3 * (100dvh - 210px) / 2) - 4.5vw) !important;
-    left: calc(3vw + (3 * (100dvh - 210px) / 2) + 1.5vw) !important;
+    width: calc(94vw - (3 * (100dvh - 200px) / 2) - 4.5vw) !important;
+    left: calc(3vw + (3 * (100dvh - 200px) / 2) + 1.5vw) !important;
   }
-  
+
   #buildup img,
   #final-presentation img,
   #lobsters-v-three img,
@@ -872,36 +890,40 @@ header nav a {
   #repair-two img,
   #mauritshuis img,
   #lobsters-v-two img {
-    width: calc(3 * (100dvh - 210px) / 2) !important;
+    width: calc(3 * (100dvh - 200px) / 2) !important;
   }
-  
+
   main.full-images {
-    height: calc(100dvh - 210px);
+    height: calc(100dvh - 200px);
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
   }
 
-  img, div.row, aside {
-    height: calc(100dvh - 210px) !important;
+  img,
+  div.row,
+  aside {
+    height: calc(100dvh - 200px) !important;
   }
 
-  footer, footer > * {
+  footer,
+  footer > * {
     height: 95px !important;
     padding-top: 0;
     z-index: -2;
   }
 
-  #index footer, #index footer > * {
-    height: 69px !important;
+  #index footer,
+  #index footer > * {
+    height: 100px !important;
     z-index: initial;
-  } 
+  }
 
   #index footer div#links {
-    margin-top: 19px !important;
+    margin-top: 49px !important;
   }
 
   footer div#links {
-    margin-top: 33px !important;
+    margin-top: 47.5px !important;
     padding-top: 0;
   }
 
@@ -910,16 +932,14 @@ header nav a {
     padding-top: 0;
   }
 
-  footer div#arrows, footer div#ad {
-    margin-top: 21px !important;
+  footer div#arrows,
+  footer div#ad {
+    margin-top: 40.5px !important;
     padding-top: 0;
-
   }
-
 }
 
-@media ((min-width: 750px) and (max-width: 1814px)) {
-
+@media ((min-width: 750px) and (max-width: 1658px)) {
   aside div.info {
     display: none;
   }
@@ -927,15 +947,13 @@ header nav a {
   aside span.hint {
     display: inline;
   }
-
 }
 
-@media ((min-width:750px) and (max-width: 1250px)) {
+@media ((min-width: 750px) and (max-width: 1250px)) {
   td {
     width: 50%;
   }
 }
-
 
 @media screen and (min-width: 965px) {
   .hide-on-desktop {
@@ -951,7 +969,6 @@ header nav a {
 /* RESPONSIVE DESIGN FOR SMALLER SCREENS --------------- */
 
 @media screen and (max-width: 965px) {
-
   .hide-on-mobile {
     display: none;
   }
@@ -1108,8 +1125,6 @@ header nav a {
   #cornish-works .row img {
     object-position: bottom;
   }
-
-
 
   /* 86:61 */
   #books aside {
@@ -1350,7 +1365,7 @@ header nav a {
 } */
 
 @media screen and (max-width: 500px) {
-/*   aside p {
+  /*   aside p {
     font-size: 1.8dvh;
   } */
 
@@ -1391,27 +1406,23 @@ header nav a {
     flex-shrink: 0;
     display: initial;
   }
-
 }
 
 @media screen and (max-width: 365px) {
-  
   table {
-      margin-top: 7px;
-      margin-bottom: 3px;
-    }
+    margin-top: 7px;
+    margin-bottom: 3px;
+  }
 
-    #final-presentation aside {
-      height: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 44px);
-    }
+  #final-presentation aside {
+    height: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 44px);
+  }
 
-    footer {
-      height: 44px;
-      
-    }
-  
+  footer {
+    height: 44px;
+  }
+
   div#ad {
     display: none;
   }
-
 }

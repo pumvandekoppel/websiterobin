@@ -16,11 +16,17 @@ var scaleRatioAbout = 48.5;
 
 const mediaQuery = window.matchMedia('(max-width: 925px)')
 
-var k = JSON.parse(sessionStorage.getItem("k"))
+var k = 0
 // var obj = {}
 // obj[k] = JSON.stringify(0)
 // k = JSON.parse(sessionStorage.getItem("k"))
 // console.log(k)
+
+
+history.scrollRestoration = 'manual';
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
 
 var model = document.getElementsByClassName("images")[0].firstChild.outerHTML
 const scaleThisTitle = document.getElementsByTagName("p")[0]
