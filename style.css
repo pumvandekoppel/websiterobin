@@ -681,30 +681,24 @@ div#ad {
   flex-wrap: nowrap;
   flex-shrink: 0;
   margin-left: 3vw;
-  margin-top: 6.5px;
-}
-
-div#ad a > * {
-  margin-top: -2px;
-  flex-shrink: 0;
-  height: 45px;
 }
 
 div#ad p,
 div#ad span {
   margin-right: 0;
   text-align: right;
+  margin-top: 19px;
 }
 
 div#ad .self-promotion_shown {
   display: initial;
   width: auto;
-  margin-top: -1px;
+  margin-top: 19px !important;
 }
 
 div#ad .self-promotion_hidden {
-  display: inline;
-  margin-top: 7px;
+  display: inline-block;
+  margin-top: 19px !important;
 }
 
 p#plug {
@@ -945,7 +939,7 @@ header nav a {
 
   footer div#arrows,
   footer div#ad {
-    margin-top: 40.5px !important;
+    margin-top: 40.5px;
     padding-top: 0;
   }
 }
