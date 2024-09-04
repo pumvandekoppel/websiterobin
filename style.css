@@ -1336,6 +1336,10 @@ header nav a {
     padding-top: 14px;
   }
 
+  footer div#links {
+    margin-bottom: 7px;
+  }
+
   footer div#links div {
     height: 45px;
     margin-top: -10px;
