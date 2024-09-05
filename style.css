@@ -1329,7 +1329,17 @@ header nav a {
   }
 
   footer div#writing-hand p {
-    margin-top: 17px;
+    margin-top: 22px;
+    font-size: 24px;
+    width: auto;
+    vertical-align: middle;
+
+  }
+
+  footer #contact {
+    margin-left: -18px;
+    vertical-align: middle;
+    margin-bottom: -10px;
   }
 
   footer #contact-info {
@@ -1355,6 +1365,8 @@ header nav a {
 
   div#ad {
     flex-shrink: 0;
+    vertical-align: middle;
+
   }
 
   .hide-on-mobile-earlier {
@@ -1412,7 +1424,7 @@ header nav a {
   } */
 
   div#ad {
-    margin-top: 10px;
+    margin-top: -13px;
     flex-shrink: 0;
     display: initial;
   }
