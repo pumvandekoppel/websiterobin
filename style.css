@@ -588,12 +588,14 @@ footer div#links {
   flex-wrap: nowrap;
   flex-shrink: 0;
   margin-right: 1vw;
+  margin-top: 2px;
 }
 
 footer div#links div {
   display: inline-block;
   height: 45px;
   margin-top: -7px;
+  width: auto;
 }
 
 footer div#writing-hand {
@@ -927,7 +929,7 @@ header nav a {
   }
 
   #index footer div#links {
-    margin-top: 49px !important;
+    margin-top: 53px !important;
   }
 
   footer div#links {
@@ -1349,12 +1351,12 @@ header nav a {
   }
 
   footer div#links {
-    margin-bottom: 7px;
+    margin-bottom: 41px;
   }
 
   footer div#links div {
     height: 45px;
-    margin-top: -10px;
+    margin-top: -2px;
   }
 
   footer div.box {
@@ -1362,7 +1364,11 @@ header nav a {
   }
 
   footer div#arrows {
-    margin-top: -19px;
+    margin-top: -16px;
+  }
+
+  footer div#arrows a {
+    font-size: 25px;
   }
 
   div#ad {
