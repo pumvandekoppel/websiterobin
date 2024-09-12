@@ -665,8 +665,8 @@ div.box {
 }
 
 footer div#arrows {
-  width: 8ch;
-  margin-top: -1px;
+  width: auto;
+  margin-top: 28px;
   margin-bottom: 7px;
   margin-left: 1vw;
   text-align: right;
@@ -674,7 +674,8 @@ footer div#arrows {
 }
 
 footer div#arrows a {
-  font-size: 21px;
+  font-size: 32px;
+  margin-top: 40px !important;
 }
 
 div#ad {
@@ -700,6 +701,7 @@ div#ad .self-promotion_shown {
 div#ad .self-promotion_hidden {
   display: inline-block;
   margin-top: 19px !important;
+  cursor: pointer;
 }
 
 p#plug {
@@ -938,7 +940,7 @@ header nav a {
     padding-top: 0;
   }
 
-  footer div#arrows,
+
   footer div#ad {
     margin-top: 40.5px;
     padding-top: 0;
