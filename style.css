@@ -263,7 +263,7 @@ aside {
 
 aside p {
   margin: 0;
-  font-size: min(.85em, 1vw);
+  font-size: min(.9em, 1.05vw);
 
 }
 
