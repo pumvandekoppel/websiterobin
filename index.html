@@ -9,8 +9,8 @@
 
   <body class="no-transition" id="index" onresize="scaleIndexToWidth()">
     <header>
-      <nav>
-        <a id="name" href="index.html"><h2>Robin Whitehouse</h2></a>
+      <nav class="noselect">
+        <a id="name" onclick="toggleFullName()"><h2>Robin <span id="middle-name">Phoenix&#32;</span>Whitehouse</h2></a>
         <a id="about-button" href="about.html"><h2>&#9753;&#xFE0E;</h2></a>
       </nav>
     </header>
@@ -131,5 +131,6 @@
       <div class="box"></div>
     </footer>
     <script src="scaleIndex.js"></script>
+    <script src="fullname.js"></script>
   </body>
 </html>

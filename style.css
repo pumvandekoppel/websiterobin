@@ -292,6 +292,14 @@ aside p {
 
 /* INDEX SETTINGS */
 
+#name h2{
+  cursor:pointer;
+}
+
+#middle-name {
+  display: none;
+}
+
 .index-crops {
   height: calc(100dvh - 200px);
   padding-left: 0;
