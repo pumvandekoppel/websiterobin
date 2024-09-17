@@ -257,7 +257,7 @@ aside {
   overflow-y: hidden;
 }
 
-#about aside {
+#about tr {
   overflow-y: scroll;
 }
 
@@ -265,6 +265,10 @@ aside p {
   margin: 0;
   font-size: min(.9em, 1.05vw);
 
+}
+
+td:nth-child(1) {
+  font-weight:bold;
 }
 
 aside a {
@@ -949,6 +953,12 @@ header nav a {
     margin-top: 40.5px;
     padding-top: 0;
   }
+}
+
+@media ((min-width: 1279px) and (max-width: 1570px)) {
+
+  tr {    display: table;  width:100%;    }               
+  td {    display: table-row; }  
 }
 
 @media ((min-width: 750px) and (max-width: 1279px)) {
