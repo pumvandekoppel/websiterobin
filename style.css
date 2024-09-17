@@ -263,6 +263,8 @@ aside {
 
 aside p {
   margin: 0;
+  font-size: min(.85em, 1vw);
+
 }
 
 aside a {
@@ -448,7 +450,7 @@ section {
 #vertical-drawings aside,
 #posters-for2030 aside,
 #prints aside {
-  width: calc(94vw - (86 * (100dvh - 130px) / 61) - 4.5vw);
+  width: calc(94vw - (86 * (100dvh - 130px) / 61) - 3vw);
   left: calc(3vw + (5 * (100dvh - 130px) / 61) + 1.5vw);
 }
 
@@ -486,7 +488,7 @@ section {
 #repair-two aside,
 #mauritshuis aside,
 #lobsters-v-two aside {
-  width: calc(94vw - (3 * (100dvh - 130px) / 2) - 4.5vw);
+  width: calc(94vw - (3 * (100dvh - 130px) / 2) - 3vw);
   left: calc(3vw + (3 * (100dvh - 130px) / 2) + 1.5vw);
 }
 
@@ -850,7 +852,7 @@ header nav a {
   #vertical-drawings aside,
   #posters-for2030 aside,
   #prints aside {
-    width: calc(94vw - (86 * (100dvh - 200px) / 61) - 4.5vw) !important;
+    width: calc(94vw - (86 * (100dvh - 200px) / 61) - 3vw) !important;
     left: calc(3vw + (5 * (100dvh - 200px) / 61) + 1.5vw) !important;
   }
 
@@ -888,7 +890,7 @@ header nav a {
   #repair-two aside,
   #mauritshuis aside,
   #lobsters-v-two aside {
-    width: calc(94vw - (3 * (100dvh - 200px) / 2) - 4.5vw) !important;
+    width: calc(94vw - (3 * (100dvh - 200px) / 2) - 3vw) !important;
     left: calc(3vw + (3 * (100dvh - 200px) / 2) + 1.5vw) !important;
   }
 
@@ -949,7 +951,7 @@ header nav a {
   }
 }
 
-@media ((min-width: 750px) and (max-width: 1658px)) {
+@media ((min-width: 750px) and (max-width: 1279px)) {
   aside div.info {
     display: none;
   }
