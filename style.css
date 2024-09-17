@@ -221,10 +221,6 @@ main {
   overflow-x: hidden;
 }
 
-#about main {
-  overflow: hidden;
-}
-
 main.index-crops,
 main.full-images {
   padding-left: 0;
@@ -257,8 +253,8 @@ aside {
   overflow-y: hidden;
 }
 
-#about tr {
-  overflow-y: scroll;
+#about aside {
+  overflow-y: auto;
 }
 
 aside p {
@@ -1057,7 +1053,7 @@ header nav a {
 
   main.full-images {
     height: calc(100dvh - 95px);
-    overflow-y: scroll;
+    overflow-y: scroll !important;
     scroll-snap-type: y mandatory;
   }
 
@@ -1337,6 +1333,7 @@ header nav a {
   #about table {
     margin-top: 0px;
   }
+
 
   footer {
     height: 45px;
