@@ -25,11 +25,11 @@ function scaleIndexToWidth() {
     bigTitles[1].style.transform = "scaleX(" + newScaleXRock +")"
     bigTitles[0].style.transform = "scaleX(" + newScaleXGips +")"
     bigTitles[2].style.transform = "scaleX(" + newScaleXFountain+")"
-    bigTitles[3].style.transform = "scaleX(" + newScaleXLobsters +")"
+    bigTitles[4].style.transform = "scaleX(" + newScaleXLobsters +")"
     // bigTitles[4].style.transform = "scaleX(" + newScaleXBlock +")"
-    bigTitles[4].style.transform = "scaleX(" + newScaleXBooks +")"
-    bigTitles[5].style.transform = "scaleX(" + newScaleXPaper +")"
-    bigTitles[6].style.transform = "scaleX(" + newScaleXPaintings +")"
+    // bigTitles[4].style.transform = "scaleX(" + newScaleXBooks +")"
+    // bigTitles[5].style.transform = "scaleX(" + newScaleXPaper +")"
+    bigTitles[3].style.transform = "scaleX(" + newScaleXPaintings +")"
 }
 
 scaleIndexToWidth();

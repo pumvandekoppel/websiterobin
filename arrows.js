@@ -53,7 +53,7 @@ function isInViewport(element) {
 function getCurrentSection() {
   for (j = 0; j < sections.length; j++) {
     let asideOfSection = sections[j].getElementsByTagName("aside")[0];
-    if (isInViewport(asideOfSection)) {
+    if (isInViewport(asideOfSection) || window.parent.isInViewport(document.querySelector('iframe'))) {
       currentSection = sections[j];
       currentSectionID = sectionIDs[j];
       return j;
