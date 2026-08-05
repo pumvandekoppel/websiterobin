@@ -6,17 +6,17 @@ var height = Math.max( body.scrollHeight, body.offsetHeight,
 
 var scaleRatioRock = 220.5; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioGips = 125.5; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
+var scaleRatioPaintings = 80; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioFountain = 113.9; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioLobsters = 581; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioBlock = 83.75; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioBooks = 102.075; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioPaper = 133; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
-var scaleRatioPaintings = 80; // if a div is 218.075px wide, the horizontal scale of the text is 1 | 436.15 -> 2 etc
 var scaleRatioAbout = 48.5;
 
 const mediaQuery = window.matchMedia('(max-width: 925px)')
 
-var k = 0
+var k = JSON.parse(sessionStorage.getItem("k")) || 0;
 // var obj = {}
 // obj[k] = JSON.stringify(0)
 // k = JSON.parse(sessionStorage.getItem("k"))
@@ -28,9 +28,9 @@ window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 }
 
-var model = document.getElementsByClassName("images")[0].firstChild.outerHTML
-const scaleThisTitle = document.getElementsByTagName("p")[0]
-const shrinkThisBigTitle = document.getElementsByTagName("p")[0]
+// var model = document.getElementsByClassName("images")[0].firstChild.outerHTML
+const scaleThisTitle = document.getElementsByTagName("h2")[0]
+const shrinkThisBigTitle = document.getElementsByTagName("h2")[0]
 
 function vh(percent) {
   var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
@@ -45,38 +45,40 @@ var newScaleX;
 
 function scaleTitleToWidth() {
   // k = JSON.parse(sessionStorage.getItem("k"))
-  model = document.getElementsByTagName("section")[k].getElementsByClassName("images")[0].getElementsByClassName("first-child")[0]
+  // model = document.getElementsByTagName("section")[k].getElementsByClassName("images")[0].children[0] || document.getElementsByTagName("section")[k].getElementsByClassName("video-wrapper")[0].getElementsByTagName("div")[0].getElementsByTagName("iframe")[0].getElementsByTagName("html")[0].getElementsByClassName("vp-center")[0].getElementsByTagName("div")[0].getElementsByTagName("div")[0].getElementsByTagName("div")[0].firstChild
+  model = document.getElementsByTagName("section")[k].children[1].children[0]
+  // model = document.getElementsByTagName("section")[k].getElementsByClassName("images")[0].children[0] || document.getElementsByTagname("section")[k].getElementsByClassName("images")[0].firstChild || document.getElementsByTagname("section")[k].getElementsByClassName("images")[0].childNodes[0] || document.getElementsByTagName("section")[k].getElementsByClassName("video-wrapper")[0].childNodes[0]
   let width = model.offsetWidth
   var newScaleXRock;
   var newScaleXGips;
+  var newScaleXPaintings;
   var newScaleXFountain;
   var newScaleXLobsters;
   var newScaleXBlock;
   var newScaleXBooks;
   var newScaleXPaper;
-  var newScaleXPaintings;
   var newScaleXAbout;
   // on small screens make room for about icon
   if (mediaQuery.matches) {
     newScaleXRock = (width - 50) / scaleRatioRock
     newScaleXGips = (width - 50) / scaleRatioGips
+    newScaleXPaintings = (width - 50) / scaleRatioPaintings
     newScaleXFountain = (width - 50) / scaleRatioFountain
     newScaleXLobsters = (width - 50) / scaleRatioLobsters
     newScaleXBlock = (width - 50) / scaleRatioBlock
     newScaleXBooks = (width - 50) / scaleRatioBooks
     newScaleXPaper = (width - 50) / scaleRatioPaper
-    newScaleXPaintings = (width - 50) / scaleRatioPaintings
     var newScaleXAbout = (width - 50) / scaleRatioAbout
   }
   else {
     newScaleXRock = width / scaleRatioRock
     newScaleXGips = width / scaleRatioGips
+    newScaleXPaintings = width / scaleRatioPaintings
     newScaleXFountain = width / scaleRatioFountain
     newScaleXLobsters = width / scaleRatioLobsters
     newScaleXBlock = width / scaleRatioBlock
     newScaleXBooks = width / scaleRatioBooks
     newScaleXPaper = width / scaleRatioPaper
-    newScaleXPaintings = width / scaleRatioPaintings
     var newScaleXAbout = width / scaleRatioAbout
   }
   if (document.getElementById('rock')) {
@@ -87,7 +89,12 @@ function scaleTitleToWidth() {
   if (document.getElementById('gips')) {
     scaleThisTitle.style.transform = "scaleX(" + newScaleXGips +")"
     newScaleX = newScaleXGips
-    return
+    return newScaleX
+  }  
+  if (document.getElementById('paintings')) {
+    scaleThisTitle.style.transform = "scaleX(" + newScaleXPaintings +")"
+    newScaleX = newScaleXPaintings
+    return newScaleX
   }  
   if (document.getElementById('fountain')) {
     scaleThisTitle.style.transform = "scaleX(" + newScaleXFountain +")"
@@ -114,11 +121,6 @@ function scaleTitleToWidth() {
     newScaleX = newScaleXPaper
     return newScaleX
   }  
-  if (document.getElementById('paintings')) {
-    scaleThisTitle.style.transform = "scaleX(" + newScaleXPaintings +")"
-    newScaleX = newScaleXPaintings
-    return newScaleX
-  }  
   if (document.getElementById('about')) {
     scaleThisTitle.style.transform = "scaleX(" + newScaleXAbout +")"
     newScaleX = newScaleXAbout
@@ -128,6 +130,12 @@ function scaleTitleToWidth() {
 }
 
 scaleTitleToWidth();
+
+function oops() {
+  scaleTitleToWidth();
+  console.log(k);
+  // clearK();
+}
 
 // // transition from scaleX (from scale.js) to 0 when scrolling from top to bottom
 // window.addEventListener("scroll", function () {
@@ -145,4 +153,4 @@ scaleTitleToWidth();
 //     shrinkThisBigTitle.style.fontVariationSettings = "'wght' "  + fontWeight
 // });
 
-window.addEventListener('resize', scaleTitleToWidth);
+window.addEventListener('resize', oops());

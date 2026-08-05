@@ -1,0 +1,1487 @@
+@import url();
+
+@font-face {
+  font-family: STIX Two;
+  src: url(STIXTwoText[wght].ttf);
+}
+
+@font-face {
+  font-family: STIX Two;
+  font-style: italic;
+  src: url(STIXTwoText-Italic[wght].ttf);
+}
+
+/* ALL ELEMENTS */
+
+/* html {
+  height: 100%;
+} */
+
+main,
+aside {
+  /*FireFox*/
+  scrollbar-width: none !important;
+  /*IE10+*/
+  -ms-overflow-style: none !important;
+}
+
+main::-webkit-scrollbar,
+main#index::-webkit-scrollbar,
+aside::-webkit-scrollbar {
+  /*Chrome, Safari, Edge*/
+  overflow-y: scroll;
+  display: none !important;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+main,
+aside {
+  -ms-overflow-style: none !important;
+  /* IE and Edge */
+
+  scrollbar-width: none !important;
+  /* Firefox */
+  max-width: 94vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 94vw;
+  overflow-x: hidden;
+  font-family: "STIX Two", Georia, Serif;
+  font-size: large;
+  line-height: normal;
+
+  height: 100vh;
+  /* maybe? */
+}
+
+.no-transition * {
+  transition: 0s;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* * { border: 1px solid red !important; } */
+
+/* GENERAL CLASSES */
+
+/* GENERAL RULES FOR TAGS */
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+p {
+  max-width: 73ch;
+  transform-origin: left center;
+}
+
+h1 {
+  font-size: large;
+  max-width: 94vw;
+}
+
+img,
+iframe {
+  margin-left: 0;
+  object-fit: cover;
+  display: block;
+}
+
+/* HEADER */
+
+header {
+  position: fixed;
+  height: 100px;
+  width: 92vw;
+  margin-bottom: 0px;
+  background-color: #fff;
+  z-index: 3;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 4vw;
+  /* max-width: 92vw; */
+  text-decoration: none;
+  color: #000;
+  max-height: 100px;
+  padding-left: 0;
+  margin-top: 0 !important;
+  margin-bottom: 0;
+  flex-wrap: nowrap;
+}
+
+header nav h2 {
+  width: auto;
+  max-width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 0;
+  /* padding-top: 8px; */
+}
+
+header nav h2 a {
+  font-size: 2em;
+  height: 100px;
+  vertical-align: middle;
+}
+/**/
+/* header nav a h2 { */
+/*   height: 100px; */
+/*   margin: 0; */
+/* } */
+
+header nav > * {
+  height: auto;
+}
+
+header #name {
+  position: fixed;
+  left: 3vw;
+}
+
+header #name h2 {
+  padding-top: 12px;
+}
+
+header #about-button {
+  cursor: help;
+  flex-shrink: 0;
+  flex-grow: 1;
+  flex-basis: 100px;
+}
+
+p.big-titles {
+  display: inline-block;
+  font-variation-settings: "wght" 700;
+  white-space: nowrap;
+  /* max-width: 92vw; */
+  object-fit: cover;
+  position: -webkit-sticky;
+  vertical-align: middle;
+  line-height: 100px;
+  margin-bottom: 0;
+  margin-top: 0;
+  position: sticky;
+  transition-property: transform;
+  transition-duration: 0.34s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+}
+
+#index p.big-titles {
+  transition: transform 0s;
+}
+
+header a {
+  display: inline-block;
+}
+
+p.big-titles:hover {
+  color: #b5b5b5;
+}
+
+main a:visited {
+  color: rgb(107, 107, 107);
+}
+
+#about-button {
+  background-color: #fff;
+  width: 40px;
+  height: auto;
+}
+
+
+#about header nav a#about-button {
+  color: rgb(107, 107, 107);
+}
+
+/* MAIN */
+
+main {
+  position: relative;
+  top: 100px;
+  /* margin-bottom: 65px;
+  padding-bottom: 100px; */
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#index main {
+  width: 94vw;
+  margin-bottom: 100px;
+  padding-bottom: 100px;
+  overflow-x: hidden;
+}
+
+main.index-crops,
+main.full-images {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0px;
+}
+
+/* 
+main hr {
+  color: #000;
+  background-color: #000;
+  height: 4px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 13px;
+} */
+
+/* INFO ASIDE */
+
+aside {
+  position: sticky;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100dvh - 212px) !important;
+  top: 0px;
+  z-index: 1;
+  background-color: #fff;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#about aside {
+  overflow-y: auto;
+}
+
+aside p {
+  margin: 0;
+  font-size: min(0.9em, 1.05vw);
+}
+
+td:nth-child(1) {
+  font-weight: bold;
+}
+
+aside a {
+  color: gray;
+  text-decoration: none;
+}
+
+th {
+  text-align: left;
+  /* white-space: nowrap; */
+}
+
+blockquote {
+  margin: 0;
+}
+
+aside p {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/*****/
+/*****/
+/*****/
+
+/* INDEX SETTINGS */
+
+#index header nav h2 {
+  font-size:
+
+#name h2 {
+  cursor: pointer;
+}
+
+#middle-name {
+  display: none;
+}
+
+.index-crops {
+  height: calc(100dvh - 200px);
+  padding-left: 0;
+  padding-right: 0;
+  overflow: scroll;
+}
+
+.index-crops img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 122px;
+  padding: 10px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 11px;
+  /* cursor: row-resize; */
+}
+
+#index main div.wrapper:hover {
+  color: grey;
+}
+
+/* SECTION */
+
+section {
+  margin-bottom: 78px;
+}
+
+.row {
+  display: flex !important;
+  justify-content: space-around !important;
+  width: auto;
+  padding-bottom: 13px;
+  padding-left: 0;
+}
+
+#paper .row {
+  justify-content: start;
+  gap: 13px;
+}
+
+.row > img {
+  height: calc(100dvh - 130px);
+  width: auto;
+}
+
+/* .row { */
+/* 	display: flex !important; */
+/* 	justify-content: space-around !important; */
+/* 	width: auto; */
+/* 	padding-bottom: 13px; */
+/* 	padding-left: 0; */
+/* } */
+
+/* VIDEO */
+
+div.video-wrapper {
+  --aspect-ratio: 9 / 16;
+  margin-right: 130px;
+}
+
+/* DIVISION OF IMAGE AND INFO ASIDE */
+/* - WITH 16:9 ASPECT RATIO */
+section.video aside,
+#rock-transport aside,
+#rock-talk aside,
+#fountain-transport aside,
+#block aside,
+#basement-paintings aside,
+#old-studio aside,
+#scheveningen aside,
+#webcam aside {
+  width: calc(94vw - (16 * (100dvh - 130px) / 9) - 1.5vw);
+  left: calc(3vw + (16 * (100dvh - 130px) / 9) + 1.5vw);
+}
+section.video img,
+#rock img,
+#gips img,
+#fountain-transport img,
+#block img,
+#basement-paintings img,
+#old-studio img,
+#scheveningen img,
+#webcam img {
+  width: calc(16 * (100dvh - 130px) / 9);
+}
+
+/* DIVISION OF IMAGE AND INFO ASIDE */
+/* - WITH 4:3 ASPECT RATIO */
+#cornish-works aside,
+#basement aside,
+#heden aside,
+#oranjeplein aside,
+#repair-one aside,
+#facebook aside,
+#homeless-man aside,
+#hms aside {
+  width: calc(94vw - (4 * (100dvh - 130px) / 3) - 1.5vw);
+  left: calc(3vw + (4 * (100dvh - 130px) / 3) + 1.5vw);
+}
+
+#cornish-works img,
+#basement img,
+#heden img,
+#oranjeplein img,
+#repair-one img,
+#homeless-man img,
+#hms img {
+  width: calc(4 * (100dvh - 130px) / 3);
+}
+
+#facebook img {
+  object-position: left center;
+  width: calc(100dvh - 56px);
+}
+
+/* - WITH 86:61 ASPECT RATIO (HORIZONTAL SCAN) */
+#books aside {
+  width: calc(94vw - (86 * (100dvh - 130px) / 61) - 1.5vw);
+  left: calc(3vw + (86 * (100dvh - 130px) / 61) + 1.5vw);
+}
+
+#books img {
+  width: calc(86 * (100dvh - 130px) / 61);
+}
+
+/* - WITH 5:4 ASPECT RATIO */
+#about aside,
+#cornish aside {
+  width: calc(94vw - (5 * (100dvh - 130px) / 4) - 1.5vw);
+  left: calc(3vw + (5 * (100dvh - 130px) / 4) + 1.5vw);
+}
+
+#about img,
+#cornish aside {
+  width: calc(5 * (100dvh - 130px) / 4);
+}
+
+/* - WITH 61:86 ASPECT RATIO* (VERTICAL SCAN) */
+#vertical-drawings aside,
+#posters-for2030 aside,
+#prints aside {
+  width: calc(94vw - (86 * (100dvh - 130px) / 61) - 3vw);
+  left: calc(3vw + (5 * (100dvh - 130px) / 61) + 1.5vw);
+}
+
+#vertical-drawings img,
+#posters-for2030 img,
+#prints img {
+  width: calc(86 * (100dvh - 130px) / 61);
+}
+
+#vertical-drawings .row,
+#posters-for2030 .row,
+#prints .row {
+  width: calc(86 * (100dvh - 130px) / 61);
+}
+
+#vertical-drawings .row img,
+#posters-for2030 .row img,
+#prints .row img {
+  width: 30.2vw;
+  height: calc(100dvh - 130px);
+}
+
+/* #vertical-drawings img,
+#posters-for2030 img {
+  /* width: calc(61 * (100dvh - 130px) / 86); */
+/* */
+
+/* - WITH 3:2 ASPECT RATIO */
+#buildup aside,
+#final-presentation aside,
+#lobsters-v-three aside,
+#one-nest-stand aside,
+#dusseldorf aside,
+#west aside,
+#repair-two aside,
+#mauritshuis aside,
+#lobsters-v-two aside,
+#lobsters-v-one aside {
+  width: calc(94vw - (3 * (100dvh - 130px) / 2) - 3vw);
+  left: calc(3vw + (3 * (100dvh - 130px) / 2) + 1.5vw);
+}
+
+#buildup img,
+#final-presentation img,
+#lobsters-v-three img,
+#one-nest-stand .row,
+#dusseldorf img,
+#west img,
+#repair-two img,
+#mauritshuis img,
+#lobsters-v-two img,
+#lobsters-v-one img {
+  width: calc(3 * (100dvh - 130px) / 2);
+}
+
+/* TABLES */
+
+table {
+  display: table !important;
+  padding-top: 1px !important;
+  background-color: #fff !important;
+}
+
+tbody {
+  margin-bottom: 39px;
+}
+
+table td {
+  padding-right: 20px !important;
+}
+
+table tr.spacer {
+  height: 13px;
+}
+
+/* PROJECTS SETTINGS */
+
+.full-images img,
+.full-images iframe {
+  padding-bottom: 13px;
+}
+
+#about .full-images img {
+  padding: 0;
+}
+
+#about div.box {
+  margin-right: 22px;
+}
+
+img.fake-image {
+  visibility: hidden;
+  height: 0px !important;
+}
+
+/* SCROLL SNAP */
+
+/* main.full-images {
+	height: calc(100dvh - 130px);
+	overflow-y: scroll;
+	scroll-snap-type: y;
+	scroll-snap-type: y mandatory;
+}
+
+main.full-images section img, main.full-images section iframe {
+	scroll-snap-align: center;
+	scroll-margin-top: 0px;
+	scroll-margin-bottom: -13px;
+	scroll-snap-stop: always;
+} */
+
+/* FOOTER */
+
+footer {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  width: 94vw;
+  bottom: 0px;
+  left: 3vw;
+  height: 45px;
+  z-index: 3;
+  padding-top: 15px;
+  color: gray;
+  padding-bottom: 6px;
+}
+
+footer div {
+  height: 45px;
+}
+
+footer a {
+  color: rgb(107, 107, 107);
+  text-decoration: none;
+}
+
+footer div#links {
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  display: flex;
+  align-items: start;
+  margin-right: 1vw;
+  margin-top: 2px;
+}
+
+footer div#links div {
+  display: inline-block;
+  height: 45px;
+  margin-top: -7px;
+  width: auto;
+}
+
+footer div#writing-hand {
+  width: auto;
+}
+
+footer div#writing-hand p {
+  width: auto;
+  font-size: 1.25em;
+  margin-top: 13px;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+@-moz-document url-prefix() {
+  footer div#writing-hand {
+    width: 50px;
+  }
+
+  footer div#writing-hand p {
+    font-size: 22px;
+  }
+}
+
+footer div#box {
+  flex: 1;
+}
+
+/* footer div#line hr {
+  color: #b5b5b5;
+  background-color: #b5b5b5;
+  border-width: 0;
+  height: 2px;
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 0px;
+} */
+
+div.box {
+  color: #d9d9d9;
+  background-color: #d9d9d9;
+  margin-top: -5px;
+  margin-left: 13px;
+  margin-right: 0px;
+  flex-grow: 1;
+  --mask: radial-gradient(
+        4.18px at 50% calc(100% + 1.05px),
+        #0000 calc(99% - 2px),
+        #000 calc(101% - 2px) 99%,
+        #0000 101%
+      )
+      calc(50% - 6px) calc(50% - 2.5px + 0.5px) / 12px 5px repeat-x,
+    radial-gradient(
+        4.18px at 50% -1.05px,
+        #0000 calc(99% - 2px),
+        #000 calc(101% - 2px) 99%,
+        #0000 101%
+      )
+      50% calc(50% + 2.5px) / 12px 5px repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
+
+#index footer div.box {
+  margin-right: 4px;
+}
+
+#about footer div.box {
+  margin-right: 0px;
+}
+
+footer div#arrows {
+  width: auto;
+  margin-top: 28px;
+  margin-bottom: 7px;
+  margin-left: 1vw;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+footer div#arrows a {
+  font-size: 30px;
+  margin-top: 39px !important;
+}
+
+div#ad {
+  height: 45px;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  margin-left: 3vw;
+}
+
+div#ad p,
+div#ad span {
+  margin-right: 0;
+  text-align: right;
+  margin-top: 19px;
+}
+
+div#ad .self-promotion_shown {
+  display: initial;
+  width: auto;
+  margin-top: 19px !important;
+}
+
+div#ad .self-promotion_hidden {
+  display: inline-block;
+  margin-top: 19px !important;
+  cursor: pointer;
+}
+
+p#plug {
+  display: none;
+}
+
+span#huh {
+  cursor: zoom-in;
+}
+
+aside span.hint {
+  display: none;
+}
+
+header {
+  height: 50px;
+}
+
+header nav {
+  height: 100px;
+  width: auto;
+}
+
+@media all and (min-width: 1214px) {
+  header,
+  header > * {
+    height: 100px !important;
+  }
+
+  main {
+    top: 100px !important;
+  }
+
+  /* DIVISION OF IMAGE AND INFO ASIDE */
+  /* - WITH 16:9 ASPECT RATIO */
+
+  section.video aside,
+  #rock-transport aside,
+  #rock-talk aside,
+  #fountain-transport aside,
+  #block aside,
+  #basement-paintings aside,
+  #old-studio aside,
+  #scheveningen aside,
+  #webcam aside {
+    width: calc(94vw - (16 * (100dvh - 200px) / 9) - 1.5vw) !important;
+    left: calc(3vw + (16 * (100dvh - 200px) / 9) + 1.5vw) !important;
+  }
+
+  #rock img,
+  #gips img,
+  #fountain-transport img,
+  #block img,
+  #basement-paintings img,
+  #old-studio img,
+  #scheveningen img,
+  #webcam img {
+    width: calc(16 * (100dvh - 200px) / 9) !important;
+  }
+
+  /* DIVISION OF IMAGE AND INFO ASIDE */
+  /* - WITH 4:3 ASPECT RATIO */
+  #cornish-works aside,
+  #basement aside,
+  #heden aside,
+  #oranjeplein aside,
+  #repair-one aside,
+  #facebook aside,
+  #homeless-man aside,
+  #hms aside {
+    width: calc(94vw - (4 * (100dvh - 200px) / 3) - 1.5vw) !important;
+    left: calc(3vw + (4 * (100dvh - 200px) / 3) + 1.5vw) !important;
+  }
+
+  #cornish-works img,
+  #basement img,
+  #heden img,
+  #oranjeplein img,
+  #repair-one img,
+  #homeless-man img,
+  #hms img {
+    width: calc(4 * (100dvh - 210px) / 3) !important;
+  }
+
+  #facebook img {
+    object-position: left center;
+    width: calc((4 * (100dvh - 200px) / 3) - 1.5vw) !important;
+  }
+
+  .row > img {
+    height: calc(100dvh - 200px);
+    width: auto;
+  }
+
+  /* - WITH 86:61 ASPECT RATIO (HORIZONTAL SCAN) */
+  #books aside {
+    width: calc(94vw - (86 * (100dvh - 200px) / 61) - 1.5vw) !important;
+    left: calc(3vw + (86 * (100dvh - 200px) / 61) + 1.5vw) !important;
+  }
+
+  #books img {
+    width: calc(86 * (100dvh - 200px) / 61) !important;
+  }
+
+  /* - WITH 5:4 ASPECT RATIO */
+  #about aside,
+  #cornish aside {
+    width: calc(94vw - (5 * (100dvh - 200px) / 4) - 1.5vw) !important;
+    left: calc(3vw + (5 * (100dvh - 200px) / 4) + 1.5vw) !important;
+  }
+
+  #about img,
+  #cornish img {
+    width: calc(5 * (100dvh - 200px) / 4) !important;
+  }
+
+  /* - WITH 61:86 ASPECT RATIO* (VERTICAL SCAN) */
+  #vertical-drawings aside,
+  #posters-for2030 aside,
+  #prints aside {
+    width: calc(94vw - (86 * (100dvh - 200px) / 61) - 3vw) !important;
+    left: calc(3vw + (5 * (100dvh - 200px) / 61) + 1.5vw) !important;
+  }
+
+  #vertical-drawings img,
+  #posters-for2030 img,
+  #prints img {
+    width: calc(86 * (100dvh - 200px) / 61) !important;
+  }
+
+  #vertical-drawings .row,
+  #posters-for2030 .row,
+  #prints .row {
+    width: calc(86 * (100dvh - 200px) / 61) !important;
+  }
+
+  #vertical-drawings .row img,
+  #posters-for2030 .row img,
+  #prints .row img {
+    width: 30.2vw !important;
+    height: calc(100dvh - 200px) !important;
+  }
+
+  /* - WITH 3:2 ASPECT RATIO */
+  #buildup aside,
+  #final-presentation aside,
+  #lobsters-v-three aside,
+  #one-nest-stand aside,
+  #dusseldorf aside,
+  #west aside,
+  #repair-two aside,
+  #mauritshuis aside,
+  #lobsters-v-two aside,
+  #lobsters-v-one aside {
+    width: calc(94vw - (3 * (100dvh - 200px) / 2) - 3vw) !important;
+    left: calc(3vw + (3 * (100dvh - 200px) / 2) + 1.5vw) !important;
+  }
+
+  #buildup img,
+  #final-presentation img,
+  #lobsters-v-three img,
+  #one-nest-stand .row,
+  #dusseldorf img,
+  #west img,
+  #repair-two img,
+  #mauritshuis img,
+  #lobsters-v-two img,
+  #lobsters-v-one img {
+    width: calc(3 * (100dvh - 200px) / 2) !important;
+  }
+
+  main.full-images {
+    height: calc(100dvh - 200px);
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
+
+  main.full-images section img,
+  main.full-images section iframe {
+    scroll-snap-align: center;
+    scroll-margin-top: 0px;
+    scroll-margin-bottom: -13px;
+    scroll-snap-stop: always;
+  }
+
+  img,
+  iframe,
+  div.row,
+  aside {
+    height: calc(100dvh - 212px) !important;
+  }
+
+  footer,
+  footer > * {
+    height: 86px !important;
+    padding-top: 0;
+    z-index: -2;
+  }
+
+  #index footer,
+  #index footer > * {
+    height: 100px !important;
+    z-index: initial;
+  }
+
+  #index footer div#links {
+    margin-top: 53px !important;
+  }
+
+  footer div#links {
+    margin-top: 47.5px !important;
+    padding-top: 0;
+  }
+
+  footer div.box {
+    margin-top: 4px !important;
+    padding-top: 0;
+  }
+
+  footer div#ad {
+    margin-top: 40.5px;
+    padding-top: 0;
+  }
+}
+
+@media ((min-width: 1279px) and (max-width: 1570px)) {
+  tr {
+    display: table;
+    width: 100%;
+  }
+
+  td {
+    display: table-row;
+  }
+}
+
+@media ((min-width: 750px) and (max-width: 1279px)) {
+  aside div.info {
+    display: none;
+  }
+
+  aside span.hint {
+    display: inline;
+  }
+}
+
+@media ((min-width: 750px) and (max-width: 1250px)) {
+  td {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 965px) {
+  .hide-on-desktop {
+    display: none;
+  }
+
+  img,
+  iframe,
+  aside {
+    height: calc(100dvh - 212px);
+  }
+}
+
+/* RESPONSIVE DESIGN FOR SMALLER SCREENS --------------- */
+
+@media screen and (max-width: 965px) {
+  .hide-on-mobile {
+    display: none;
+  }
+
+  aside {
+    overflow-x: hidden;
+    justify-content: flex-start;
+  }
+
+  header {
+    height: 50px;
+  }
+
+  header nav {
+    height: 50px;
+    width: 94vw;
+  }
+
+  header nav a {
+    height: 50px;
+  }
+
+  p.big-titles {
+    margin-bottom: 10px;
+  }
+
+  header #about-button {
+    height: 30px;
+  }
+
+  header #about-button h2 {
+    margin-bottom: 0;
+    font-size: 40px;
+  }
+
+  main {
+    top: 50px;
+  }
+
+  section {
+    margin-bottom: 58px;
+  }
+
+  /* DIVISION OF IMAGE AND INFO ASIDE */
+
+  img,
+  iframe {
+    width: 94vw !important;
+    object-fit: cover;
+  }
+
+  .row {
+    display: block !important;
+    width: 94vw !important;
+  }
+
+  aside div.info {
+    padding-bottom: 13px !important;
+    background-color: #fff;
+    padding-left: 2px;
+  }
+
+  main.full-images {
+    height: calc(100dvh - 86px);
+    overflow-y: scroll !important;
+    scroll-snap-type: y mandatory;
+  }
+
+  main.full-images section img,
+  main.full-images section iframe {
+    scroll-snap-align: center;
+    scroll-margin-top: 0px;
+    scroll-margin-bottom: -13px;
+    scroll-snap-stop: always;
+  }
+
+  /* VIDEO */
+ 
+  section.video,
+  section#lobster-video,
+  section#heden-video,
+  section#beach-video,
+  section#oyster-video,
+  section#cheese-video,
+  section#vegetable-video,
+  /* section#kabk-video, */
+  section#berlin-video {
+    margin-top: 30vh;
+    margin-bottom: 30vh;
+    margin-right: 30vh;
+    margin-left: 0;
+  }
+
+  /* 16:9 */
+  section.video aside,
+  /* section#kabk-video aside, */
+  #rock-transport aside,
+  #rock-talk aside,
+  #fountain-transport aside,
+  #block aside,
+  #basement-paintings aside,
+  #old-studio aside,
+  #scheveningen aside,
+  #webcam aside {
+    width: 94vw;
+    padding-top: calc((9 * (94vw / 16)) + 13px);
+    height: calc(100dvh - 50px - 9 * (94vw / 16) - 13px - 45px);
+    background-clip: content-box;
+  }
+
+  /* section#kabk-video > div, */
+  section.video img,
+  #rock img,
+  #gips img,
+  #fountain-transport:first-child img,
+  #block img,
+  #basement-paintings img,
+  #old-studio img,
+  #scheveningen img,
+  #webcam img {
+    background: black;
+    scroll-snap-align: center;
+    height: calc(9 * (94vw / 16));
+    scroll-margin-top: 0;
+    scroll-margin-bottom: calc(100dvh - 50px - 9 * (94vw / 16) - 13px - 45px);
+    scroll-snap-stop: always;
+  }
+
+  #rock div.images,
+  #gips div.images,
+  #fountain-transport div.images,
+  #block div.images,
+  #basement-paintings div.images,
+  #old-studio div.images,
+  #scheveningen div.images,
+  #webcam div.images {
+    padding-bottom: calc(100dvh - 50px - 9 * (94vw / 16) - 13px - 45px);
+  }
+
+  /* 4:3 */
+  #cornish-works aside
+  #basement aside,
+  #heden aside,
+  #oranjeplein aside,
+  #repair-one aside,
+  #facebook aside,
+  #homeless-man aside,
+  #hms aside {
+    width: 94vw;
+    padding-top: calc((3 * (94vw / 4)) + 13px);
+    /* height: calc(100dvh - 50px - 3 * (94vw / 4) - 13px - 45px); */
+    background-clip: content-box;
+  }
+
+  #cornish-works img,
+  #basement img,
+  #heden img,
+  #oranjeplein img,
+  #repair-one img,
+  #facebook img,
+  #homeless-man img,
+  #hms img {
+    scroll-snap-align: center;
+    height: calc(3 * (94vw / 4));
+    scroll-margin-top: 0;
+    scroll-margin-bottom: calc(100dvh - 50px - 3 * (94vw / 4) - 13px - 45px);
+    scroll-snap-stop: always;
+  }
+
+  #basement div.images,
+  #cornish-works div.images,
+  #heden div.images,
+  #oranjeplein div.images,
+  #repair-one div.images,
+  #facebook div.images,
+  #homeless-man div.images,
+  #hms div.images {
+    padding-bottom: calc(100dvh - 50px - 3 * (94vw / 4) - 13px - 45px);
+  }
+
+  /* 5:4 */
+  #about aside,
+  #cornish aside {
+    width: 94vw;
+    padding-top: calc((4 * (94vw / 5)) + 13px);
+    /* height: calc(100dvh - 50px - 4 * (94vw / 5) - 13px - 45px); */
+    background-clip: content-box;
+  }
+
+  #about section img,
+  #cornish img {
+    scroll-snap-align: center;
+    height: calc(4 * (94vw / 5));
+    scroll-margin-top: 0;
+    scroll-margin-bottom: calc(100dvh - 50px - 4 * (94vw / 5) - 13px - 45px);
+    scroll-snap-stop: always;
+  }
+
+  #about div.images,
+  #cornish div.images {
+    padding-bottom: calc(100dvh - 50px - 4 * (94vw / 5) - 13px - 45px);
+  }
+
+  /* 61/86 */
+  #vertical-drawings aside,
+  #posters-for2030 aside,
+  #prints aside {
+    width: 94vw;
+    padding-top: calc((86 * (94vw / 61)) + 13px);
+    /* height: calc(100dvh - 50px - 86 * (94vw / 61) - 13px - 45px) !important; */
+    background-clip: content-box;
+  }
+
+  section#vertical-drawings img,
+  section#posters-for2030 img,
+  section#prints img {
+    scroll-snap-align: center;
+    height: calc(86 * (94vw / 61)) !important;
+    scroll-margin-top: 0;
+    scroll-margin-bottom: calc(100dvh - 50px - 86 * (94vw / 61) - 13px - 45px);
+    scroll-snap-stop: always;
+    object-position: right;
+  }
+
+  #vertical-drawings div.images,
+  #posters-for2030 div.images,
+  #prints div.images {
+    padding-bottom: calc(100dvh - 50px - 86 * (94vw / 61) - 13px - 45px);
+  }
+
+  /* 3/2 */
+  #buildup aside,
+  #final-presentation aside,
+  #lobsters-v-three aside,
+  #one-nest-stand aside,
+  #dusseldorf aside,
+  #west aside,
+  #repair-two aside,
+  #mauritshuis aside,
+  #lobsters-v-two aside,
+  #lobsters-v-one aside {
+    width: 94vw;
+    padding-top: calc((2 * (94vw / 3)) + 13px);
+    /* height: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 45px); */
+    background-clip: content-box;
+  }
+
+  #buildup img,
+  #final-presentation img,
+  #lobsters-v-three img,
+  #one-nest-stand img,
+  #one-nest-stand .row,
+  #dusseldorf img,
+  #west img,
+  #repair-two img,
+  #mauritshuis img,
+  #lobsters-v-two img,
+  #lobsters-v-one img {
+    scroll-snap-align: center;
+    height: calc(2 * (94vw / 3));
+    scroll-margin-top: 0;
+    scroll-margin-bottom: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 45px);
+    scroll-snap-stop: always;
+  }
+
+  #buildup div.images,
+  #final-presentation div.images,
+  #lobsters-v-three div.images,
+  #one-nest-stand div.images,
+  #dusseldorf div.images,
+  #west div.images,
+  #repair-two div.images,
+  #mauritshuis div.images,
+  #lobsters-v-two div.images,
+  #lobsters-v-one div.images {
+    padding-bottom: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 45px);
+  }
+
+  /**/
+
+  aside p {
+    font-size: 2dvh;
+    max-width: 94vw;
+    text-align: left;
+  }
+
+  /* table {
+    display: table !important;
+    border-spacing: 13px !important;
+    padding-top: 13px !important;
+    padding-right: 13px !important;
+    background-color: #fff !important;
+  }
+
+  thead {
+    visibility: hidden;
+    height: 0;
+    position: absolute;
+  }
+
+  tr {
+    margin-bottom: -11px;
+    margin-top: -24px;
+    display: inline-block;
+    width: 94vw;
+  }
+
+  #about th {
+    font-size: medium;
+  }
+
+  #about tr {
+    margin-bottom: 30px;
+    text-align: right;
+  }
+
+  tr p {
+    width: 45.5vw;
+  }
+
+  td {
+    font-size: 0.85em;
+    text-align: right;
+  }
+
+  td p {
+    padding-right: 13px;
+  } */
+
+  table {
+    margin-top: 2px;
+    margin-bottom: 13px;
+  }
+
+  #paper table {
+    margin-top: 3px;
+    margin-bottom: 23px;
+  }
+
+  tr {
+    border-collapse: separate;
+    border-spacing: 0 139px;
+  }
+
+  #about div.info {
+    margin-top: 13px;
+  }
+
+  #about table {
+    margin-top: 0px;
+  }
+
+  footer {
+    height: 45px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  footer div#writing-hand p {
+    margin-top: 22px;
+    font-size: 24px;
+    width: auto;
+    vertical-align: middle;
+  }
+
+  footer #contact {
+    margin-left: -18px;
+    vertical-align: middle;
+    margin-bottom: -10px;
+  }
+
+  footer #contact-info {
+    padding-top: 14px;
+  }
+
+  footer div#links {
+    margin-bottom: 41px;
+  }
+
+  footer div#links div {
+    height: 45px;
+    margin-top: -2px;
+  }
+
+  footer div.box {
+    margin-top: -2px;
+  }
+
+  footer div#arrows {
+    margin-top: -16px;
+  }
+
+  footer div#arrows a {
+    font-size: 25px;
+  }
+
+  div#ad {
+    flex-shrink: 0;
+    vertical-align: middle;
+  }
+
+  .hide-on-mobile-earlier {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
+
+/* @media screen and (min-width: 500px) {
+  div#ad small.self-promotion_hidden {
+    display: none;
+  }
+} */
+
+@media screen and (max-width: 500px) {
+  /*   aside p {
+    font-size: 1.8dvh;
+  } */
+
+  #name-listed-item {
+    flex: 3 1 auto;
+  }
+
+  #about-listed-item {
+    flex: 1 1 auto;
+  }
+
+  #about-listed-item a h2 {
+    /* font-size: 47px; */
+    margin-top: -11px;
+    text-align: center;
+  }
+
+  /* main.indexCrops, main.fullImages {
+    padding-top: 0px;
+  } */
+
+  main {
+    width: 94vw;
+    margin-bottom: 94px;
+    padding-bottom: 97px;
+  }
+
+  footer {
+    height: 45px;
+  }
+
+  /* .self-promotion_hidden {
+    display: flex;
+  } */
+
+  div#ad {
+    margin-top: -13px;
+    flex-shrink: 0;
+    display: initial;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  table {
+    margin-top: 7px;
+    margin-bottom: 3px;
+  }
+
+  #final-presentation aside {
+    height: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 44px);
+  }
+
+  footer {
+    height: 44px;
+  }
+
+  div#ad {
+    display: none;
+  }
+}

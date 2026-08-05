@@ -53,7 +53,7 @@ function isInViewport(element) {
 function getCurrentSection() {
   for (j = 0; j < sections.length; j++) {
     let asideOfSection = sections[j].getElementsByTagName("aside")[0];
-    if (isInViewport(asideOfSection) || window.parent.isInViewport(document.querySelector('iframe'))) {
+    if (isInViewport(asideOfSection)) {
       currentSection = sections[j];
       currentSectionID = sectionIDs[j];
       return j;
@@ -97,7 +97,42 @@ function upArrow() {
     .setAttribute("href", "#" + sectionIDs[linkToPreviousSection]); 
 }
 
+// function scrollHandlerDevounce(fns) {
+//     let scrollTimeout = null;
+//
+//     window.addEventListener('scroll', () => {
+//         if (scrollTimeout) {
+//             clearInterval(scrollTimeout);
+//         }
+//
+//         scrollTimeout = setTimeout(() => {
+//             const queue = [...fns];
+//             function next() {
+//                 const fn = queue.shift();
+//                 if (fn) {
+//                     fn();
+//                     requestAnimationFrame(next);
+//                 }
+//             }
+//             next();
+//         }, 200);
+//     });
+// }
+
 // // *SCROLL*
+
+function debounce(func, delay) {
+  let timeoutId
+  return function(...args) {
+    clearTimeout(timeoutId)
+    timeoutId = setTimeout(() => func.apply(this, args), delay)
+  }
+}
+
+const handleScroll = debounce(() => {
+  console.log('Scroll ended at:', window.scrollY)
+}, 250)
+
 const main = document.getElementsByTagName("main")[0];
 main.onscroll = (event) => {
   getCurrentSection(); // updates currentSection to section that is in viewport
@@ -155,7 +190,12 @@ main.onscroll = (event) => {
 };
 
 // clear 
-function clearKAndGoToIndex() {
-  sessionStorage.removeItem("k")
-  history.replaceState(null, '', 'index.html')
-}
+
+// function clearK() {
+//   sessionStorate.removeItem("k")
+// }
+//
+// function clearKAndGoToIndex() {
+//   sessionStorage.removeItem("k")
+//   history.replaceState(null, '', 'index.html')
+// }

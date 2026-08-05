@@ -10,7 +10,7 @@ var scaleRatioAbout;
 
 const wrapper = document.getElementsByClassName("wrapper")[0];
 
-const bigTitles = document.querySelectorAll('.wrapper > p');
+const bigTitles = document.querySelectorAll('.wrapper > h2');
 function scaleIndexToWidth() {
     let width = wrapper.offsetWidth;
     var newScaleXRock = width / scaleRatioRock

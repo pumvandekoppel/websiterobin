@@ -14,7 +14,7 @@
 /* ALL ELEMENTS */
 
 /* html {
-  height: 100%;
+height: 100%;
 } */
 
 main,
@@ -87,7 +87,7 @@ body {
   /* Internet Explorer/Edge */
   user-select: none;
   /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+  supported by Chrome, Edge, Opera and Firefox */
 }
 
 /* * { border: 1px solid red !important; } */
@@ -103,7 +103,8 @@ a {
 
 p {
   max-width: 73ch;
-  transform-origin: left center;
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
 }
 
 h1 {
@@ -123,35 +124,53 @@ iframe {
 header {
   position: fixed;
   height: 100px;
-  width: 100vw;
+  width: 94vw;
   margin-bottom: 0px;
   background-color: #fff;
   z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0 !important;
+  flex-wrap: nowrap;
 }
 
 header nav {
-  width: 94vw;
+  /* max-width: 92vw; */
   text-decoration: none;
   color: #000;
-  height: 100px;
+  max-height: 100px;
   padding-left: 0;
+  margin-top: 0 !important;
   margin-bottom: 0;
 }
 
-header nav a {
+header h2, header nav h2 {
+  width: auto;
+  height: 100px;
+  line-height: 100px;
+  margin: 0;
+  /* padding-top: 8px; */
+}
+
+header nav h2 a {
   height: 100px;
   vertical-align: middle;
 }
+/**/
+/* header nav a h2 { */
+/*   height: 100px; */
+/*   margin: 0; */
+/* } */
 
-header nav a h2 {
-  height: 100px;
-  margin: 0;
+header nav > * {
+  height: auto;
 }
 
-header #name {
-  position: fixed;
-  left: 3vw;
-}
+/* header #name { */
+/*   position: fixed; */
+/*   left: 3vw; */
+/* } */
 
 header #name h2 {
   padding-top: 12px;
@@ -159,32 +178,43 @@ header #name h2 {
 
 header #about-button {
   cursor: help;
+  flex-shrink: 0;
+  flex-grow: 1;
+  flex-basis: 100px;
 }
 
-p.big-titles {
+h2.big-titles {
+  /* display: inline-block; */
+  font-size: 1em;
   font-variation-settings: "wght" 700;
   white-space: nowrap;
-  max-width: 94vw;
+  /* max-width: 92vw; */
   object-fit: cover;
-  top: 0px;
-  margin: 17px 0px;
   position: -webkit-sticky;
+  vertical-align: middle;
+  /* line-height: 100px; */
+  /* margin-bottom: 0; */
+  /* margin-top: 0; */
+  top: 0px;
+  max-width: 94vw;
+  margin: 12px 0px;
   position: sticky;
   transition-property: transform;
   transition-duration: 0.34s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
+  transform-origin: left center;
 }
 
-#index p.big-titles {
+#index h2.big-titles {
   transition: transform 0s;
 }
 
-header a {
-  display: inline-block;
-}
+/* header a { */
+/*   display: inline-block; */
+/* } */
 
-p.big-titles:hover {
+h2.big-titles:hover {
   color: #b5b5b5;
 }
 
@@ -192,21 +222,12 @@ main a:visited {
   color: rgb(107, 107, 107);
 }
 
-#about-button {
-  position: fixed;
-  background-color: #fff;
-  width: 40px;
-  top: 0;
-  right: 2.7vw;
-  height: 50px;
-}
+/* #about-button { */
+/*  background-color: #fff; */
+/*  width: 40px; */
+/*  height: auto; */
+/* }
 
-#about-button h2 {
-  font-size: 51px;
-  height: 31px;
-  margin-top: 0px;
-  z-index: 3;
-}
 
 #about header nav a#about-button {
   color: rgb(107, 107, 107);
@@ -219,13 +240,13 @@ main {
   top: 100px;
   /* margin-bottom: 65px;
   padding-bottom: 100px; */
-  height: 100%;
-  overflow-x: hidden;
+height: 100%;
+overflow-x: hidden;
 }
 
 #index main {
   width: 94vw;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
   padding-bottom: 100px;
   overflow-x: hidden;
 }
@@ -239,12 +260,12 @@ main.full-images {
 
 /* 
 main hr {
-  color: #000;
-  background-color: #000;
-  height: 4px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 13px;
+color: #000;
+background-color: #000;
+height: 4px;
+margin-left: 0;
+margin-right: 0;
+margin-bottom: 13px;
 } */
 
 /* INFO ASIDE */
@@ -255,7 +276,7 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100dvh - 130px);
+  height: calc(100dvh - 200px) !important;
   top: 0px;
   z-index: 1;
   background-color: #fff;
@@ -363,32 +384,46 @@ section {
 /* 	padding-left: 0; */
 /* } */
 
+/* VIDEO */
+
+div.video-wrapper {
+  --aspect-ratio: 9 / 16;
+  margin-right: 130px;
+}
+
 /* DIVISION OF IMAGE AND INFO ASIDE */
 /* - WITH 16:9 ASPECT RATIO */
+section.video aside,
 #rock-transport aside,
 #rock-talk aside,
-#fountain-transport aside,
+#fountain-act-1 aside,
+#fountain-act-2 aside,
+#fountain-act-3 aside,
 #block aside,
 #basement-paintings aside,
 #old-studio aside,
-#scheveningen aside,
-#webcam aside {
+#scheveningen aside
+{
   width: calc(94vw - (16 * (100dvh - 130px) / 9) - 1.5vw);
   left: calc(3vw + (16 * (100dvh - 130px) / 9) + 1.5vw);
 }
+section.video img,
 #rock img,
 #gips img,
-#fountain-transport img,
+#fountain-act-1 img,
+#fountain-act-2 img,
+#fountain-act-3 img,
 #block img,
 #basement-paintings img,
 #old-studio img,
-#scheveningen img,
-#webcam img {
+#scheveningen img {
   width: calc(16 * (100dvh - 130px) / 9);
 }
 
 /* DIVISION OF IMAGE AND INFO ASIDE */
 /* - WITH 4:3 ASPECT RATIO */
+#overview aside,
+#cornish-works aside,
 #basement aside,
 #heden aside,
 #oranjeplein aside,
@@ -400,6 +435,9 @@ section {
   left: calc(3vw + (4 * (100dvh - 130px) / 3) + 1.5vw);
 }
 
+
+#overview img,
+#cornish-works img,
 #basement img,
 #heden img,
 #oranjeplein img,
@@ -426,12 +464,14 @@ section {
 
 /* - WITH 5:4 ASPECT RATIO */
 #about aside,
+#webcam aside,
 #cornish aside {
   width: calc(94vw - (5 * (100dvh - 130px) / 4) - 1.5vw);
   left: calc(3vw + (5 * (100dvh - 130px) / 4) + 1.5vw);
 }
 
 #about img,
+#webcam aside,
 #cornish aside {
   width: calc(5 * (100dvh - 130px) / 4);
 }
@@ -465,10 +505,13 @@ section {
 
 /* #vertical-drawings img,
 #posters-for2030 img {
-  /* width: calc(61 * (100dvh - 130px) / 86); */
+/* width: calc(61 * (100dvh - 130px) / 86); */
 /* */
 
 /* - WITH 3:2 ASPECT RATIO */
+#berlin aside,
+#dutch-landscapes aside,
+#lobsters-v-four aside,
 #buildup aside,
 #final-presentation aside,
 #lobsters-v-three aside,
@@ -483,10 +526,14 @@ section {
   left: calc(3vw + (3 * (100dvh - 130px) / 2) + 1.5vw);
 }
 
+#berlin img,
+#dutch-landscapes img,
+#lobsters-v-four img,
 #buildup img,
 #final-presentation img,
 #lobsters-v-three img,
 #one-nest-stand .row,
+#dusseldorf img,
 #west img,
 #repair-two img,
 #mauritshuis img,
@@ -500,6 +547,7 @@ section {
 table {
   display: table !important;
   padding-top: 1px !important;
+  border-spacing: 0px;
   background-color: #fff !important;
 }
 
@@ -538,17 +586,17 @@ img.fake-image {
 /* SCROLL SNAP */
 
 /* main.full-images {
-	height: calc(100dvh - 130px);
-	overflow-y: scroll;
-	scroll-snap-type: y;
-	scroll-snap-type: y mandatory;
+height: calc(100dvh - 130px);
+overflow-y: scroll;
+scroll-snap-type: y;
+scroll-snap-type: y mandatory;
 }
 
 main.full-images section img, main.full-images section iframe {
-	scroll-snap-align: center;
-	scroll-margin-top: 0px;
-	scroll-margin-bottom: -13px;
-	scroll-snap-stop: always;
+scroll-snap-align: center;
+scroll-margin-top: 0px;
+scroll-margin-bottom: -13px;
+scroll-snap-stop: always;
 } */
 
 /* FOOTER */
@@ -556,6 +604,7 @@ main.full-images section img, main.full-images section iframe {
 footer {
   position: fixed;
   display: flex;
+  gap: 16px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -563,15 +612,14 @@ footer {
   width: 94vw;
   bottom: 0px;
   left: 3vw;
-  height: 45px;
   z-index: 3;
-  padding-top: 15px;
   color: gray;
-  padding-bottom: 6px;
 }
 
-footer div {
-  height: 45px;
+footer, footer > * {
+  height: 95px !important;
+  line-height: 95px !important;
+  vertical-align: middle;
 }
 
 footer a {
@@ -582,27 +630,26 @@ footer a {
 footer div#links {
   flex-wrap: nowrap;
   flex-shrink: 0;
-  margin-right: 1vw;
-  margin-top: 2px;
+  display: flex;
+  align-items: center;
 }
 
 footer div#links div {
-  display: inline-block;
-  height: 45px;
-  margin-top: -7px;
   width: auto;
 }
 
 footer div#writing-hand {
-  width: 58px;
-}
-
-footer div#writing-hand p {
-  margin-top: 13.5px;
-  margin-bottom: -8px;
-  font-size: 26px;
+  align-self: flex-end;
   width: auto;
 }
+
+/* footer div#writing-hand p { */
+/*   width: auto; */
+/*   font-size: 1.25em; */
+/*   margin-top: 8px; */
+/*   margin-bottom: 18px; */
+/*   text-align: center; */
+/* } */
 
 @-moz-document url-prefix() {
   footer div#writing-hand {
@@ -610,8 +657,13 @@ footer div#writing-hand p {
   }
 
   footer div#writing-hand p {
-    font-size: 22px;
+    font-size: 1.4rem;
+    margin-top: -3px;
   }
+}
+
+footer div#writing-hand p {
+  font-size: 1.4rem;
 }
 
 footer div#box {
@@ -619,64 +671,52 @@ footer div#box {
 }
 
 /* footer div#line hr {
-  color: #b5b5b5;
-  background-color: #b5b5b5;
-  border-width: 0;
-  height: 2px;
-  margin-top: 20px;
-  margin-left: 5px;
-  margin-right: 0px;
+color: #b5b5b5;
+background-color: #b5b5b5;
+border-width: 0;
+height: 2px;
+margin-top: 20px;
+margin-left: 5px;
+margin-right: 0px;
 } */
 
 div.box {
   color: #d9d9d9;
   background-color: #d9d9d9;
-  margin-top: -5px;
-  margin-left: 13px;
-  margin-right: 0px;
   flex-grow: 1;
   --mask: radial-gradient(
-        4.18px at 50% calc(100% + 1.05px),
-        #0000 calc(99% - 2px),
-        #000 calc(101% - 2px) 99%,
-        #0000 101%
-      )
-      calc(50% - 6px) calc(50% - 2.5px + 0.5px) / 12px 5px repeat-x,
-    radial-gradient(
-        4.18px at 50% -1.05px,
-        #0000 calc(99% - 2px),
-        #000 calc(101% - 2px) 99%,
-        #0000 101%
-      )
-      50% calc(50% + 2.5px) / 12px 5px repeat-x;
+  4.18px at 50% calc(100% + 1.05px),
+  #0000 calc(99% - 2px),
+  #000 calc(101% - 2px) 99%,
+  #0000 101%
+  )
+  calc(50% - 6px) calc(50% - 2.5px + 0.5px) / 12px 5px repeat-x,
+  radial-gradient(
+  4.18px at 50% -1.05px,
+  #0000 calc(99% - 2px),
+  #000 calc(101% - 2px) 99%,
+  #0000 101%
+  )
+  50% calc(50% + 2.5px) / 12px 5px repeat-x;
   -webkit-mask: var(--mask);
   mask: var(--mask);
 }
 
-#index footer div.box {
-  margin-right: 4px;
-}
-
-#about footer div.box {
-  margin-right: 0px;
-}
-
 footer div#arrows {
   width: auto;
-  margin-top: 28px;
-  margin-bottom: 7px;
-  margin-left: 1vw;
   text-align: right;
   flex-shrink: 0;
 }
 
 footer div#arrows a {
-  font-size: 30px;
-  margin-top: 39px !important;
+  font-size: 23px;
+}
+
+footer div#arrows p {
+  padding-top: 2px;
 }
 
 div#ad {
-  height: 45px;
   flex-wrap: nowrap;
   flex-shrink: 0;
   margin-left: 3vw;
@@ -686,7 +726,6 @@ div#ad p,
 div#ad span {
   margin-right: 0;
   text-align: right;
-  margin-top: 19px;
 }
 
 div#ad .self-promotion_shown {
@@ -719,25 +758,13 @@ header {
 
 header nav {
   height: 50px;
-  width: 94vw;
-}
-
-header nav a {
-  height: 50px;
+  width: auto;
 }
 
 @media all and (min-width: 1214px) {
   header,
   header > * {
     height: 100px !important;
-  }
-
-  nav {
-    margin-top: 15px !important;
-  }
-
-  nav #about-button {
-    margin-top: 15px !important;
   }
 
   main {
@@ -747,31 +774,36 @@ header nav a {
   /* DIVISION OF IMAGE AND INFO ASIDE */
   /* - WITH 16:9 ASPECT RATIO */
 
+  section.video aside,
   #rock-transport aside,
   #rock-talk aside,
-  #fountain-transport aside,
+  #fountain-act-1 aside,
+  #fountain-act-2 aside,
+  #fountain-act-3 aside,
   #block aside,
   #basement-paintings aside,
   #old-studio aside,
-  #scheveningen aside,
-  #webcam aside {
+  #scheveningen aside {
     width: calc(94vw - (16 * (100dvh - 200px) / 9) - 1.5vw) !important;
     left: calc(3vw + (16 * (100dvh - 200px) / 9) + 1.5vw) !important;
   }
 
   #rock img,
   #gips img,
-  #fountain-transport img,
+  #fountain-act-1 img,
+  #fountain-act-2 img,
+  #fountain-act-3 img,
   #block img,
   #basement-paintings img,
   #old-studio img,
-  #scheveningen img,
-  #webcam img {
+  #scheveningen img {
     width: calc(16 * (100dvh - 200px) / 9) !important;
   }
 
   /* DIVISION OF IMAGE AND INFO ASIDE */
   /* - WITH 4:3 ASPECT RATIO */
+  #overview aside,
+  #cornish-works aside,
   #basement aside,
   #heden aside,
   #oranjeplein aside,
@@ -783,6 +815,8 @@ header nav a {
     left: calc(3vw + (4 * (100dvh - 200px) / 3) + 1.5vw) !important;
   }
 
+  #overview img,
+  #cornish-works img,
   #basement img,
   #heden img,
   #oranjeplein img,
@@ -814,6 +848,7 @@ header nav a {
 
   /* - WITH 5:4 ASPECT RATIO */
   #about aside,
+  #webcam aside,
   #cornish aside {
     width: calc(94vw - (5 * (100dvh - 200px) / 4) - 1.5vw) !important;
     left: calc(3vw + (5 * (100dvh - 200px) / 4) + 1.5vw) !important;
@@ -852,6 +887,9 @@ header nav a {
   }
 
   /* - WITH 3:2 ASPECT RATIO */
+  #berlin aside,
+  #dutch-landscapes aside,
+  #lobsters-v-four aside,
   #buildup aside,
   #final-presentation aside,
   #lobsters-v-three aside,
@@ -866,10 +904,14 @@ header nav a {
     left: calc(3vw + (3 * (100dvh - 200px) / 2) + 1.5vw) !important;
   }
 
+  #berlin img,
+  #dutch-landscapes img,
+  #lobsters-v-four img,
   #buildup img,
   #final-presentation img,
   #lobsters-v-three img,
   #one-nest-stand .row,
+  #dusseldorf img,
   #west img,
   #repair-two img,
   #mauritshuis img,
@@ -901,35 +943,17 @@ header nav a {
 
   footer,
   footer > * {
-    height: 95px !important;
-    padding-top: 0;
+    height: 86px !important;
+    line-height: 86px !important;
     z-index: -2;
   }
 
   #index footer,
   #index footer > * {
-    height: 100px !important;
+    height: 86px !important;
     z-index: initial;
   }
 
-  #index footer div#links {
-    margin-top: 53px !important;
-  }
-
-  footer div#links {
-    margin-top: 47.5px !important;
-    padding-top: 0;
-  }
-
-  footer div.box {
-    margin-top: 4px !important;
-    padding-top: 0;
-  }
-
-  footer div#ad {
-    margin-top: 40.5px;
-    padding-top: 0;
-  }
 }
 
 @media ((min-width: 1279px) and (max-width: 1570px)) {
@@ -967,7 +991,7 @@ header nav a {
   img,
   iframe,
   aside {
-    height: calc(100dvh - 130px);
+    height: calc(100dvh - 200px);
   }
 }
 
@@ -983,34 +1007,45 @@ header nav a {
     justify-content: flex-start;
   }
 
+  main.index-crops {
+    max-height: calc(100dvh - 95px);
+  }
+
   header {
     height: 50px;
   }
 
+  header h2 {
+    height: 50px;
+    line-height: 50px;
+  }
+
   header nav {
     height: 50px;
-    width: 94vw;
   }
 
-  header nav a {
+  header nav h2 {
     height: 50px;
+    line-height: 50px;
   }
 
-  p.big-titles {
+  header nav h2 a {
+    height: 50px;
+    line-height: 50px;
+  }
+
+  h2.big-titles {
     margin-bottom: 10px;
   }
 
-  header #about-button {
-    height: 30px;
-  }
+  /* header #about-button { */
+  /*   height: 30px; */
+  /* } */
 
-  header #about-button h2 {
-    position: fixed;
-    margin-bottom: 0;
-    top: 4px;
-    right: 3vw;
-    font-size: 40px;
-  }
+  /* header #about-button h2 { */
+  /*   margin-bottom: 0; */
+  /*   font-size: 40px; */
+  /* } */
 
   main {
     top: 50px;
@@ -1040,7 +1075,7 @@ header nav a {
   }
 
   main.full-images {
-    height: calc(100dvh - 95px);
+    height: calc(100dvh - 86px);
     overflow-y: scroll !important;
     scroll-snap-type: y mandatory;
   }
@@ -1055,40 +1090,50 @@ header nav a {
 
   /* VIDEO */
 
+  section.video,
   section#lobster-video,
   section#heden-video,
   section#beach-video,
   section#oyster-video,
   section#cheese-video,
   section#vegetable-video,
-  section#kabk-video,
+  /* section#kabk-video, */
   section#berlin-video {
     margin-top: 30vh;
     margin-bottom: 30vh;
+    margin-right: 30vh;
+    margin-left: 0;
   }
 
   /* 16:9 */
+  section.video aside,
+  /* section#kabk-video aside, */
   #rock-transport aside,
   #rock-talk aside,
-  #fountain-transport aside,
+  #fountain-act-1 aside,
+  #fountain-act-2 aside,
+  #fountain-act-3 aside,
   #block aside,
   #basement-paintings aside,
   #old-studio aside,
-  #scheveningen aside,
-  #webcam aside {
+  #scheveningen aside {
     width: 94vw;
     padding-top: calc((9 * (94vw / 16)) + 13px);
     height: calc(100dvh - 50px - 9 * (94vw / 16) - 13px - 45px);
     background-clip: content-box;
   }
+
+  /* section#kabk-video > div, */
+  section.video img,
   #rock img,
   #gips img,
-  #fountain-transport:first-child img,
+  #fountain-act-1:first-child img,
+  #fountain-act-2:first-child img,
+  #fountain-act-3:first-child img,
   #block img,
   #basement-paintings img,
   #old-studio img,
-  #scheveningen img,
-  #webcam img {
+  #scheveningen img {
     scroll-snap-align: center;
     height: calc(9 * (94vw / 16));
     scroll-margin-top: 0;
@@ -1098,16 +1143,19 @@ header nav a {
 
   #rock div.images,
   #gips div.images,
-  #fountain-transport div.images,
+  #fountain-act-1 div.images,
+  #fountain-act-2 div.images,
+  #fountain-act-3 div.images,
   #block div.images,
   #basement-paintings div.images,
   #old-studio div.images,
-  #scheveningen div.images,
-  #webcam div.images {
+  #scheveningen div.images {
     padding-bottom: calc(100dvh - 50px - 9 * (94vw / 16) - 13px - 45px);
   }
 
   /* 4:3 */
+  #overview aside,
+  #cornish-works aside,
   #basement aside,
   #heden aside,
   #oranjeplein aside,
@@ -1121,6 +1169,8 @@ header nav a {
     background-clip: content-box;
   }
 
+  #overview img,
+  #cornish-works img,
   #basement img,
   #heden img,
   #oranjeplein img,
@@ -1136,6 +1186,7 @@ header nav a {
   }
 
   #basement div.images,
+  #cornish-works div.images,
   #heden div.images,
   #oranjeplein div.images,
   #repair-one div.images,
@@ -1147,6 +1198,7 @@ header nav a {
 
   /* 5:4 */
   #about aside,
+  #webcam aside,
   #cornish aside {
     width: 94vw;
     padding-top: calc((4 * (94vw / 5)) + 13px);
@@ -1193,238 +1245,220 @@ header nav a {
   #posters-for2030 div.images,
   #prints div.images {
     padding-bottom: calc(100dvh - 50px - 86 * (94vw / 61) - 13px - 45px);
+
+    /* 3/2 */
+    #berlin aside,
+    #dutch-landscapes aside,
+    #lobsters-v-four aside,
+    #buildup aside,
+    #final-presentation aside,
+    #lobsters-v-three aside,
+    #one-nest-stand aside,
+    #dusseldorf aside,
+    #west aside,
+    #repair-two aside,
+    #mauritshuis aside,
+    #lobsters-v-two aside,
+    #lobsters-v-one aside {
+      width: 94vw;
+      padding-top: calc((2 * (94vw / 3)) + 13px);
+      height: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 45px);
+      background-clip: content-box;
+    }
+
+    #berlin img,
+    #dutch-landscapes img,
+    #lobsters-v-four img,
+    #buildup img,
+    #final-presentation img,
+    #lobsters-v-three img,
+    #one-nest-stand img,
+    #one-nest-stand .row,
+    #dusseldorf img,
+    #west img,
+    #repair-two img,
+    #mauritshuis img,
+    #lobsters-v-two img,
+    #lobsters-v-one img {
+      scroll-snap-align: center;
+      height: calc(2 * (94vw / 3));
+      scroll-margin-top: 0;
+      scroll-margin-bottom: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 45px);
+      scroll-snap-stop: always;
+    }
+
+
+    #berlin div.images,
+    #dutch-landscapes div.images,
+    #lobsters-v-four div.images,
+    #buildup div.images,
+    #final-presentation div.images,
+    #lobsters-v-three div.images,
+    #one-nest-stand div.images,
+    #dusseldorf div.images,
+    #west div.images,
+    #repair-two div.images,
+    #mauritshuis div.images,
+    #lobsters-v-two div.images,
+    #lobsters-v-one div.images {
+      padding-bottom: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 45px);
+    }
+
+    /**/
+
+    aside p {
+      font-size: 2dvh;
+      max-width: 94vw;
+      text-align: left;
+    }
+
+    /* /* table { */
+    /* display: table !important; */
+    /* border-spacing: 13px !important; */
+    /* padding-top: 13px !important; */
+    /* padding-right: 13px !important; */
+    /* background-color: #fff !important; */
+    /* } */
+    /**/
+    /* thead { */
+    /* visibility: hidden; */
+    /* height: 0; */
+    /* position: absolute; */
+    /* } */
+    /**/
+    /* tr { */
+    /* margin-bottom: -11px; */
+    /* margin-top: -24px; */
+    /* display: inline-block; */
+    /* width: 94vw; */
+    /* } */
+    /**/
+    /* #about th { */
+    /* font-size: medium; */
+    /* } */
+    /**/
+    /* #about tr { */
+    /* margin-bottom: 30px; */
+    /* text-align: right; */
+    /* } */
+    /**/
+    /* tr p { */
+    /* width: 45.5vw; */
+    /* } */
+    /**/
+    /* td { */
+    /* font-size: 0.85em; */
+    /* text-align: right; */
+    /* } */
+    /**/
+    /* td p { */
+    /* padding-right: 13px; */
+    /* } */
+
+    table {
+      padding-top: 1px;
+      margin-bottom: 13px;
+    }
+
+    #paper table {
+      margin-top: 3px;
+      margin-bottom: 23px;
+    }
+
+    tr {
+      border-collapse: separate;
+      border-spacing: 0 139px;
+    }
+
+    #about div.info {
+      margin-top: 13px;
+    }
+
+    #about table {
+      margin-top: 0px;
+    }
+
+    footer {
+      height: 45px;
+    }
+
+    footer > * {
+      line-height: 45px !important;
+      vertical-align: middle;
+    }
+
+    footer div#writing-hand p {
+      font-size: 24px;
+    }
+  
+    footer div#arrows a {
+      font-size: 20px;
+    }
+
+    div#ad {
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+
+    .hide-on-mobile-earlier {
+      display: none;
+    }
   }
 
-  /* 3/2 */
-  #buildup aside,
-  #final-presentation aside,
-  #lobsters-v-three aside,
-  #one-nest-stand aside,
-  #dusseldorf aside,
-  #west aside,
-  #repair-two aside,
-  #mauritshuis aside,
-  #lobsters-v-two aside,
-  #lobsters-v-one aside {
-    width: 94vw;
-    padding-top: calc((2 * (94vw / 3)) + 13px);
-    height: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 45px);
-    background-clip: content-box;
+  @media screen and (max-width: 800px) {
+    .hide-on-mobile {
+      display: none;
+    }
   }
 
-  #buildup img,
-  #final-presentation img,
-  #lobsters-v-three img,
-  #one-nest-stand img,
-  #one-nest-stand .row,
-  #dusseldorf img,
-  #west img,
-  #repair-two img,
-  #mauritshuis img,
-  #lobsters-v-two img,
-  #lobsters-v-one img {
-    scroll-snap-align: center;
-    height: calc(2 * (94vw / 3));
-    scroll-margin-top: 0;
-    scroll-margin-bottom: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 45px);
-    scroll-snap-stop: always;
-  }
-
-  #buildup div.images,
-  #final-presentation div.images,
-  #lobsters-v-three div.images,
-  #one-nest-stand div.images,
-  #dusseldorf div.images,
-  #west div.images,
-  #repair-two div.images,
-  #mauritshuis div.images,
-  #lobsters-v-two div.images,
-  #lobsters-v-one div.images {
-    padding-bottom: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 45px);
-  }
-
-  /**/
-
-  aside p {
-    font-size: 2dvh;
-    max-width: 94vw;
-    text-align: left;
-  }
-
-  /* table {
-    display: table !important;
-    border-spacing: 13px !important;
-    padding-top: 13px !important;
-    padding-right: 13px !important;
-    background-color: #fff !important;
-  }
-
-  thead {
-    visibility: hidden;
-    height: 0;
-    position: absolute;
-  }
-
-  tr {
-    margin-bottom: -11px;
-    margin-top: -24px;
-    display: inline-block;
-    width: 94vw;
-  }
-
-  #about th {
-    font-size: medium;
-  }
-
-  #about tr {
-    margin-bottom: 30px;
-    text-align: right;
-  }
-
-  tr p {
-    width: 45.5vw;
-  }
-
-  td {
-    font-size: 0.85em;
-    text-align: right;
-  }
-
-  td p {
-    padding-right: 13px;
-  } */
-
-  table {
-    margin-top: 2px;
-    margin-bottom: 13px;
-  }
-
-  #paper table {
-    margin-top: 3px;
-    margin-bottom: 23px;
-  }
-
-  tr {
-    border-collapse: separate;
-    border-spacing: 0 139px;
-  }
-
-  #about div.info {
-    margin-top: 13px;
-  }
-
-  #about table {
-    margin-top: 0px;
-  }
-
-  footer {
-    height: 45px;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  footer div#writing-hand p {
-    margin-top: 22px;
-    font-size: 24px;
-    width: auto;
-    vertical-align: middle;
-  }
-
-  footer #contact {
-    margin-left: -18px;
-    vertical-align: middle;
-    margin-bottom: -10px;
-  }
-
-  footer #contact-info {
-    padding-top: 14px;
-  }
-
-  footer div#links {
-    margin-bottom: 41px;
-  }
-
-  footer div#links div {
-    height: 45px;
-    margin-top: -2px;
-  }
-
-  footer div.box {
-    margin-top: -2px;
-  }
-
-  footer div#arrows {
-    margin-top: -16px;
-  }
-
-  footer div#arrows a {
-    font-size: 25px;
-  }
-
-  div#ad {
-    flex-shrink: 0;
-    vertical-align: middle;
-  }
-
-  .hide-on-mobile-earlier {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .hide-on-mobile {
-    display: none;
-  }
-}
-
-/* @media screen and (min-width: 500px) {
+  /* @media screen and (min-width: 500px) {
   div#ad small.self-promotion_hidden {
-    display: none;
+  display: none;
   }
-} */
+  } */
 
 @media screen and (max-width: 500px) {
   /*   aside p {
-    font-size: 1.8dvh;
+  font-size: 1.8dvh;
   } */
 
-  #name-listed-item {
-    flex: 3 1 auto;
-  }
+#name-listed-item {
+  flex: 3 1 auto;
+}
 
-  #about-listed-item {
-    flex: 1 1 auto;
-  }
+#about-listed-item {
+  flex: 1 1 auto;
+}
 
-  #about-listed-item a h2 {
-    /* font-size: 47px; */
-    margin-top: -11px;
-    text-align: center;
-  }
+#about-listed-item a h2 {
+  /* font-size: 47px; */
+  margin-top: -11px;
+  text-align: center;
+}
 
-  /* main.indexCrops, main.fullImages {
-    padding-top: 0px;
-  } */
+/* main.indexCrops, main.fullImages {
+padding-top: 0px;
+} */
 
-  main {
-    width: 94vw;
-    margin-bottom: 94px;
-    padding-bottom: 97px;
-  }
+main {
+  width: 94vw;
+  margin-bottom: 94px;
+  padding-bottom: 97px;
+}
 
-  footer {
-    height: 45px;
-  }
+footer {
+  height: 45px;
+}
 
-  /* .self-promotion_hidden {
-    display: flex;
-  } */
+/* .self-promotion_hidden {
+display: flex;
+} */
 
-  div#ad {
-    margin-top: -13px;
-    flex-shrink: 0;
-    display: initial;
-  }
+div#ad {
+  margin-top: -13px;
+  flex-shrink: 0;
+  display: initial;
+}
 }
 
 @media screen and (max-width: 365px) {
