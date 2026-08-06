@@ -131,7 +131,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 0 !important;
+  margin-top: 0;
   flex-wrap: nowrap;
 }
 
@@ -141,7 +141,7 @@ header nav {
   color: #000;
   max-height: 100px;
   padding-left: 0;
-  margin-top: 0 !important;
+  margin-top: 0;
   margin-bottom: 0;
 }
 
@@ -276,7 +276,7 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100dvh - 200px) !important;
+  height: calc(100dvh - 200px);
   top: 0px;
   z-index: 1;
   background-color: #fff;
@@ -359,7 +359,7 @@ section {
 }
 
 .row {
-  display: flex !important;
+  display: flex;
   justify-content: space-around !important;
   width: auto;
   padding-bottom: 13px;
@@ -407,7 +407,7 @@ section.video aside,
   width: calc(94vw - (16 * (100dvh - 130px) / 9) - 1.5vw);
   left: calc(3vw + (16 * (100dvh - 130px) / 9) + 1.5vw);
 }
-section.video img,
+section.video div.wrapper,
 #rock img,
 #gips img,
 #fountain-act-1 img,
@@ -545,10 +545,10 @@ section.video img,
 /* TABLES */
 
 table {
-  display: table !important;
-  padding-top: 1px !important;
+  display: table;
+  padding-top: 1px;
   border-spacing: 0px;
-  background-color: #fff !important;
+  background-color: #fff;
 }
 
 tbody {
@@ -556,7 +556,8 @@ tbody {
 }
 
 table td {
-  padding-right: 20px !important;
+  padding-top: 10px;
+  padding-right: 20px;
 }
 
 table tr.spacer {
@@ -575,12 +576,12 @@ table tr.spacer {
 }
 
 #about div.box {
-  margin-right: 22px;
+  margin-bottom: 3px;
 }
 
 img.fake-image {
   visibility: hidden;
-  height: 0px !important;
+  height: 0px;
 }
 
 /* SCROLL SNAP */
@@ -617,8 +618,8 @@ footer {
 }
 
 footer, footer > * {
-  height: 95px !important;
-  line-height: 95px !important;
+  height: 95px;
+  line-height: 95px;
   vertical-align: middle;
 }
 
@@ -639,7 +640,6 @@ footer div#links div {
 }
 
 footer div#writing-hand {
-  align-self: flex-end;
   width: auto;
 }
 
@@ -719,7 +719,6 @@ footer div#arrows p {
 div#ad {
   flex-wrap: nowrap;
   flex-shrink: 0;
-  margin-left: 3vw;
 }
 
 div#ad p,
@@ -731,12 +730,10 @@ div#ad span {
 div#ad .self-promotion_shown {
   display: initial;
   width: auto;
-  margin-top: 19px !important;
 }
 
 div#ad .self-promotion_hidden {
   display: inline-block;
-  margin-top: 19px !important;
   cursor: pointer;
 }
 
@@ -764,11 +761,11 @@ header nav {
 @media all and (min-width: 1214px) {
   header,
   header > * {
-    height: 100px !important;
+    height: 100px;
   }
 
   main {
-    top: 100px !important;
+    top: 100px;
   }
 
   /* DIVISION OF IMAGE AND INFO ASIDE */
@@ -784,8 +781,8 @@ header nav {
   #basement-paintings aside,
   #old-studio aside,
   #scheveningen aside {
-    width: calc(94vw - (16 * (100dvh - 200px) / 9) - 1.5vw) !important;
-    left: calc(3vw + (16 * (100dvh - 200px) / 9) + 1.5vw) !important;
+    width: calc(94vw - (16 * (100dvh - 200px) / 9) - 1.5vw);
+    left: calc(3vw + (16 * (100dvh - 200px) / 9) + 1.5vw);
   }
 
   #rock img,
@@ -797,7 +794,7 @@ header nav {
   #basement-paintings img,
   #old-studio img,
   #scheveningen img {
-    width: calc(16 * (100dvh - 200px) / 9) !important;
+    width: calc(16 * (100dvh - 200px) / 9);
   }
 
   /* DIVISION OF IMAGE AND INFO ASIDE */
@@ -811,8 +808,8 @@ header nav {
   #facebook aside,
   #homeless-man aside,
   #hms aside {
-    width: calc(94vw - (4 * (100dvh - 200px) / 3) - 1.5vw) !important;
-    left: calc(3vw + (4 * (100dvh - 200px) / 3) + 1.5vw) !important;
+    width: calc(94vw - (4 * (100dvh - 200px) / 3) - 1.5vw);
+    left: calc(3vw + (4 * (100dvh - 200px) / 3) + 1.5vw);
   }
 
   #overview img,
@@ -823,12 +820,12 @@ header nav {
   #repair-one img,
   #homeless-man img,
   #hms img {
-    width: calc(4 * (100dvh - 210px) / 3) !important;
+    width: calc(4 * (100dvh - 210px) / 3);
   }
 
   #facebook img {
     object-position: left center;
-    width: calc((4 * (100dvh - 200px) / 3) - 1.5vw) !important;
+    width: calc((4 * (100dvh - 200px) / 3) - 1.5vw);
   }
 
   .row > img {
@@ -838,52 +835,52 @@ header nav {
 
   /* - WITH 86:61 ASPECT RATIO (HORIZONTAL SCAN) */
   #books aside {
-    width: calc(94vw - (86 * (100dvh - 200px) / 61) - 1.5vw) !important;
-    left: calc(3vw + (86 * (100dvh - 200px) / 61) + 1.5vw) !important;
+    width: calc(94vw - (86 * (100dvh - 200px) / 61) - 1.5vw);
+    left: calc(3vw + (86 * (100dvh - 200px) / 61) + 1.5vw);
   }
 
   #books img {
-    width: calc(86 * (100dvh - 200px) / 61) !important;
+    width: calc(86 * (100dvh - 200px) / 61);
   }
 
   /* - WITH 5:4 ASPECT RATIO */
   #about aside,
   #webcam aside,
   #cornish aside {
-    width: calc(94vw - (5 * (100dvh - 200px) / 4) - 1.5vw) !important;
-    left: calc(3vw + (5 * (100dvh - 200px) / 4) + 1.5vw) !important;
+    width: calc(94vw - (5 * (100dvh - 200px) / 4) - 1.5vw);
+    left: calc(3vw + (5 * (100dvh - 200px) / 4) + 1.5vw);
   }
 
   #about img,
   #cornish img {
-    width: calc(5 * (100dvh - 200px) / 4) !important;
+    width: calc(5 * (100dvh - 200px) / 4);
   }
 
   /* - WITH 61:86 ASPECT RATIO* (VERTICAL SCAN) */
   #vertical-drawings aside,
   #posters-for2030 aside,
   #prints aside {
-    width: calc(94vw - (86 * (100dvh - 200px) / 61) - 3vw) !important;
-    left: calc(3vw + (5 * (100dvh - 200px) / 61) + 1.5vw) !important;
+    width: calc(94vw - (86 * (100dvh - 200px) / 61) - 3vw);
+    left: calc(3vw + (5 * (100dvh - 200px) / 61) + 1.5vw);
   }
 
   #vertical-drawings img,
   #posters-for2030 img,
   #prints img {
-    width: calc(86 * (100dvh - 200px) / 61) !important;
+    width: calc(86 * (100dvh - 200px) / 61);
   }
 
   #vertical-drawings .row,
   #posters-for2030 .row,
   #prints .row {
-    width: calc(86 * (100dvh - 200px) / 61) !important;
+    width: calc(86 * (100dvh - 200px) / 61);
   }
 
   #vertical-drawings .row img,
   #posters-for2030 .row img,
   #prints .row img {
-    width: 30.2vw !important;
-    height: calc(100dvh - 200px) !important;
+    width: 30.2vw ;
+    height: calc(100dvh - 200px);
   }
 
   /* - WITH 3:2 ASPECT RATIO */
@@ -900,8 +897,8 @@ header nav {
   #mauritshuis aside,
   #lobsters-v-two aside,
   #lobsters-v-one aside {
-    width: calc(94vw - (3 * (100dvh - 200px) / 2) - 3vw) !important;
-    left: calc(3vw + (3 * (100dvh - 200px) / 2) + 1.5vw) !important;
+    width: calc(94vw - (3 * (100dvh - 200px) / 2) - 3vw);
+    left: calc(3vw + (3 * (100dvh - 200px) / 2) + 1.5vw);
   }
 
   #berlin img,
@@ -917,7 +914,7 @@ header nav {
   #mauritshuis img,
   #lobsters-v-two img,
   #lobsters-v-one img {
-    width: calc(3 * (100dvh - 200px) / 2) !important;
+    width: calc(3 * (100dvh - 200px) / 2);
   }
 
   main.full-images {
@@ -927,6 +924,7 @@ header nav {
   }
 
   main.full-images section img,
+  main.full-images section div.video-wrapper,
   main.full-images section iframe {
     scroll-snap-align: center;
     scroll-margin-top: 0px;
@@ -938,19 +936,19 @@ header nav {
   iframe,
   div.row,
   aside {
-    height: calc(100dvh - 200px) !important;
+    height: calc(100dvh - 200px);
   }
 
   footer,
   footer > * {
-    height: 86px !important;
-    line-height: 86px !important;
+    height: 86px;
+    line-height: 86px;
     z-index: -2;
   }
 
   #index footer,
   #index footer > * {
-    height: 86px !important;
+    height: 86px;
     z-index: initial;
   }
 
@@ -1005,6 +1003,7 @@ header nav {
   aside {
     overflow-x: hidden;
     justify-content: flex-start;
+    margin-bottom: -10px;
   }
 
   main.index-crops {
@@ -1027,6 +1026,8 @@ header nav {
   header nav h2 {
     height: 50px;
     line-height: 50px;
+    font-size: 1.3em;
+    padding-top: 2px;
   }
 
   header nav h2 a {
@@ -1059,17 +1060,21 @@ header nav {
 
   img,
   iframe {
-    width: 94vw !important;
+    width: calc(94vw - 1px);
     object-fit: cover;
   }
 
+  div.video-wrapper {
+    width: 94vw;
+  }
+
   .row {
-    display: block !important;
-    width: 94vw !important;
+    display: block;
+    width: calc(94vw - 1px);
   }
 
   aside div.info {
-    padding-bottom: 13px !important;
+    padding-bottom: 13px;
     background-color: #fff;
     padding-left: 2px;
   }
@@ -1081,8 +1086,9 @@ header nav {
   }
 
   main.full-images section img,
+  main.full-images section div.video-wrapper,
   main.full-images section iframe {
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     scroll-margin-top: 0px;
     scroll-margin-bottom: -13px;
     scroll-snap-stop: always;
@@ -1099,15 +1105,15 @@ header nav {
   section#vegetable-video,
   /* section#kabk-video, */
   section#berlin-video {
-    margin-top: 30vh;
-    margin-bottom: 30vh;
-    margin-right: 30vh;
-    margin-left: 0;
+    width: 94vw;
+    /* padding-top: calc((9 * (94vw / 16)) + 13px); */
+    height: calc(100dvh - 50px - 9 * (94vw / 16) - 12px - 45px + 9px);
   }
 
   /* 16:9 */
   section.video aside,
   /* section#kabk-video aside, */
+  div.images #gips img,
   #rock-transport aside,
   #rock-talk aside,
   #fountain-act-1 aside,
@@ -1117,27 +1123,28 @@ header nav {
   #basement-paintings aside,
   #old-studio aside,
   #scheveningen aside {
-    width: 94vw;
+    width: calc(94vw );
     padding-top: calc((9 * (94vw / 16)) + 13px);
-    height: calc(100dvh - 50px - 9 * (94vw / 16) - 13px - 45px);
+    height: calc(100dvh - 50px - 9 * (94vw / 16) - 12px - 45px + 9px);
     background-clip: content-box;
   }
 
   /* section#kabk-video > div, */
-  section.video img,
+  section.video div.video-wrapper,
   #rock img,
-  #gips img,
-  #fountain-act-1:first-child img,
-  #fountain-act-2:first-child img,
-  #fountain-act-3:first-child img,
+  div.images #gips img,
+  #fountain-act-1 img,
+  #fountain-act-2 img,
+  #fountain-act-3 img,
   #block img,
   #basement-paintings img,
   #old-studio img,
   #scheveningen img {
     scroll-snap-align: center;
     height: calc(9 * (94vw / 16));
+    width: calc(94vw - 1px);
     scroll-margin-top: 0;
-    scroll-margin-bottom: calc(100dvh - 50px - 9 * (94vw / 16) - 13px - 45px);
+    scroll-margin-bottom: calc(100dvh - 50px - 9 * (94vw / 16) - 13px - 45px) !important;
     scroll-snap-stop: always;
   }
 
@@ -1165,7 +1172,7 @@ header nav {
   #hms aside {
     width: 94vw;
     padding-top: calc((3 * (94vw / 4)) + 13px);
-    height: calc(100dvh - 50px - 3 * (94vw / 4) - 13px - 45px);
+    height: calc(100dvh - 50px - 3 * (94vw / 4) - 12px - 45px + 9px);
     background-clip: content-box;
   }
 
@@ -1180,6 +1187,7 @@ header nav {
   #hms img {
     scroll-snap-align: center;
     height: calc(3 * (94vw / 4));
+    width: calc(94vw - 1px);
     scroll-margin-top: 0;
     scroll-margin-bottom: calc(100dvh - 50px - 3 * (94vw / 4) - 13px - 45px);
     scroll-snap-stop: always;
@@ -1202,7 +1210,7 @@ header nav {
   #cornish aside {
     width: 94vw;
     padding-top: calc((4 * (94vw / 5)) + 13px);
-    height: calc(100dvh - 50px - 4 * (94vw / 5) - 13px - 45px);
+    height: calc(100dvh - 50px - 4 * (94vw / 5) - 12px - 45px + 9px);
     background-clip: content-box;
   }
 
@@ -1210,6 +1218,7 @@ header nav {
   #cornish img {
     scroll-snap-align: center;
     height: calc(4 * (94vw / 5));
+    width: calc(94vw - 1px);
     scroll-margin-top: 0;
     scroll-margin-bottom: calc(100dvh - 50px - 4 * (94vw / 5) - 13px - 45px);
     scroll-snap-stop: always;
@@ -1226,7 +1235,7 @@ header nav {
   #prints aside {
     width: 94vw;
     padding-top: calc((86 * (94vw / 61)) + 13px);
-    height: calc(100dvh - 50px - 86 * (94vw / 61) - 13px - 45px) !important;
+    height: calc(100dvh - 50px - 86 * (94vw / 61) - 12px - 45px + 9px);
     background-clip: content-box;
   }
 
@@ -1234,7 +1243,8 @@ header nav {
   section#posters-for2030 img,
   section#prints img {
     scroll-snap-align: center;
-    height: calc(86 * (94vw / 61)) !important;
+    height: calc(86 * (94vw / 61));
+    width: calc(94vw - 1px);
     scroll-margin-top: 0;
     scroll-margin-bottom: calc(100dvh - 50px - 86 * (94vw / 61) - 13px - 45px);
     scroll-snap-stop: always;
@@ -1244,7 +1254,7 @@ header nav {
   #vertical-drawings div.images,
   #posters-for2030 div.images,
   #prints div.images {
-    padding-bottom: calc(100dvh - 50px - 86 * (94vw / 61) - 13px - 45px);
+    padding-bottom: calc(100dvh - 50px - 86 * (94vw / 61) - 13px - 45px);}
 
     /* 3/2 */
     #berlin aside,
@@ -1262,7 +1272,7 @@ header nav {
     #lobsters-v-one aside {
       width: 94vw;
       padding-top: calc((2 * (94vw / 3)) + 13px);
-      height: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 45px);
+      height: calc(100dvh - 50px - 2 * (94vw / 3) - 12px - 45px + 9px);
       background-clip: content-box;
     }
 
@@ -1282,6 +1292,7 @@ header nav {
     #lobsters-v-one img {
       scroll-snap-align: center;
       height: calc(2 * (94vw / 3));
+      width: calc(94vw - 1px);
       scroll-margin-top: 0;
       scroll-margin-bottom: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 45px);
       scroll-snap-stop: always;
@@ -1308,7 +1319,7 @@ header nav {
 
     aside p {
       font-size: 2dvh;
-      max-width: 94vw;
+      max-width: calc(94vw);
       text-align: left;
     }
 
@@ -1378,17 +1389,36 @@ header nav {
       margin-top: 0px;
     }
 
+    #about table tr.collections td {
+	width: 94vw;
+    }
+ 
+    #about table tr.collections td p {
+	max-width: 94vw;
+    }
+
     footer {
       height: 45px;
     }
 
     footer > * {
-      line-height: 45px !important;
+      height: 45px;
+      line-height: 45px;
       vertical-align: middle;
+    }
+
+    footer div#writing-hand {
+      padding-left: 2px;
+      margin-right: -2px;
     }
 
     footer div#writing-hand p {
       font-size: 24px;
+    }
+
+    footer div#arrows {
+      margin-bottom: 2px;
+      margin-right: 2.5px;
     }
   
     footer div#arrows a {
@@ -1468,7 +1498,8 @@ div#ad {
   }
 
   #final-presentation aside {
-    height: calc(100dvh - 50px - 2 * (94vw / 3) - 13px - 44px);
+    height: calc(100dvh - 50px - 2 * (94vw / 3) - 12px - 44px + 9px);
+    width: 94vw;
   }
 
   footer {
