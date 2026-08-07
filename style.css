@@ -759,7 +759,6 @@ header {
 }
 
 header nav {
-  height: 50px;
   width: auto;
 }
 
@@ -1013,6 +1012,11 @@ header nav {
 
   main.index-crops {
     max-height: calc(100dvh - 95px);
+  }
+
+  #index header h2 {
+	  height: unset;
+	  line-height: unset;
   }
 
   header {
