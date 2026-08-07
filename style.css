@@ -148,7 +148,6 @@ header nav {
 header h2, header nav h2 {
   width: auto;
   height: 100px;
-  line-height: 100px;
   margin: 0;
   /* padding-top: 8px; */
 }
