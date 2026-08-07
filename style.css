@@ -145,6 +145,12 @@ header nav {
   margin-bottom: 0;
 }
 
+#index header h2 {
+	height: 100px;
+	line-height: 156px;
+	margin: 0;
+}
+
 header h2, header nav h2 {
   width: auto;
   height: 100px;
