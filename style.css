@@ -756,6 +756,7 @@ aside span.hint {
 
 header nav {
   width: auto;
+  line-height: 100px;
 }
 
 @media all and (min-width: 1214px) {
