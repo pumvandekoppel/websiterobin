@@ -139,7 +139,7 @@ header nav {
   /* max-width: 92vw; */
   text-decoration: none;
   color: #000;
-  max-height: 100px;
+  height: 100px;
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
@@ -147,7 +147,7 @@ header nav {
 
 #index header h2 {
 	height: 100px;
-	line-height: 156px;
+	line-height: 100px;
 	margin: 0;
 }
 
