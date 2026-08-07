@@ -154,6 +154,7 @@ header nav {
 header h2, header nav h2 {
   width: auto;
   height: 100px;
+  line-height: 100px;
   margin: 0;
   /* padding-top: 8px; */
 }
@@ -754,12 +755,9 @@ aside span.hint {
   display: none;
 }
 
-header {
-  height: 50px;
-}
-
 header nav {
   width: auto;
+  line-height: 100px;
 }
 
 @media all and (min-width: 1214px) {
