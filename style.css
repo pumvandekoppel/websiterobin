@@ -796,7 +796,7 @@ header nav {
   #basement-paintings img,
   #old-studio img,
   #scheveningen img {
-    width: calc(16 * (100dvh - 200px) / 9);
+    width: calc(16 * (100dvh - 200px) / 9) !important;
   }
 
   /* DIVISION OF IMAGE AND INFO ASIDE */
@@ -938,7 +938,7 @@ header nav {
   iframe,
   div.row,
   aside {
-    height: calc(100dvh - 200px);
+    height: calc(100dvh - 200px) !important;
   }
 
   footer,
@@ -991,7 +991,7 @@ header nav {
   img,
   iframe,
   aside {
-    height: calc(100dvh - 200px);
+    height: calc(100dvh - 200px) !important;
   }
 }
 
