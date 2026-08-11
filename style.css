@@ -1137,15 +1137,15 @@ header nav {
   }
 
   /* section#kabk-video > div, */
-  section.video div.video-wrapper,
+  section.video div.video-wrapper iframe,
   #rock img,
   div.images #gips img,
   #fountain-act-1 img,
-  #fountain-act-1 div.video-wrapper,
+  #fountain-act-1 div.video-wrapper iframe,
   #fountain-act-2 img,
-  #fountain-act-2 div.video-wrapper,
+  #fountain-act-2 div.video-wrapper iframe,
   #fountain-act-3 img,
-  #fountain-act-3 div.video-wrapper,
+  #fountain-act-3 div.video-wrapper iframe,
   #block img,
   #basement-paintings img,
   #old-studio img,
