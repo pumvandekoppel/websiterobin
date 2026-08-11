@@ -796,7 +796,7 @@ header nav {
   #basement-paintings img,
   #old-studio img,
   #scheveningen img {
-    width: calc(16 * (100dvh - 200px) / 9) !important;
+    width: calc(16 * (100dvh - 200px) / 9);
   }
 
   /* DIVISION OF IMAGE AND INFO ASIDE */
@@ -938,7 +938,7 @@ header nav {
   iframe,
   div.row,
   aside {
-    height: calc(100dvh - 200px) !important;
+    height: calc(100dvh - 200px);
   }
 
   footer,
@@ -991,7 +991,7 @@ header nav {
   img,
   iframe,
   aside {
-    height: calc(100dvh - 200px) !important;
+    height: calc(100dvh - 200px);
   }
 }
 
@@ -1067,7 +1067,7 @@ header nav {
 
   img,
   iframe {
-    width: calc(94vw - 1px);
+    width: calc(94vw - 1px) !important;
     object-fit: cover;
   }
 
@@ -1154,7 +1154,7 @@ header nav {
     height: calc(9 * (94vw / 16));
     width: calc(94vw - 1px);
     scroll-margin-top: 0;
-    scroll-margin-bottom: calc(100dvh - 50px - 9 * (94vw / 16) - 13px - 45px) !important;
+    scroll-margin-bottom: calc(100dvh - 50px - 9 * (94vw / 16) - 13px - 45px);
     scroll-snap-stop: always;
   }
 
