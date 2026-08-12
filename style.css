@@ -296,6 +296,7 @@ aside {
 
 aside p {
   margin: 0;
+  padding-bottom: 4px;
   font-size: min(0.9em, 1.05vw);
 }
 
